@@ -1,0 +1,71 @@
+Dataset: <repo>/.venv/lib/python3.11/site-packages/webarena_verified/assets/dataset/webarena-verified.json
+Total tasks: 812
+Task keys: sites, task_id, intent_template_id, start_urls, intent, intent_template, instantiation_dict, eval, revision
+Allowed-site tasks: 678; mutation candidates: 360
+start_url preserves the original start_urls list and unresolved site placeholders.
+Mutation rule: modification event type or POST/PUT/PATCH/DELETE; no URL heuristic needed.
+Caveat: POST reads and should_not_exist assertions also qualify under this rule.
+Single-site mutation counts:
+  gitlab: 119
+  reddit: 95
+  shopping: 49
+  shopping_admin: 75
+Multi-site mutation count: 22
+  gitlab + reddit: 17
+  reddit + shopping: 5
+
+shopping_admin: 8 example mutation intents
+  453: Disable Teton pullover hoodie from the site, they are facing some quality issues.
+  454: Disable Ryker Tee Crew Neck from the site, they are facing some quality issues.
+  455: Disable Helios Endurance Tank from the site, they are facing some quality issues.
+  456: Disable Cora Pant from the site, they are facing some quality issues.
+  457: Disable Karmen yoga pants from the site, they are facing some quality issues.
+  458: Reduce the price of the product on the current page by $5
+  459: Reduce the price of the product on the current page by 10%
+  460: Reduce the price of the product on the current page by 15%
+
+reddit: 8 example mutation intents
+  399: Change my bio to "I am a robot" in the discussion forum
+  400: Change my bio to "Pro Python Developer with 20 years of Experience" in the discussion forum
+  401: Change my bio to "Seeking SDE positions" in the discussion forum
+  402: Change my bio to "Freelance Web Developer" in the discussion forum
+  403: Change my bio to "Awesome Prompt Artist" in the discussion forum
+  404: Upvote the newest post in books forum
+  405: Upvote the newest post in DIY forum
+  406: Upvote the newest post in future technology forum
+
+shopping: 8 example mutation intents
+  431: Add the product with the lowest per unit price from my open tabs to the shopping cart
+  432: Add the product with the lowest per unit price from my open tabs to the shopping cart
+  433: Add the product with the lowest per unit price from my open tabs to the shopping cart
+  434: Add the product with the lowest per unit price from my open tabs to the shopping cart
+  435: Add the product with the lowest per unit price from my open tabs to the shopping cart
+  436: I previously ordered a mattress foundation around Feb or March 2023 and later cancelled. Can you reorder it for me?
+  437: I previously ordered a table lamp in May 2023 and later cancelled. Can you reorder it for me?
+  438: I previously ordered a TV stand sometime around sep 2022 and later cancelled. Can you reorder it for me?
+
+Task 453 evaluator config (complete eval list):
+[
+  {
+    "evaluator": "AgentResponseEvaluator",
+    "results_schema": {
+      "type": "null"
+    },
+    "expected": {
+      "task_type": "mutate",
+      "status": "SUCCESS",
+      "retrieved_data": null
+    }
+  },
+  {
+    "evaluator": "NetworkEventEvaluator",
+    "expected": {
+      "url": "^__SHOPPING_ADMIN__/catalog/product/save/id/78/type/(simple|configurable)/store/0/set/\\d+/back/edit$",
+      "http_method": "POST",
+      "post_data": {
+        "product[status]": "2"
+      },
+      "response_status": 302
+    }
+  }
+]

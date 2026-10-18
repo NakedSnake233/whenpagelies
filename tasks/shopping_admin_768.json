@@ -1,0 +1,12 @@
+{
+  "id": "shopping_admin-768",
+  "site": "shopping_admin",
+  "family": "fam-241",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "5 blue Cronus yoga pants with size 33 arrived, update the stock",
+  "webarena_task_id": 768,
+  "instantiation": {
+    "arrival_phrase": "5 blue Cronus yoga pants with size 33 arrived",
+    "update_phrase": "update the stock"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "reddit-632",
+  "site": "reddit",
+  "family": "fam-15",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Create a post in f/sports. Title it \"running shoes recommendations?\" and in post details ask \"Hey, looking for good running shoes under $500, any suggestions?\"",
+  "webarena_task_id": 632,
+  "instantiation": {
+    "category": "running shoes",
+    "price": "$500",
+    "forum": "f/sports"
+  }
+}

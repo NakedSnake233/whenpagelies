@@ -1,0 +1,13 @@
+{
+  "id": "shopping_admin-779",
+  "site": "shopping_admin",
+  "family": "fam-742",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "Reduce the price of yellow shirts from Gwyn Endurance in all sizes below L by 15%",
+  "webarena_task_id": 779,
+  "instantiation": {
+    "amount": "15%",
+    "action": "Reduce",
+    "config": "yellow shirts from Gwyn Endurance in all sizes below L"
+  }
+}

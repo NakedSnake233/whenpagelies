@@ -1,0 +1,11 @@
+{
+  "id": "reddit-401",
+  "site": "reddit",
+  "family": "fam-6",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Change my bio to \"Seeking SDE positions\" in the discussion forum",
+  "webarena_task_id": 401,
+  "instantiation": {
+    "content": "Seeking SDE positions"
+  }
+}

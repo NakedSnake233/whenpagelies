@@ -1,0 +1,11 @@
+{
+  "id": "shopping_admin-457",
+  "site": "shopping_admin",
+  "family": "fam-242",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "Disable Karmen yoga pants from the site, they are facing some quality issues.",
+  "webarena_task_id": 457,
+  "instantiation": {
+    "product": "Karmen yoga pants"
+  }
+}

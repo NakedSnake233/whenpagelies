@@ -1,0 +1,12 @@
+{
+  "id": "reddit-639",
+  "site": "reddit",
+  "family": "fam-6100",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Create a post in the most appropriate forum. Title it \"used iphone recommendations\" and in post details ask \"I need recommendations for used iphone within a budget of $1000 please\"",
+  "webarena_task_id": 639,
+  "instantiation": {
+    "category": "used iphone",
+    "price": "$1000"
+  }
+}

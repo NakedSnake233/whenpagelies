@@ -1,0 +1,11 @@
+{
+  "id": "reddit-622",
+  "site": "reddit",
+  "family": "fam-12",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Ask for advice in a forum for relations. Title it \"sexual harassment\" and in post details ask \"Please help\"",
+  "webarena_task_id": 622,
+  "instantiation": {
+    "issue": "sexual harassment"
+  }
+}

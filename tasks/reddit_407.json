@@ -1,0 +1,11 @@
+{
+  "id": "reddit-407",
+  "site": "reddit",
+  "family": "fam-22",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Upvote the newest post in the deep learning forum",
+  "webarena_task_id": 407,
+  "instantiation": {
+    "forum": "the deep learning"
+  }
+}

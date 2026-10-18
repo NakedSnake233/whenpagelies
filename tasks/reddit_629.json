@@ -1,0 +1,11 @@
+{
+  "id": "reddit-629",
+  "site": "reddit",
+  "family": "fam-13",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Create a discussion post titled \"Fun thing to do in Pittsburgh\" in a relevant forum and ask users for their opinions with the simple prompt, \"your opinion\"",
+  "webarena_task_id": 629,
+  "instantiation": {
+    "topic": "Fun thing to do in Pittsburgh"
+  }
+}

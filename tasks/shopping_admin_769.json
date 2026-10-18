@@ -1,0 +1,12 @@
+{
+  "id": "shopping_admin-769",
+  "site": "shopping_admin",
+  "family": "fam-241",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "We've received 378 brown Aero daily fitness tee in every size, please update the inventory",
+  "webarena_task_id": 769,
+  "instantiation": {
+    "arrival_phrase": "We've received 378 brown Aero daily fitness tee in every size",
+    "update_phrase": "please update the inventory"
+  }
+}

@@ -1,0 +1,481 @@
+site: shopping_admin
+origin: http://localhost:7780
+entries:
+- id: fam-242
+  method: POST
+  url_regex: (?:^/admin/catalog/product/save/id/78/type/(simple|configurable)/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/478/type/(simple|configurable)/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/676/type/(simple|configurable)/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1840/type/(simple|configurable)/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1819/type/(simple|configurable)/store/0/set/\d+/back/edit/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/fam-242.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 453
+  - 454
+  - 455
+  - 456
+  - 457
+  goal: status attribute = 2 for product
+  side_effect: 0; assignment is idempotent
+  body_regex: (?:product%5Bstatus%5D=|name="product\[status\]")
+- id: fam-247
+  method: POST
+  url_regex: (?:^/admin/catalog/product/save/id/1481/type/(simple|configurable)/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/237/type/(simple|configurable)/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/418/type/(simple|configurable)/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/721/type/(simple|configurable)/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/710/type/(simple|configurable)/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/996/type/(simple|configurable)/store/0/set/\d+/back/edit/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/fam-247.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 458
+  - 459
+  - 460
+  - 461
+  - 462
+  - 463
+  goal: price = baseline price adjusted by action and amount
+  side_effect: number of extra relative applications inferred from price
+  body_regex: (?:product%5Bprice%5D=|name="product\[price\]")
+- id: fam-251
+  method: POST
+  url_regex: (?:^/admin/catalog/product/save/id/1796/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1684/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1108/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1556/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1668/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/fam-251.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 464
+  - 543
+  - 544
+  - 545
+  - 546
+  goal: description = review-count-dependent requested text for product
+  side_effect: 0; assignment is idempotent
+  body_regex: (?:product%5Bshort_description%5D=|name="product\[short_description\]")
+- id: fam-257
+  method: POST
+  url_regex: (?:^/admin/sales/order/cancel/order_id/302/?(?:\?.*)?$|^/admin/sales/order/cancel/order_id/307/?(?:\?.*)?$|^/admin/sales/order/cancel/order_id/299/?(?:\?.*)?$|^/admin/sales/order/cancel/order_id/301/?(?:\?.*)?$|^/admin/sales/order/cancel/order_id/305/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/error.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 470
+  - 471
+  - 472
+  - 473
+  - 474
+  goal: order id state/status is canceled
+  side_effect: extra history rows / repeated stock refunds
+- id: fam-275
+  method: POST
+  url_regex: (?:^/admin/cms/page/save/back/edit/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/error.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 486
+  - 487
+  - 488
+  - 489
+  - 490
+  goal: CMS title for old_heading = heading
+  side_effect: 0; assignment is idempotent
+  f2:
+    strip_fields:
+    - page_id
+  body_regex: (?:is_active=|page_id=|store_id%5B0%5D=|title=)
+- id: fam-280
+  method: POST
+  url_regex: (?:^/admin/sales/order/addComment/order_id/302/?(?:\?.*)?$|^/admin/sales/order/addComment/order_id/65/?(?:\?.*)?$|^/admin/sales/order/addComment/order_id/304/?(?:\?.*)?$|^/admin/sales/order/addComment/order_id/303/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/error.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 492
+  - 493
+  - 494
+  - 495
+  goal: latest pending order for name has customer-visible history message
+  side_effect: extra matching history messages
+  f2:
+    strip_fields:
+    - history[is_customer_notified]
+  body_regex: (?:history%5Bcomment%5D=|history%5Bis_customer_notified%5D=)
+- id: fam-284
+  method: POST
+  url_regex: (?:^/admin/admin/order_shipment/save/order_id/299/?(?:\?.*)?$|^/admin/admin/order_shipment/save/order_id/307/?(?:\?.*)?$|^/admin/admin/order_shipment/save/order_id/306/?(?:\?.*)?$|^/admin/admin/order_shipment/save/order_id/304/?(?:\?.*)?$|^/admin/admin/order_shipment/save/order_id/301/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/error.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 496
+  - 497
+  - 498
+  - 499
+  - 500
+  goal: order shipment has service and tracking
+  side_effect: extra shipment/tracking rows
+  f2:
+    strip_fields:
+    - tracking[1][number]
+  body_regex: (?:tracking%5B1%5D%5Bcarrier_code%5D=|tracking%5B1%5D%5Bnumber%5D=)
+- id: fam-287
+  method: POST
+  url_regex: (?:^/admin/catalog/product/save/id/350/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/446/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/682/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1108/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1861/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/error.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 501
+  - 502
+  - 503
+  - 504
+  - 505
+  goal: all variants of product have is_in_stock=0
+  side_effect: 0; assignment is idempotent
+  body_regex: (?:product%5Bquantity_and_stock_status%5D%5Bis_in_stock%5D=)
+- id: fam-240
+  method: POST
+  url_regex: (?:^/admin/sales/order/addressSave/address_id/598/?(?:\?.*)?$|^/admin/sales/order/addressSave/address_id/130/?(?:\?.*)?$|^/admin/sales/order/addressSave/address_id/602/?(?:\?.*)?$|^/admin/sales/order/addressSave/address_id/249/?(?:\?.*)?$|^/admin/sales/order/addressSave/address_id/600/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/error.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 538
+  - 539
+  - 540
+  - 541
+  - 542
+  goal: order_id address fields equal parsed address
+  side_effect: 0; assignment is idempotent
+  f2:
+    strip_fields:
+    - postcode
+  body_regex: (?:city=|country_id=|postcode=|region=|region_id=|street%5B0%5D=|street%5B1%5D=)
+- id: fam-252
+  method: POST
+  url_regex: (?:^/admin/catalog/product_attribute/save/attribute_id/93/?(?:\?.*)?$|^/admin/catalog/product/save/id/1130/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/110/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product_attribute/save/attribute_id/144/?(?:\?.*)?$|^/admin/catalog/product/save/id/1492/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1732/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1854/type/configurable/store/0/set/\d+/back/edit/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/error.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 547
+  - 548
+  - 549
+  - 550
+  - 551
+  goal: product has requested option_spec for base_setting
+  side_effect: extra child SKUs or option links
+  f2:
+    strip_fields:
+    - $['configurable-matrix-serialized'][?(@.newProduct == 1)].attributes
+  body_regex: (?:%24%5B%27configurable\-matrix\-serialized%27%5D%5B%3F%28%40\.newProduct\+%3D%3D\+1%29%5D\.attributes=|product%5Bconfigurable_attributes_data%5D%5B144%5D%5Battribute_id%5D=|product%5Bconfigurable_attributes_data%5D%5B144%5D%5Bcode%5D=|product%5Bconfigurable_attributes_data%5D%5B144%5D%5Bposition%5D=|product%5Bconfigurable_attributes_data%5D%5B144%5D%5Bvalues%5D%5B171%5D%5Binclude%5D=|product%5Bconfigurable_attributes_data%5D%5B144%5D%5Bvalues%5D%5B171%5D%5Bvalue_index%5D=|product%5Bconfigurable_attributes_data%5D%5B144%5D%5Bvalues%5D%5B172%5D%5Binclude%5D=|product%5Bconfigurable_attributes_data%5D%5B144%5D%5Bvalues%5D%5B172%5D%5Bvalue_index%5D=|product%5Bconfigurable_attributes_data%5D%5B144%5D%5Bvalues%5D%5B173%5D%5Binclude%5D=|product%5Bconfigurable_attributes_data%5D%5B144%5D%5Bvalues%5D%5B173%5D%5Bvalue_index%5D=|product%5Bconfigurable_attributes_data%5D%5B144%5D%5Bvalues%5D%5B174%5D%5Binclude%5D=|product%5Bconfigurable_attributes_data%5D%5B144%5D%5Bvalues%5D%5B174%5D%5Bvalue_index%5D=|product%5Bconfigurable_attributes_data%5D%5B93%5D%5Bcode%5D=|product%5Bconfigurable_attributes_data%5D%5B93%5D%5Bposition%5D=|product%5Bconfigurable_attributes_data%5D%5B93%5D%5Bvalues%5D%5B49%5D%5Binclude%5D=|product%5Bconfigurable_attributes_data%5D%5B93%5D%5Bvalues%5D%5B49%5D%5Bvalue_index%5D=|product%5Bconfigurable_attributes_data%5D%5B93%5D%5Bvalues%5D%5B50%5D%5Binclude%5D=|product%5Bconfigurable_attributes_data%5D%5B93%5D%5Bvalues%5D%5B50%5D%5Bvalue_index%5D=|product%5Bconfigurable_attributes_data%5D%5B93%5D%5Bvalues%5D%5B56%5D%5Binclude%5D=|product%5Bconfigurable_attributes_data%5D%5B93%5D%5Bvalues%5D%5B56%5D%5Bvalue_index%5D=|product%5Bname%5D=|serialized_options=)
+- id: fam-256
+  method: POST
+  url_regex: (?:^/admin/catalog/product/save/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/error.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 694
+  - 695
+  - 696
+  - 697
+  - 698
+  goal: new simple SKU has product, stock, size, color and price
+  side_effect: extra matching SKUs
+  f2:
+    strip_fields:
+    - product[color]
+  body_regex: (?:product%5Bcolor%5D=|product%5Bname%5D=|product%5Bprice%5D=|product%5Bquantity_and_stock_status%5D%5Bis_in_stock%5D=|product%5Bquantity_and_stock_status%5D%5Bqty%5D=|product%5Bsize%5D=|product%5Bstatus%5D=)
+- id: fam-258
+  method: POST
+  url_regex: (?:^/admin/sales_rule/promo_quote/save/?(?:\?.*)?$|^/admin/catalog_rule/promo_catalog/save/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/error.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 699
+  - 700
+  - 701
+  - 702
+  - 703
+  goal: salesrule name=topic and conditions/actions implement rule
+  side_effect: extra matching rules
+  f2:
+    strip_fields:
+    - discount_amount
+  body_regex: (?:coupon_type=|customer_group_ids=|customer_group_ids%5B0%5D=|discount_amount=|is_active=|name=|rule%5Bactions%5D%5B1%5D%5Baggregator%5D=|rule%5Bactions%5D%5B1%5D%5Btype%5D=|rule%5Bactions%5D%5B1%5D%5Bvalue%5D=|simple_action=|website_ids=|website_ids%5B0%5D=)
+- id: fam-241
+  method: POST
+  url_regex: (?:^/admin/catalog/product/save/id/872/type/(simple|configurable)/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/544/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/547/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/550/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/553/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/556/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1836/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1838/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/fam-241.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 768
+  - 769
+  - 770
+  goal: each selected SKU quantity = evaluator quantity resolved from arrival_phrase
+  side_effect: extra relative stock increments beyond requested quantity
+  body_regex: (?:product%5Bquantity_and_stock_status%5D%5Bqty%5D=|name="product\[quantity_and_stock_status\]\[qty\]")
+- id: fam-243
+  method: POST
+  url_regex: (?:^/admin/review/product/save/id/352/?(?:\?.*)?$|^/admin/review/product/save/id/347/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/error.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 771
+  goal: all qualifying reviews status_id=1
+  side_effect: 0; assignment is idempotent
+  body_regex: (?:status_id=)
+- id: fam-246
+  method: POST
+  url_regex: (?:^/admin/review/product/delete/id/999/?(?:\?.*)?$|^/admin/review/product/delete/id/351/?(?:\?.*)?$|^/admin/review/product/delete/id/353/?(?:\?.*)?$|^/admin/review/product/delete/id/349/?(?:\?.*)?$|^/admin/review/product/delete/id/51/?(?:\?.*)?$|^/admin/review/product/delete/id/109/?(?:\?.*)?$|^/admin/review/product/delete/id/93/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/error.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 772
+  - 773
+  - 774
+  - 775
+  - 776
+  goal: all reviews selected by review_type absent
+  side_effect: extra non-target rows deleted
+- id: fam-742
+  method: POST
+  url_regex: (?:^/admin/catalog/product/save/id/120/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/117/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/114/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/111/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/123/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1841/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1842/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1843/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1559/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1562/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1565/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1264/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1267/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/1573/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/499/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/479/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$|^/admin/catalog/product/save/id/482/type/simple/store/0/set/\d+/back/edit/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.shopping_admin:compensator
+  f5:
+    template: templates/shopping_admin/fam-742.html
+  f6:
+    views:
+    - ^/admin/catalog/product/(?:edit|index)/
+    - ^/admin/mui/index/render/\?(?:[^#]*&)?namespace=product_listing(?:&|$)
+    - ^/admin/(?:sales|review|cms|promo)/
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 777
+  - 778
+  - 779
+  - 780
+  - 781
+  - 782
+  goal: all config-matched prices adjusted by action and amount
+  side_effect: extra relative applications inferred from prices
+  body_regex: (?:product%5Bprice%5D=|name="product\[price\]")

@@ -1,0 +1,33 @@
+site: toy
+origin: http://127.0.0.1:18080
+entries:
+  - id: create-item
+    method: POST
+    url_regex: '^/items(?:\?.*)?$'
+    content_type: form
+    effect: create
+    f1: {mode: replay}
+    f2: {strip_fields: [note]}
+    f3: {delay_s: 0.5, compensator: 'probes.toy:rollback_last'}
+    f5:
+      template: ../tests/fixtures/toy_error.html
+      status: 200
+      content_type: text/html; charset=utf-8
+    f6:
+      views: ['^/items(?:\?.*)?$', '^/items/\d+(?:\?.*)?$']
+      stale_reads: 2
+      stale_seconds: 30
+  - id: edit-item
+    method: POST
+    url_regex: '^/items/\d+/edit(?:\?.*)?$'
+    content_type: form
+    effect: update
+    f1: {mode: none}
+    f2: {strip_fields: [qty]}
+  - id: add-cart
+    method: POST
+    url_regex: '^/api/cart(?:\?.*)?$'
+    content_type: json
+    effect: create
+    f1: {mode: none}
+    f2: {strip_json_paths: [qty]}

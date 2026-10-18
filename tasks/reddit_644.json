@@ -1,0 +1,13 @@
+{
+  "id": "reddit-644",
+  "site": "reddit",
+  "family": "fam-16",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Post a notice in games forum titled \"Tears of Kingdom Meet up!\". Set post details to \"virtual meetup for Tears of Kingdom on Dec 15th\"",
+  "webarena_task_id": 644,
+  "instantiation": {
+    "interest": "Tears of Kingdom",
+    "date": "Dec 15th",
+    "forum": "games forum"
+  }
+}

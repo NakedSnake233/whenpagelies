@@ -1,0 +1,11 @@
+{
+  "id": "shopping_admin-464",
+  "site": "shopping_admin",
+  "family": "fam-251",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "Update the product description of Antonia Racer Tank to \"{count} customer(s) love it!\" where count is the number of reviews with 4 stars or above, or \"don't miss out on this amazing product\" when there are no such reviews.",
+  "webarena_task_id": 464,
+  "instantiation": {
+    "product": "Antonia Racer Tank"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "reddit-642",
+  "site": "reddit",
+  "family": "fam-16",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Post a notice in books forum titled \"Big little lies Meet up!\". Set post details to \"virtual meetup for Big little lies on Sep 10th\"",
+  "webarena_task_id": 642,
+  "instantiation": {
+    "interest": "Big little lies",
+    "date": "Sep 10th",
+    "forum": "books forum"
+  }
+}

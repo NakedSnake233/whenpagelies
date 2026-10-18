@@ -1,0 +1,13 @@
+{
+  "id": "shopping_admin-777",
+  "site": "shopping_admin",
+  "family": "fam-742",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "Reduce the price of green Hollister backyard sweatshirt in all sizes by $5",
+  "webarena_task_id": 777,
+  "instantiation": {
+    "amount": "$5",
+    "action": "Reduce",
+    "config": "green Hollister backyard sweatshirt in all sizes"
+  }
+}

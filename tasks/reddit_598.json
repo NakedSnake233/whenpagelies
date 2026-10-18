@@ -1,0 +1,12 @@
+{
+  "id": "reddit-598",
+  "site": "reddit",
+  "family": "fam-4",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Subscribe to the \"pittsburgh\" forum from the page of the all time most commented post in that forum.",
+  "webarena_task_id": 598,
+  "instantiation": {
+    "post_selector": "all time most commented",
+    "forum": "pittsburgh"
+  }
+}

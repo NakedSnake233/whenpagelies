@@ -1,0 +1,12 @@
+{
+  "id": "shopping_admin-770",
+  "site": "shopping_admin",
+  "family": "fam-241",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "We've received 12 white Cora parachute pant of size 28 and 56 blue of size 29, update the inventory",
+  "webarena_task_id": 770,
+  "instantiation": {
+    "arrival_phrase": "We've received 12 white Cora parachute pant of size 28 and 56 blue of size 29",
+    "update_phrase": "update the inventory"
+  }
+}

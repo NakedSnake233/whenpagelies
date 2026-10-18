@@ -1,0 +1,17 @@
+sites:
+  shopping_admin:
+    image: am1n3e/webarena-verified-shopping_admin
+    container: osd-shopping_admin
+    ports: ["7780:80", "7781:8877"]
+  reddit:
+    image: am1n3e/webarena-verified-reddit
+    container: osd-reddit
+    ports: ["9999:80", "9998:8877"]
+  shopping:
+    image: am1n3e/webarena-verified-shopping
+    container: osd-shopping
+    ports: ["7770:80", "7771:8877"]
+  gitlab:
+    image: am1n3e/webarena-verified-gitlab
+    container: osd-gitlab
+    ports: ["8023:8023", "8024:8877"]

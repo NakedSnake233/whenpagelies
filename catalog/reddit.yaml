@@ -1,0 +1,600 @@
+site: reddit
+origin: http://127.0.0.1:9999
+entries:
+- id: fam-6
+  method: POST
+  url_regex: (?:^/user/MarvelsGrantMan136/edit_biography/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/fam-6.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 399
+  - 400
+  - 401
+  - 402
+  - 403
+  goal: users.biography = content
+  side_effect: 0; assignment is idempotent
+  body_regex: (?:user_biography%5Bbiography%5D=|name="user_biography\[biography\]")
+- id: fam-22
+  method: POST
+  url_regex: (?:^/sv/124260.json/?(?:\?.*)?$|^/sv/119019.json/?(?:\?.*)?$|^/sv/119517.json/?(?:\?.*)?$|^/sv/125036.json/?(?:\?.*)?$|^/sv/125342.json/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/fam-22.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 404
+  - 405
+  - 406
+  - 407
+  - 408
+  goal: episode user has upvote=true on newest submission in forum
+  side_effect: max(0, matching votes - 1); unique vote is idempotent
+  body_regex: (?:choice=|name="choice")
+- id: fam-23
+  method: POST
+  url_regex: (?:^/f/books/59421/-/comment/1235250/?(?:\?.*)?$|^/f/singularity/69404/-/comment/1042264/?(?:\?.*)?$|^/f/books/59421/-/comment/?(?:\?.*)?$|^/f/pittsburgh/45899/-/comment/?(?:\?.*)?$|^/f/technology/134852/-/comment/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/error.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 409
+  - 410
+  - 650
+  - 651
+  - 652
+  goal: reply text = content_description under selected parent
+  side_effect: extra matching comments beyond one
+  body_regex: (?:reply_to_comment_1042264%5Bcomment%5D=|reply_to_comment_1235250%5Bcomment%5D=|reply_to_submission_134852%5Bcomment%5D=|reply_to_submission_45899%5Bcomment%5D=|reply_to_submission_59421%5Bcomment%5D=)
+- id: fam-7
+  method: POST
+  url_regex: (?:^/create_forum/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/error.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 580
+  - 581
+  - 582
+  - 583
+  - 584
+  goal: forum name/title=name; description=description; sidebar=sidebar_list
+  side_effect: extra matching forums
+  f2:
+    strip_fields:
+    - forum[sidebar]
+  body_regex: (?:forum%5Bdescription%5D=|forum%5Bname%5D=|forum%5Bsidebar%5D=|forum%5Btitle%5D=)
+- id: fam-4
+  method: POST
+  url_regex: (?:^/f/space/subscribe.json/?(?:\?.*)?$|^/f/space/unsubscribe.json/?(?:\?.*)?$|^/f/books/subscribe.json/?(?:\?.*)?$|^/f/books/unsubscribe.json/?(?:\?.*)?$|^/f/consoles/subscribe.json/?(?:\?.*)?$|^/f/consoles/unsubscribe.json/?(?:\?.*)?$|^/f/pittsburgh/subscribe.json/?(?:\?.*)?$|^/f/pittsburgh/unsubscribe.json/?(?:\?.*)?$|^/f/machine
+    learning/subscribe.json/?(?:\?.*)?$|^/f/machine learning/unsubscribe.json/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/fam-4.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 595
+  - 596
+  - 597
+  - 598
+  - 599
+  goal: episode user subscribed to forum
+  side_effect: max(0, matching subscriptions - 1); subscription is idempotent
+- id: fam-3765
+  method: POST
+  url_regex: (?:^/submit/?(?:\?.*)?$|^/submit/consoles/?(?:\?.*)?$|^/submit/nyc/?(?:\?.*)?$|^/submit/pittsburgh/?(?:\?.*)?$|^/submit/deeplearning/?(?:\?.*)?$|^/submit/MachineLearning/?(?:\?.*)?$|^/submit/singularity/?(?:\?.*)?$)
+  content_type: form
+  effect: create
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/error.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 600
+  - 601
+  - 602
+  - 603
+  - 604
+  goal: submission title = question in relevant forum
+  side_effect: extra matching posts
+  f2:
+    strip_fields:
+    - submission[forum]
+  body_regex: (?:submission%5Bforum%5D=|submission%5Btitle%5D=)
+- id: fam-5
+  method: POST
+  url_regex: (?:^/submit/?(?:\?.*)?$|^/submit/consoles/?(?:\?.*)?$|^/submit/nyc/?(?:\?.*)?$|^/submit/pittsburgh/?(?:\?.*)?$|^/submit/washington/?(?:\?.*)?$|^/submit/deeplearning/?(?:\?.*)?$)
+  content_type: form
+  effect: create
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/error.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 605
+  - 606
+  - 607
+  - 608
+  - 609
+  goal: submission contains question in forum relevant to topic
+  side_effect: extra matching posts
+  f2:
+    strip_fields:
+    - submission[forum]
+  body_regex: (?:submission%5Bforum%5D=|submission%5Btitle%5D=)
+- id: fam-9
+  method: POST
+  url_regex: (?:^/submit/?(?:\?.*)?$|^/submit/books/?(?:\?.*)?$|^/f/books/\d+/-/comment/?(?:\?.*)?$|^/f/books/{{post_id}}/-/comment/?(?:\?.*)?$)
+  content_type: form
+  effect: create
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/error.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 610
+  - 611
+  - 612
+  - 613
+  - 614
+  goal: post title=book in books AND child comment=content
+  side_effect: extra matching posts/comments
+  f2:
+    strip_fields:
+    - submission[forum]
+  body_regex: (?:%24\.%5Ereply_to_submission_%5Cd%2B%5C%5Bcomment%5C%5D%24=|reply_to_submission_%7B%7Bpost_id%7D%7D%5Bcomment%5D=|submission%5Bforum%5D=|submission%5Btitle%5D=)
+- id: fam-11
+  method: POST
+  url_regex: (?:^/submit.*/?(?:\?.*)?$)
+  content_type: form
+  effect: create
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/error.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 615
+  - 616
+  - 617
+  - 618
+  - 619
+  goal: reposted image URL of content, title=from /f/pics, forum=forum
+  side_effect: extra matching posts
+  f2:
+    strip_fields:
+    - submission[forum]
+  body_regex: (?:submission%5Bforum%5D=|submission%5Btitle%5D=|submission%5Burl%5D=)
+- id: fam-12
+  method: POST
+  url_regex: (?:^/submit/?(?:\?.*)?$|^/submit/relationship_advice/?(?:\?.*)?$)
+  content_type: form
+  effect: create
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/fam-12.html
+  f6:
+    views:
+    - ^/f/[^/]+(?:/(?:new|hot|top))?/?(?:\?.*)?$
+    - ^/user/[^/]+/submissions
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 620
+  - 621
+  - 622
+  - 623
+  - 624
+  goal: new actor post in evaluator-resolved forum; title and body equal task fields
+  side_effect: max(0, all new actor posts in target forum - 1)
+  f2:
+    strip_fields:
+    - submission[body]
+  body_regex: (?:submission%5Bbody%5D=|name="submission\[body\]"|submission%5Bforum%5D=|name="submission\[forum\]"|submission%5Btitle%5D=|name="submission\[title\]")
+- id: fam-13
+  method: POST
+  url_regex: (?:^/submit/?(?:\?.*)?$|^/submit/deeplearning/?(?:\?.*)?$|^/submit/iphone/?(?:\?.*)?$|^/submit/movies/?(?:\?.*)?$|^/submit/relationship_advice/?(?:\?.*)?$|^/submit/pittsburgh/?(?:\?.*)?$)
+  content_type: form
+  effect: create
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/fam-13.html
+  f6:
+    views:
+    - ^/f/[^/]+(?:/(?:new|hot|top))?/?(?:\?.*)?$
+    - ^/user/[^/]+/submissions
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 625
+  - 626
+  - 627
+  - 628
+  - 629
+  goal: new actor post in evaluator-resolved forum; title and body equal task fields
+  side_effect: max(0, all new actor posts in target forum - 1)
+  f2:
+    strip_fields:
+    - submission[body]
+  body_regex: (?:submission%5Bbody%5D=|name="submission\[body\]"|submission%5Bforum%5D=|name="submission\[forum\]"|submission%5Btitle%5D=|name="submission\[title\]")
+- id: fam-15
+  method: POST
+  url_regex: (?:^/submit/?(?:\?.*)?$|^/submit/headphones/?(?:\?.*)?$|^/submit/sports/?(?:\?.*)?$|^/submit/iphone/?(?:\?.*)?$)
+  content_type: form
+  effect: create
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/fam-15.html
+  f6:
+    views:
+    - ^/f/[^/]+(?:/(?:new|hot|top))?/?(?:\?.*)?$
+    - ^/user/[^/]+/submissions
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 630
+  - 631
+  - 632
+  - 633
+  - 634
+  goal: post title = category + recommendations?; body contains category and price;
+    forum = forum
+  side_effect: extra matching posts beyond one
+  f2:
+    strip_fields:
+    - submission[body]
+  body_regex: (?:submission%5Bbody%5D=|name="submission\[body\]"|submission%5Bforum%5D=|name="submission\[forum\]"|submission%5Btitle%5D=|name="submission\[title\]")
+- id: fam-6100
+  method: POST
+  url_regex: (?:^/submit/?(?:\?.*)?$|^/submit/headphones/?(?:\?.*)?$|^/submit/diy/?(?:\?.*)?$|^/submit/BuyItForLife/?(?:\?.*)?$|^/submit/iphone/?(?:\?.*)?$)
+  content_type: form
+  effect: create
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/fam-6100.html
+  f6:
+    views:
+    - ^/f/[^/]+(?:/(?:new|hot|top))?/?(?:\?.*)?$
+    - ^/user/[^/]+/submissions
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 635
+  - 636
+  - 637
+  - 638
+  - 639
+  goal: new actor post in evaluator-resolved forum; title and body equal task fields
+  side_effect: max(0, all new actor posts in target forum - 1)
+  f2:
+    strip_fields:
+    - submission[body]
+  body_regex: (?:submission%5Bbody%5D=|name="submission\[body\]"|submission%5Bforum%5D=|name="submission\[forum\]"|submission%5Btitle%5D=|name="submission\[title\]")
+- id: fam-16
+  method: POST
+  url_regex: (?:^/submit/?(?:\?.*)?$|^/submit/books/?(?:\?.*)?$|^/submit/nyc/?(?:\?.*)?$|^/submit/gaming/?(?:\?.*)?$)
+  content_type: form
+  effect: create
+  f1:
+    mode: none
+  f3:
+    delay_s: 8
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/fam-16.html
+  f6:
+    views:
+    - ^/f/[^/]+(?:/(?:new|hot|top))?/?(?:\?.*)?$
+    - ^/user/[^/]+/submissions
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: true
+  task_ids:
+  - 640
+  - 641
+  - 642
+  - 643
+  - 644
+  goal: new actor post in evaluator-resolved forum; title and body equal task fields
+  side_effect: max(0, all new actor posts in target forum - 1)
+  f2:
+    strip_fields:
+    - submission[body]
+  body_regex: (?:submission%5Bbody%5D=|name="submission\[body\]"|submission%5Bforum%5D=|name="submission\[forum\]"|submission%5Btitle%5D=|name="submission\[title\]")
+- id: fam-19
+  method: POST
+  url_regex: (?:^/submit/?(?:\?.*)?$|^/submit/books/?(?:\?.*)?$|^/submit/DIY/?(?:\?.*)?$|^/submit/technology/?(?:\?.*)?$|^/submit/dataisbeautiful/?(?:\?.*)?$)
+  content_type: form
+  effect: create
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/error.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 645
+  - 646
+  - 647
+  - 648
+  - 649
+  goal: title=title in forum
+  side_effect: extra matching posts
+  f2:
+    strip_fields:
+    - submission[forum]
+  body_regex: (?:submission%5Bforum%5D=|submission%5Btitle%5D=)
+- id: fam-24
+  method: POST
+  url_regex: (?:^/sv/19459.json/?(?:\?.*)?$|^/sv/58888.json/?(?:\?.*)?$|^/sv/41616.json/?(?:\?.*)?$|^/sv/81371.json/?(?:\?.*)?$|^/sv/59421.json/?(?:\?.*)?$|^/sv/59447.json/?(?:\?.*)?$|^/sv/86174.json/?(?:\?.*)?$|^/sv/86029.json/?(?:\?.*)?$|^/sv/86055.json/?(?:\?.*)?$|^/sv/42682.json/?(?:\?.*)?$|^/sv/48670.json/?(?:\?.*)?$|^/sv/134696.json/?(?:\?.*)?$|^/sv/48785.json/?(?:\?.*)?$|^/sv/70354.json/?(?:\?.*)?$|^/sv/70233.json/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/error.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 714
+  - 715
+  - 716
+  - 717
+  - 718
+  goal: top k posts in forum have user downvote
+  side_effect: extra votes beyond selected set
+  body_regex: (?:choice=)
+- id: fam-25
+  method: POST
+  url_regex: (?:^/sv/29478.json/?(?:\?.*)?$|^/sv/29458.json/?(?:\?.*)?$|^/sv/98332.json/?(?:\?.*)?$|^/sv/98297.json/?(?:\?.*)?$|^/sv/98256.json/?(?:\?.*)?$|^/sv/119742.json/?(?:\?.*)?$|^/sv/119719.json/?(?:\?.*)?$|^/sv/119714.json/?(?:\?.*)?$|^/sv/55155.json/?(?:\?.*)?$|^/sv/55142.json/?(?:\?.*)?$|^/sv/34032.json/?(?:\?.*)?$|^/sv/13175.json/?(?:\?.*)?$|^/sv/13170.json/?(?:\?.*)?$|^/sv/44650.json/?(?:\?.*)?$|^/sv/129816.json/?(?:\?.*)?$|^/sv/129808.json/?(?:\?.*)?$|^/sv/129794.json/?(?:\?.*)?$|^/sv/129783.json/?(?:\?.*)?$|^/sv/129594.json/?(?:\?.*)?$|^/sv/129508.json/?(?:\?.*)?$|^/sv/43839.json/?(?:\?.*)?$|^/sv/43781.json/?(?:\?.*)?$|^/sv/43572.json/?(?:\?.*)?$|^/sv/43558.json/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/error.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 719
+  - 720
+  - 721
+  - 722
+  - 724
+  goal: all posts by user in forum have episode-user upvote
+  side_effect: extra votes beyond selected set
+  body_regex: (?:choice=)
+- id: fam-1510
+  method: POST
+  url_regex: (?:^/sv/84954.json/?(?:\?.*)?$|^/sv/115139.json/?(?:\?.*)?$|^/sv/48303.json/?(?:\?.*)?$|^/sv/16087.json/?(?:\?.*)?$|^/sv/129816.json/?(?:\?.*)?$|^/sv/129808.json/?(?:\?.*)?$|^/sv/129794.json/?(?:\?.*)?$|^/sv/129783.json/?(?:\?.*)?$|^/sv/129594.json/?(?:\?.*)?$|^/sv/129508.json/?(?:\?.*)?$|^/sv/43839.json/?(?:\?.*)?$|^/sv/43781.json/?(?:\?.*)?$|^/sv/43572.json/?(?:\?.*)?$|^/sv/43558.json/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/error.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 725
+  - 727
+  - 728
+  - 729
+  - 730
+  goal: all posts by user in forum have episode-user downvote
+  side_effect: extra votes beyond selected set
+  body_regex: (?:choice=)
+- id: fam-27
+  method: POST
+  url_regex: (?:^/f/MachineLearning/1/-/edit/?(?:\?.*)?$|^/f/television/134868/-/edit/?(?:\?.*)?$|^/f/television/135201/-/edit/?(?:\?.*)?$|^/f/television/135156/-/edit/?(?:\?.*)?$|^/f/television/70886/-/edit/?(?:\?.*)?$)
+  content_type: form
+  effect: update
+  f1:
+    mode: none
+  f3:
+    delay_s: 30
+    compensator: probes.reddit:compensator
+  f5:
+    template: templates/reddit/error.html
+  f6:
+    views:
+    - ^/user/[^/]+(?:/|$)
+    - ^/f/
+    - ^/submit
+    - ^/forums
+    stale_reads: 2
+    stale_seconds: 0
+  implemented: false
+  task_ids:
+  - 731
+  - 732
+  - 733
+  - 734
+  - 735
+  goal: selected post body = old body plus content, title preserved
+  side_effect: extra copies of appended content
+  f2:
+    strip_fields:
+    - submission[body]
+  body_regex: (?:submission%5Bbody%5D=|submission%5Btitle%5D=)

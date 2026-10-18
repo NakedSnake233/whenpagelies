@@ -1,0 +1,11 @@
+{
+  "id": "shopping_admin-454",
+  "site": "shopping_admin",
+  "family": "fam-242",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "Disable Ryker Tee Crew Neck from the site, they are facing some quality issues.",
+  "webarena_task_id": 454,
+  "instantiation": {
+    "product": "Ryker Tee Crew Neck"
+  }
+}

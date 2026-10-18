@@ -1,0 +1,6 @@
+# Workspace allowance is shared by every model, including disabled/legacy models.
+workspace_monthly_usd: 120
+# UTC provider reset inferred from Retry-After; configurable, not calendar month.
+provider_month_anchor: {day: 26, hour: 8, minute: 44, second: 0}
+# 2026-10-15: seven-day fraction raised to 1.00 at the user's request; the provider dashboard showed 31% of the 7-day cap and 50% of the monthly limit unused, and local estimates run above provider billing.
+fractions: {five_hours: 0.25, seven_days: 1.00, month: 1.00}

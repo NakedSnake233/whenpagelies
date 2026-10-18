@@ -1,0 +1,11 @@
+{
+  "id": "reddit-408",
+  "site": "reddit",
+  "family": "fam-22",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Upvote the newest post in explain like im 5 forum",
+  "webarena_task_id": 408,
+  "instantiation": {
+    "forum": "explain like im 5"
+  }
+}

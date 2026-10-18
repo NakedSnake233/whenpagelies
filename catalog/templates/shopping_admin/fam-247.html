@@ -1,0 +1,2427 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="Minerva LumaTech™ V-Tee-S-Blue / Products / Inventory / Catalog / Magento Admin" name="title"/>
+<meta content="NOINDEX,NOFOLLOW" name="robots"/>
+<meta content="width=1024" name="viewport"/>
+<meta content="telephone=no" name="format-detection"/>
+<title>Minerva LumaTech™ V-Tee-S-Blue / Products / Inventory / Catalog / Magento Admin</title>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/extjs/resources/css/ext-all.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/extjs/resources/css/ytheme-magento.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/jquery/jstree/themes/default/style.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/css/styles.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/prototype/windows/themes/default.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/Magento_Weee/styles.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/Magento_Swatches/css/swatches.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/jquery/colorpicker/css/colorpicker.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/jquery/fileUploader/css/jquery.fileupload-ui.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/Magento_ConfigurableProduct/product/product.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/Magento_ProductVideo/css/gallery-delete-tooltip.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/Magento_Theme/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/Magento_Theme/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+</head>
+<body class="catalog-product-edit page-layout-admin-1column" id="html-body"><div class="message message-error error" role="alert"><div>We can't save the product right now. Please try again later.</div></div>
+<div class="menu-wrapper" style="top: auto;"> <a class="logo" href="http://localhost:7780/admin/admin/">
+<img alt="Magento Admin Panel" class="logo-img" src="http://localhost:7780/static/version1681922233/adminhtml/Magento/backend/en_US/images/magento-icon.svg" title="Magento Admin Panel"/>
+</a>
+<nav class="admin__menu">
+<ul id="nav" role="menubar"><li aria-haspopup="true" class="item-dashboard level-0" id="menu-magento-backend-dashboard" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/dashboard/"><span>Dashboard</span></a></li><li aria-haspopup="true" class="item-sales parent level-0" id="menu-magento-sales-sales" role="menu-item"><a class="" href=""><span>Sales</span></a><div aria-labelledby="menu-magento-sales-sales" class="submenu"><strong class="submenu-title">Sales</strong><a class="action-close _close" href=""></a><ul role="menu"><li class="item-sales-operation parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Operations</span></strong><div class="submenu"><ul role="menu"><li class="item-sales-order level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/sales/order/"><span>Orders</span></a></li><li class="item-sales-invoice level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/sales/invoice/"><span>Invoices</span></a></li><li class="item-sales-shipment level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/sales/shipment/"><span>Shipments</span></a></li><li class="item-sales-creditmemo level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/sales/creditmemo/"><span>Credit Memos</span></a></li><li class="item-paypal-billing-agreement level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/paypal/billing_agreement/"><span>Billing Agreements</span></a></li><li class="item-sales-transactions level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/sales/transactions/"><span>Transactions</span></a></li><li class="item-virtual-terminal level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/braintree/virtual/"><span>Braintree Virtual Terminal</span></a></li></ul></div></li></ul></div></li><li aria-haspopup="true" class="item-catalog _current _active parent level-0" id="menu-magento-catalog-catalog" role="menu-item"><a class="_active" href=""><span>Catalog</span></a><div aria-labelledby="menu-magento-catalog-catalog" class="submenu"><strong class="submenu-title">Catalog</strong><a class="action-close _close" href=""></a><ul role="menu"><li class="item-inventory parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Inventory</span></strong><div class="submenu"><ul role="menu"><li class="item-catalog-products level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/catalog/product/"><span>Products</span></a></li><li class="item-catalog-categories level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/catalog/category/"><span>Categories</span></a></li></ul></div></li></ul></div></li><li aria-haspopup="true" class="item-customer parent level-0" id="menu-magento-customer-customer" role="menu-item"><a class="" href=""><span>Customers</span></a><div aria-labelledby="menu-magento-customer-customer" class="submenu"><strong class="submenu-title">Customers</strong><a class="action-close _close" href=""></a><ul role="menu"><li class="item-customer-manage level-1" role="menu-item"><a class="" href="http://localhost:7780/admin/customer/index/"><span>All Customers</span></a></li><li class="item-customer-online level-1" role="menu-item"><a class="" href="http://localhost:7780/admin/customer/online/"><span>Now Online</span></a></li><li class="item-login-log level-1" role="menu-item"><a class="" href="http://localhost:7780/admin/loginascustomer_log/log/index/"><span>Login as Customer Log</span></a></li><li class="item-customer-group level-1" role="menu-item"><a class="" href="http://localhost:7780/admin/customer/group/"><span>Customer Groups</span></a></li></ul></div></li><li aria-haspopup="true" class="item-marketing parent level-0" id="menu-magento-backend-marketing" role="menu-item"><a class="" href=""><span>Marketing</span></a><div aria-labelledby="menu-magento-backend-marketing" class="submenu"><strong class="submenu-title">Marketing</strong><a class="action-close _close" href=""></a><ul role="menu"><li class="column"><ul role="menu"><li class="item-promo parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Promotions</span></strong><div class="submenu"><ul role="menu"><li class="item-promo-catalog level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/catalog_rule/promo_catalog/"><span>Catalog Price Rule</span></a></li><li class="item-promo-quote level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/sales_rule/promo_quote/"><span>Cart Price Rules</span></a></li></ul></div></li><li class="item-marketing-communications parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Communications</span></strong><div class="submenu"><ul role="menu"><li class="item-template level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/email_template/"><span>Email Templates</span></a></li><li class="item-newsletter-template level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/newsletter/template/"><span>Newsletter Templates</span></a></li><li class="item-newsletter-queue level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/newsletter/queue/"><span>Newsletter Queue</span></a></li><li class="item-newsletter-subscriber level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/newsletter/subscriber/"><span>Newsletter Subscribers</span></a></li></ul></div></li></ul></li><li class="column"><ul role="menu"><li class="item-marketing-seo parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>SEO &amp; Search</span></strong><div class="submenu"><ul role="menu"><li class="item-urlrewrite level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/url_rewrite/index/"><span>URL Rewrites</span></a></li><li class="item-search-terms level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/search/term/index/"><span>Search Terms</span></a></li><li class="item-search-synonyms level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/search/synonyms/index/"><span>Search Synonyms</span></a></li><li class="item-catalog-sitemap level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/sitemap/"><span>Site Map</span></a></li></ul></div></li><li class="item-marketing-user-content parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>User Content</span></strong><div class="submenu"><ul role="menu"><li class="item-catalog-reviews-ratings-reviews-all level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/review/product/index/"><span>All Reviews</span></a></li><li class="item-catalog-reviews-ratings-pending level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/review/product/pending/"><span>Pending Reviews</span></a></li></ul></div></li></ul></li></ul></div></li><li aria-haspopup="true" class="item-content parent level-0" id="menu-magento-backend-content" role="menu-item"><a class="" href=""><span>Content</span></a><div aria-labelledby="menu-magento-backend-content" class="submenu"><strong class="submenu-title">Content</strong><a class="action-close _close" href=""></a><ul role="menu"><li class="item-content-elements parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Elements</span></strong><div class="submenu"><ul role="menu"><li class="item-cms-page level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/cms/page/"><span>Pages</span></a></li><li class="item-cms-block level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/cms/block/"><span>Blocks</span></a></li><li class="item-cms-widget-instance level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/widget_instance/"><span>Widgets</span></a></li><li class="item-templates level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/pagebuilder/template/"><span>Templates</span></a></li></ul></div></li><li class="item-media parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Media</span></strong><div class="submenu"><ul role="menu"><li class="item-media-gallery level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/media_gallery/media/index/"><span>Media Gallery</span></a></li></ul></div></li><li class="item-system-design parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Design</span></strong><div class="submenu"><ul role="menu"><li class="item-design-config level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/theme/design_config/"><span>Configuration</span></a></li><li class="item-system-design-theme level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/system_design_theme/"><span>Themes</span></a></li><li class="item-system-design-schedule level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/system_design/"><span>Schedule</span></a></li></ul></div></li></ul></div></li><li aria-haspopup="true" class="item-report parent level-0" id="menu-magento-reports-report" role="menu-item"><a class="" href=""><span>Reports</span></a><div aria-labelledby="menu-magento-reports-report" class="submenu"><strong class="submenu-title">Reports</strong><a class="action-close _close" href=""></a><ul role="menu"><li class="column"><ul role="menu"><li class="item-report-marketing parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Marketing</span></strong><div class="submenu"><ul role="menu"><li class="item-report-shopcart-product level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_shopcart/product/"><span>Products in Cart</span></a></li><li class="item-report-search-term level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/search/term/report/"><span>Search Terms</span></a></li><li class="item-report-shopcart-abandoned level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_shopcart/abandoned/"><span>Abandoned Carts</span></a></li><li class="item-newsletter-problem level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/newsletter/problem/"><span>Newsletter Problem Reports</span></a></li></ul></div></li><li class="item-report-review parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Reviews</span></strong><div class="submenu"><ul role="menu"><li class="item-report-review-customer level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_review/customer/"><span>By Customers</span></a></li><li class="item-report-review-product level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_review/product/"><span>By Products</span></a></li></ul></div></li></ul></li><li class="column"><ul role="menu"><li class="item-report-salesroot parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Sales</span></strong><div class="submenu"><ul role="menu"><li class="item-report-salesroot-sales level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_sales/sales/"><span>Orders</span></a></li><li class="item-report-salesroot-tax level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_sales/tax/"><span>Tax</span></a></li><li class="item-report-salesroot-invoiced level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_sales/invoiced/"><span>Invoiced</span></a></li><li class="item-report-salesroot-shipping level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_sales/shipping/"><span>Shipping</span></a></li><li class="item-report-salesroot-refunded level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_sales/refunded/"><span>Refunds</span></a></li><li class="item-report-salesroot-coupons level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_sales/coupons/"><span>Coupons</span></a></li><li class="item-report-salesroot-paypal-settlement-reports level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/paypal/paypal_reports/"><span>PayPal Settlement</span></a></li><li class="item-settlement-report level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/braintree/report/"><span>Braintree Settlement</span></a></li></ul></div></li></ul></li><li class="column"><ul role="menu"><li class="item-report-customers parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Customers</span></strong><div class="submenu"><ul role="menu"><li class="item-report-customers-totals level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_customer/totals/"><span>Order Total</span></a></li><li class="item-report-customers-orders level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_customer/orders/"><span>Order Count</span></a></li><li class="item-report-customers-accounts level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_customer/accounts/"><span>New</span></a></li></ul></div></li><li class="item-report-products parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Products</span></strong><div class="submenu"><ul role="menu"><li class="item-report-products-viewed level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_product/viewed/"><span>Views</span></a></li><li class="item-report-products-bestsellers level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_sales/bestsellers/"><span>Bestsellers</span></a></li><li class="item-report-products-lowstock level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_product/lowstock/"><span>Low Stock</span></a></li><li class="item-report-products-sold level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_product/sold/"><span>Ordered</span></a></li><li class="item-report-products-downloads level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_product/downloads/"><span>Downloads</span></a></li></ul></div></li><li class="item-report-statistics parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Statistics</span></strong><div class="submenu"><ul role="menu"><li class="item-report-statistics-refresh level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/reports/report_statistics/"><span>Refresh Statistics</span></a></li></ul></div></li></ul></li><li class="column"><ul role="menu"><li class="item-business-intelligence parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Business Intelligence</span></strong><div class="submenu"><ul role="menu"><li class="item-advanced-reporting level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/analytics/reports/show/" target="_blank"><span>Advanced Reporting</span></a></li><li class="item-bi-essentials level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/analytics/biessentials/signup/" target="_blank"><span>BI Essentials</span></a></li></ul></div></li></ul></li></ul></div></li><li aria-haspopup="true" class="item-stores parent level-0" id="menu-magento-backend-stores" role="menu-item"><a class="" href=""><span>Stores</span></a><div aria-labelledby="menu-magento-backend-stores" class="submenu"><strong class="submenu-title">Stores</strong><a class="action-close _close" href=""></a><ul role="menu"><li class="column"><ul role="menu"><li class="item-stores-settings parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Settings</span></strong><div class="submenu"><ul role="menu"><li class="item-system-store level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/system_store/"><span>All Stores</span></a></li><li class="item-system-config level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/system_config/"><span>Configuration</span></a></li><li class="item-sales-checkoutagreement level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/checkout/agreement/"><span>Terms and Conditions</span></a></li><li class="item-system-order-statuses level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/sales/order_status/"><span>Order Status</span></a></li></ul></div></li><li class="item-inventory parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Inventory</span></strong><div class="submenu"><ul role="menu"><li class="item-source level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/inventory/source/index/"><span>Sources</span></a></li><li class="item-stock level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/inventory/stock/index/"><span>Stocks</span></a></li></ul></div></li><li class="item-sales-tax parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Taxes</span></strong><div class="submenu"><ul role="menu"><li class="item-sales-tax-rules level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/tax/rule/"><span>Tax Rules</span></a></li><li class="item-sales-tax-rates level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/tax/rate/"><span>Tax Zones and Rates</span></a></li></ul></div></li></ul></li><li class="column"><ul role="menu"><li class="item-system-currency parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Currency</span></strong><div class="submenu"><ul role="menu"><li class="item-system-currency-rates level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/system_currency/"><span>Currency Rates</span></a></li><li class="item-system-currency-symbols level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/system_currencysymbol/"><span>Currency Symbols</span></a></li></ul></div></li><li class="item-stores-attributes parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Attributes</span></strong><div class="submenu"><ul role="menu"><li class="item-catalog-attributes-attributes level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/catalog/product_attribute/"><span>Product</span></a></li><li class="item-catalog-attributes-sets level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/catalog/product_set/"><span>Attribute Set</span></a></li><li class="item-catalog-reviews-ratings-ratings level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/review/rating/"><span>Rating</span></a></li></ul></div></li><li class="item-other-settings level-1" role="menu-item"></li></ul></li></ul></div></li><li aria-haspopup="true" class="item-system parent level-0" id="menu-magento-backend-system" role="menu-item"><a class="" href=""><span>System</span></a><div aria-labelledby="menu-magento-backend-system" class="submenu"><strong class="submenu-title">System</strong><a class="action-close _close" href=""></a><ul role="menu"><li class="column"><ul role="menu"><li class="item-system-convert parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Data Transfer</span></strong><div class="submenu"><ul role="menu"><li class="item-system-convert-import level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/import/"><span>Import</span></a></li><li class="item-system-convert-export level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/export/"><span>Export</span></a></li><li class="item-system-convert-tax level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/tax/rate/importExport/"><span>Import/Export Tax Rates</span></a></li><li class="item-system-convert-history level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/history/"><span>Import History</span></a></li></ul></div></li><li class="item-system-extensions parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Extensions</span></strong><div class="submenu"><ul role="menu"><li class="item-system-integrations level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/integration/"><span>Integrations</span></a></li></ul></div></li><li class="item-system-tools parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Tools</span></strong><div class="submenu"><ul role="menu"><li class="item-system-cache level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/cache/"><span>Cache Management</span></a></li><li class="item-system-index level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/indexer/indexer/list/"><span>Index Management</span></a></li></ul></div></li></ul></li><li class="column"><ul role="menu"><li class="item-system-acl parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Permissions</span></strong><div class="submenu"><ul role="menu"><li class="item-system-acl-users level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/user/"><span>All Users</span></a></li><li class="item-system-acl-locks level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/locks/"><span>Locked Users</span></a></li><li class="item-system-acl-roles level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/user_role/"><span>User Roles</span></a></li></ul></div></li><li class="item-system-magento-logging parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Action Logs</span></strong><div class="submenu"><ul role="menu"><li class="item-system-magento-logging-bulk-operations level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/bulk/index/"><span>Bulk Actions</span></a></li></ul></div></li><li class="item-system-other-settings parent level-1" role="menu-item"><strong class="submenu-group-title" role="presentation"><span>Other Settings</span></strong><div class="submenu"><ul role="menu"><li class="item-system-adminnotification level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/notification/"><span>Notifications</span></a></li><li class="item-system-variable level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/system_variable/"><span>Custom Variables</span></a></li><li class="item-system-crypt-key level-2" role="menu-item"><a class="" href="http://localhost:7780/admin/admin/crypt_key/"><span>Manage Encryption Key</span></a></li></ul></div></li></ul></li></ul></div></li><li aria-haspopup="true" class="item-partners last level-0" id="menu-magento-marketplace-partners" role="menu-item"><a class="" href="http://localhost:7780/admin/marketplace/index/"><span>Find Partners &amp; Extensions</span></a></li></ul></nav>
+</div>
+<div class="page-wrapper"><div class="notices-wrapper"> <noscript>
+<div class="messages">
+<div class="message message-warning message-noscript">
+<strong>JavaScript may be disabled in your browser.</strong>
+                To use this website you must first enable JavaScript in your browser.            </div>
+</div>
+</noscript>
+<!--
+/**
+ * Copyright &copy; Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--><div class="admin__data-grid-outer-wrap">
+<div class="admin__data-grid-loading-mask" style="height: 51px; display: none;">
+<div class="spinner">
+<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+</div>
+<!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="message-system" id="system_messages" style="display: none;">
+<div class="message-system-inner">
+<div class="message-system-short">
+<button class="message-system-action-dropdown">
+<span>
+<!-- ko i18n: 'System Messages' --><span>System Messages</span><!-- /ko -->:
+                    <!-- ko text: totalRecords -->0<!-- /ko -->
+</span>
+</button>
+<!-- ko if: rows[0] --><!-- /ko -->
+</div>
+<div class="message-system-collapsible">
+<ul class="message-system-list">
+<!-- ko repeat: {foreach: rows, item: '$row'} --><!-- /ko -->
+</ul>
+<!-- ko if: isAllowed --><div class="message-system-summary">
+<a class="action__message-log" href="">Dismiss All Completed Tasks</a>
+<a class="action__message-log" href="http://localhost:7780/admin/bulk/index/">Bulk Actions Log</a>
+</div><!-- /ko -->
+</div>
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</div>
+<!-- BLOCK notification_window --><!-- /BLOCK notification_window --></div><header class="page-header row"><div class="page-header-hgroup col-l-8 col-m-6">
+<div class="page-title-wrapper complex">
+<h1 class="page-title">Minerva LumaTech™ V-Tee-S-Blue</h1>
+</div>
+</div><div class="page-header-actions col-l-4 col-m-6"> <div class="admin-user admin__action-dropdown-wrap">
+<a class="admin__action-dropdown" href="http://localhost:7780/admin/admin/system_account/index/" title="My Account">
+<span class="admin__action-dropdown-text">
+<span class="admin-user-account-text">admin</span>
+</span>
+</a>
+<ul class="admin__action-dropdown-menu">
+<li>
+<a href="http://localhost:7780/admin/admin/system_account/index/" title="Account Setting">
+                        Account Setting (<span class="admin-user-name">admin</span>)
+                    </a>
+</li>
+<li>
+<a class="store-front" href="http://localhost:7780/" target="_blank" title="Customer View">
+                        Customer View                    </a>
+</li>
+<li>
+<a class="account-signout" href="http://localhost:7780/admin/admin/auth/logout/" title="Sign Out">
+                        Sign Out                    </a>
+</li>
+</ul>
+</div>
+<div class="notifications-wrapper admin__action-dropdown-wrap">
+<a class="notifications-action admin__action-dropdown" href="http://localhost:7780/admin/admin/notification/index/" title="Notifications">
+</a>
+</div>
+<div class="search-global">
+<form action="" id="form-search">
+<div class="search-global-field">
+<label class="search-global-label" for="search-global"></label>
+<input name="query" type="hidden" value=""/><div class="mage-suggest"><div class="mage-suggest-inner"><input autocomplete="off" class="search-global-input" id="search-global" type="text" value=""/><div class="autocomplete-results" style="display: none;"></div></div></div>
+<button class="search-global-action" title="Search" type="submit"></button>
+</div>
+</form>
+</div>
+</div></header><div><input name="form_key" type="hidden" value=""/></div>
+<main class="page-content" id="anchor-content"><div class="page-main-actions"> <div class="store-switcher store-view">
+<span class="store-switcher-label">Scope:</span>
+<div class="actions dropdown closable">
+<input id="store_switcher" name="store_switcher" type="hidden" value=""/>
+<input id="store_group_switcher" name="store_group_switcher" type="hidden" value=""/>
+<input id="website_switcher" name="website_switcher" type="hidden" value=""/>
+<button aria-haspopup="true" class="admin__action-dropdown" id="store-change-button" type="button">
+                All Store Views            </button>
+<ul class="dropdown-menu">
+<li class="store-switcher-all disabled">
+<span>All Store Views</span>
+</li>
+<li class="store-switcher-website disabled">
+<span>Main Website</span>
+</li>
+<li class="store-switcher-store disabled">
+<span>Main Website Store</span>
+</li>
+<li class="store-switcher-store-view">
+<a href="">
+                                        Default Store View                                    </a>
+</li>
+</ul>
+</div>
+<div class="admin__field-tooltip tooltip"><a class="admin__field-tooltip-action action-help" href="https://docs.magento.com/user-guide/configuration/scope.html" title="What is this?"><span>What is this?</span></a></div> </div>
+<div class="page-actions-placeholder"></div><div class="page-actions"><div class="page-actions-inner"><div class="page-actions-buttons">
+<div class="actions-split save primary" title="Save">
+<button class="action-default primary" id="save-button" title="Save">
+<span>Save</span>
+</button>
+<button aria-label="Save options" class="action-toggle primary save primary" title="Save">
+<span>Select</span>
+</button>
+<ul class="dropdown-menu">
+<li>
+<span class="item" id="save_and_new" title="Save &amp; New">
+                        Save &amp; New                    </span>
+</li>
+<li>
+<span class="item" id="save_and_duplicate" title="Save &amp; Duplicate">
+                        Save &amp; Duplicate                    </span>
+</li>
+<li>
+<span class="item" id="save_and_close" title="Save &amp; Close">
+                        Save &amp; Close                    </span>
+</li>
+</ul>
+</div>
+<button class="action- scalable back" id="back" title="Back" type="button" ui-button-widget-hook-id="buttonIdIxfR577R2w">
+<span>Back</span>
+</button>
+<button class="action- scalable action-secondary" id="addAttribute" title="Add Attribute" type="button" ui-button-widget-hook-id="buttonIdrzNqtKWcHT">
+<span>Add Attribute</span>
+</button>
+</div></div></div>
+</div><div class="page-columns" id="page:main-container"><div class="admin__old"><div class="main-col" id="container"><!--
+/**
+ * Copyright &copy; Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--><div>
+<div class="admin__form-loading-mask" style="display: none;">
+<div class="spinner">
+<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+</div>
+<div class="entry-edit form-inline">
+<!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper">
+<!-- ko if: label --><!-- /ko -->
+<div class="admin__fieldset-wrapper-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><fieldset class="admin__fieldset"><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="FBA7NKT">
+<span>Enable Product</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<div class="admin__actions-switch">
+<input class="admin__actions-switch-checkbox" id="FBA7NKT" name="product[status]" type="checkbox" value=""/>
+<label class="admin__actions-switch-label" for="FBA7NKT">
+<span class="admin__actions-switch-text"></span>
+</label>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="VOXYG64">
+<span>Attribute Set</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<!-- ko ifnot: disableLabel --><!-- /ko -->
+<div class="admin__action-multiselect-wrap action-select-wrap" id="VOXYG64" tabindex="0">
+<!-- ko ifnot: chipsEnabled -->
+<div class="action-select admin__action-multiselect">
+<!-- ko ifnot: validationLoading --><div class="admin__action-multiselect-text">Top</div><!-- /ko -->
+<!-- ko if: isRemoveSelectedIcon && hasData() || !validationLoading --><!-- /ko -->
+<!-- ko if: validationLoading --><!-- /ko -->
+</div>
+<!-- /ko -->
+<!-- ko if: chipsEnabled --><!-- /ko -->
+<div class="action-menu">
+<!-- ko if: loading --><!-- /ko -->
+<!-- ko if: filterOptions -->
+<div class="admin__action-multiselect-search-wrap">
+<input class="admin__control-text admin__action-multiselect-search" id="VOXYG642" placeholder="" type="text" value=""/>
+<label class="admin__action-multiselect-search-label" for="VOXYG642">
+</label>
+<!-- ko if: itemsQuantity --><!-- /ko -->
+</div>
+<!-- ko ifnot: options().length --><!-- /ko -->
+<!-- /ko -->
+<ul class="admin__action-multiselect-menu-inner _root">
+<!-- ko foreach: { data: options, as: 'option'}  -->
+<li class="admin__action-multiselect-menu-inner-item _root">
+<div class="action-menu-item _last">
+<!-- ko if: $data.optgroup && $parent.showOpenLevelsActionIcon--><!-- /ko-->
+<!--ko if: $parent.showCheckbox--><!-- /ko-->
+<label class="admin__action-multiselect-label">
+<span>Bag</span>
+<!-- ko if: $parent.getPath(option) --><!-- /ko -->
+</label>
+</div>
+<!-- ko if: $data.optgroup --><!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item _root">
+<div class="action-menu-item _last">
+<!-- ko if: $data.optgroup && $parent.showOpenLevelsActionIcon--><!-- /ko-->
+<!--ko if: $parent.showCheckbox--><!-- /ko-->
+<label class="admin__action-multiselect-label">
+<span>Bottom</span>
+<!-- ko if: $parent.getPath(option) --><!-- /ko -->
+</label>
+</div>
+<!-- ko if: $data.optgroup --><!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item _root">
+<div class="action-menu-item _last">
+<!-- ko if: $data.optgroup && $parent.showOpenLevelsActionIcon--><!-- /ko-->
+<!--ko if: $parent.showCheckbox--><!-- /ko-->
+<label class="admin__action-multiselect-label">
+<span>Default</span>
+<!-- ko if: $parent.getPath(option) --><!-- /ko -->
+</label>
+</div>
+<!-- ko if: $data.optgroup --><!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item _root">
+<div class="action-menu-item _last">
+<!-- ko if: $data.optgroup && $parent.showOpenLevelsActionIcon--><!-- /ko-->
+<!--ko if: $parent.showCheckbox--><!-- /ko-->
+<label class="admin__action-multiselect-label">
+<span>Downloadable</span>
+<!-- ko if: $parent.getPath(option) --><!-- /ko -->
+</label>
+</div>
+<!-- ko if: $data.optgroup --><!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item _root">
+<div class="action-menu-item _last">
+<!-- ko if: $data.optgroup && $parent.showOpenLevelsActionIcon--><!-- /ko-->
+<!--ko if: $parent.showCheckbox--><!-- /ko-->
+<label class="admin__action-multiselect-label">
+<span>Gear</span>
+<!-- ko if: $parent.getPath(option) --><!-- /ko -->
+</label>
+</div>
+<!-- ko if: $data.optgroup --><!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item _root">
+<div class="action-menu-item _last">
+<!-- ko if: $data.optgroup && $parent.showOpenLevelsActionIcon--><!-- /ko-->
+<!--ko if: $parent.showCheckbox--><!-- /ko-->
+<label class="admin__action-multiselect-label">
+<span>Sprite Stasis Ball</span>
+<!-- ko if: $parent.getPath(option) --><!-- /ko -->
+</label>
+</div>
+<!-- ko if: $data.optgroup --><!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item _root">
+<div class="action-menu-item _last">
+<!-- ko if: $data.optgroup && $parent.showOpenLevelsActionIcon--><!-- /ko-->
+<!--ko if: $parent.showCheckbox--><!-- /ko-->
+<label class="admin__action-multiselect-label">
+<span>Sprite Yoga Strap</span>
+<!-- ko if: $parent.getPath(option) --><!-- /ko -->
+</label>
+</div>
+<!-- ko if: $data.optgroup --><!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item _root">
+<div class="action-menu-item _selected _last">
+<!-- ko if: $data.optgroup && $parent.showOpenLevelsActionIcon--><!-- /ko-->
+<!--ko if: $parent.showCheckbox--><!-- /ko-->
+<label class="admin__action-multiselect-label">
+<span>Top</span>
+<!-- ko if: $parent.getPath(option) --><!-- /ko -->
+</label>
+</div>
+<!-- ko if: $data.optgroup --><!-- /ko-->
+</li>
+<!-- /ko -->
+</ul>
+<!-- ko if: $data.closeBtn --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field _required">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="GQLHB7U">
+<span>Product Name</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<input aria-describedby="notice-GQLHB7U" class="admin__control-text" id="GQLHB7U" maxlength="255" name="product[name]" type="text" value=""/>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field _required">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="JB7YQCX">
+<span>SKU</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<input aria-describedby="notice-JB7YQCX" class="admin__control-text" id="JB7YQCX" maxlength="255" name="product[sku]" type="text" value=""/>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<fieldset class="admin__field">
+<!-- ko if: showLabel --><legend class="admin__field-label">
+<span></span>
+</legend><!-- /ko -->
+<div class="admin__field-control admin__control-grouped">
+<!-- ko foreach: elems -->
+<!-- ko if: !$data.additionalForGroup --><!-- ko if: visible() -->
+<!-- ko if: element.input_type != 'checkbox' || element.input_type != 'radio' --><!-- ko template: $parent.fieldTemplate -->
+<div class="admin__field admin__field-small _required">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="AXPROKY">
+<span>Price</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- /ko -->
+<!-- ko if: hasAddons() --><div class="admin__control-addon">
+<!-- ko template: elementTmpl -->
+<input aria-describedby="notice-AXPROKY" class="admin__control-text" id="AXPROKY" maxlength="255" name="product[price]" type="text" value=""/>
+<!-- /ko -->
+<!-- ko if: $data.addbefore --><label class="admin__addon-prefix" for="AXPROKY">
+<span>$</span>
+</label><!-- /ko -->
+<!-- ko if: $data.addafter --><!-- /ko -->
+</div><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: element.input_type == 'checkbox' || element.input_type == 'radio' --><!-- /ko -->
+<!-- /ko --><!-- /ko -->
+<!-- ko if: !$data.additionalForGroup --><!-- /ko -->
+<!-- /ko -->
+<!-- ko foreach: getRegion('insideGroup') --><!-- /ko -->
+<!-- ko if: validateWholeGroup --><!-- /ko -->
+</div>
+<!-- ko foreach: getRegion('outsideGroup') --><!-- ko template: getTemplate() -->
+<div class="admin__field admin__field-group-additional">
+<!-- ko if: $data.label --><!-- /ko -->
+<div class="admin__field-control">
+<!-- ko template: elementTmpl -->
+<button aria-labelledby="" class="action-additional" type="button">
+<span id="">Advanced Pricing</span>
+</button>
+<!-- ko if: childError --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+</fieldset>
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="FW2DUWF">
+<span>Tax Class</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-FW2DUWF" aria-label="notice-FW2DUWF" class="admin__control-select" id="FW2DUWF" name="product[tax_class_id]"><option value="0">None</option><option value="2">Taxable Goods</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<fieldset class="admin__field">
+<!-- ko if: showLabel --><legend class="admin__field-label">
+<span></span>
+</legend><!-- /ko -->
+<div class="admin__field-control admin__control-grouped">
+<!-- ko foreach: elems -->
+<!-- ko if: !$data.additionalForGroup --><!-- ko if: visible() -->
+<!-- ko if: element.input_type != 'checkbox' || element.input_type != 'radio' --><!-- ko template: $parent.fieldTemplate -->
+<div class="admin__field admin__field-small">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="SCU32YD">
+<span>Quantity</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<input aria-describedby="notice-SCU32YD" class="admin__control-text" id="SCU32YD" maxlength="255" name="product[quantity_and_stock_status][qty]" type="text" value=""/>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: element.input_type == 'checkbox' || element.input_type == 'radio' --><!-- /ko -->
+<!-- /ko --><!-- /ko -->
+<!-- ko if: !$data.additionalForGroup --><!-- /ko -->
+<!-- /ko -->
+<!-- ko foreach: getRegion('insideGroup') --><!-- /ko -->
+<!-- ko if: validateWholeGroup --><!-- /ko -->
+</div>
+<!-- ko foreach: getRegion('outsideGroup') --><!-- ko template: getTemplate() -->
+<div class="admin__field admin__field-group-additional">
+<!-- ko if: $data.label --><!-- /ko -->
+<div class="admin__field-control">
+<!-- ko template: elementTmpl -->
+<button aria-labelledby="" class="action-additional" type="button">
+<span id="">Advanced Inventory</span>
+</button>
+<!-- ko if: childError --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+</fieldset>
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="NAKEWL5">
+<span>Stock Status</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-NAKEWL5" aria-label="notice-NAKEWL5" class="admin__control-select" id="NAKEWL5" name="product[quantity_and_stock_status][is_in_stock]"><option value="1">In Stock</option><option value="0">Out of Stock</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<fieldset class="admin__field">
+<!-- ko if: showLabel --><legend class="admin__field-label">
+<span></span>
+</legend><!-- /ko -->
+<div class="admin__field-control admin__control-grouped">
+<!-- ko foreach: elems -->
+<!-- ko if: !$data.additionalForGroup --><!-- ko if: visible() -->
+<!-- ko if: element.input_type != 'checkbox' || element.input_type != 'radio' --><!-- ko template: $parent.fieldTemplate -->
+<div class="admin__field admin__field-small">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="A7C46OG">
+<span>Weight</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- /ko -->
+<!-- ko if: hasAddons() --><div class="admin__control-addon">
+<!-- ko template: elementTmpl -->
+<input aria-describedby="notice-A7C46OG" class="admin__control-text" id="A7C46OG" maxlength="255" name="product[weight]" type="text" value=""/>
+<!-- /ko -->
+<!-- ko if: $data.addbefore --><!-- /ko -->
+<!-- ko if: $data.addafter --><label class="admin__addon-suffix" for="A7C46OG">
+<span>lbs</span>
+</label><!-- /ko -->
+</div><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: element.input_type == 'checkbox' || element.input_type == 'radio' --><!-- /ko -->
+<!-- /ko --><!-- /ko -->
+<!-- ko if: !$data.additionalForGroup --><!-- ko if: visible() -->
+<!-- ko if: element.input_type != 'checkbox' || element.input_type != 'radio' --><!-- ko template: $parent.fieldTemplate -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-H91JMJJ" aria-label="notice-H91JMJJ" class="admin__control-select" id="H91JMJJ" name="product[product_has_weight]"><option value="1">This item has weight</option><option value="0">This item has no weight</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: element.input_type == 'checkbox' || element.input_type == 'radio' --><!-- /ko -->
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- ko foreach: getRegion('insideGroup') --><!-- /ko -->
+<!-- ko if: validateWholeGroup --><!-- /ko -->
+</div>
+<!-- ko foreach: getRegion('outsideGroup') --><!-- /ko -->
+</fieldset>
+<!-- /ko --><!-- ko template: getTemplate() -->
+<fieldset class="admin__field">
+<!-- ko if: showLabel --><legend class="admin__field-label">
+<span></span>
+</legend><!-- /ko -->
+<div class="admin__field-control admin__control-grouped">
+<!-- ko foreach: elems -->
+<!-- ko if: !$data.additionalForGroup --><!-- /ko -->
+<!-- ko if: !$data.additionalForGroup --><!-- ko if: visible() -->
+<!-- ko if: element.input_type != 'checkbox' || element.input_type != 'radio' --><!-- ko template: $parent.fieldTemplate -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="EAE7NX4">
+<span>Categories</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<!-- ko ifnot: disableLabel --><!-- /ko -->
+<div class="admin__action-multiselect-wrap action-select-wrap admin__action-multiselect-tree" id="EAE7NX4" tabindex="0">
+<!-- ko ifnot: chipsEnabled --><!-- /ko -->
+<!-- ko if: chipsEnabled -->
+<div class="action-select admin__action-multiselect">
+<div class="admin__action-multiselect-text" style="display: none;">Select...</div>
+<!-- ko foreach: { data: getSelected(), as: 'option'}  -->
+<span class="admin__action-multiselect-crumb">
+<span>Default Category</span>
+<button class="action-close" tabindex="-1" type="button">
+<span class="action-close-text">Close</span>
+</button>
+</span>
+<span class="admin__action-multiselect-crumb">
+<span>Tees</span>
+<button class="action-close" tabindex="-1" type="button">
+<span class="action-close-text">Close</span>
+</button>
+</span>
+<span class="admin__action-multiselect-crumb">
+<span>Women Sale</span>
+<button class="action-close" tabindex="-1" type="button">
+<span class="action-close-text">Close</span>
+</button>
+</span>
+<span class="admin__action-multiselect-crumb">
+<span>Tees</span>
+<button class="action-close" tabindex="-1" type="button">
+<span class="action-close-text">Close</span>
+</button>
+</span>
+<!-- /ko -->
+</div>
+<!-- /ko -->
+<div class="action-menu">
+<!-- ko if: loading --><!-- /ko -->
+<!-- ko if: filterOptions -->
+<div class="admin__action-multiselect-search-wrap">
+<input class="admin__control-text admin__action-multiselect-search" id="EAE7NX42" placeholder="" type="text" value=""/>
+<label class="admin__action-multiselect-search-label" for="EAE7NX42">
+</label>
+<!-- ko if: itemsQuantity --><!-- /ko -->
+</div>
+<!-- ko ifnot: options().length --><!-- /ko -->
+<!-- /ko -->
+<ul class="admin__action-multiselect-menu-inner _root">
+<!-- ko foreach: { data: options, as: 'option'}  -->
+<li class="admin__action-multiselect-menu-inner-item _root _parent">
+<div class="action-menu-item _selected _expended _with-checkbox">
+<!-- ko if: $data.optgroup && $parent.showOpenLevelsActionIcon-->
+<div class="admin__action-multiselect-dropdown">
+</div>
+<!-- /ko-->
+<!--ko if: $parent.showCheckbox-->
+<input checked="true" class="admin__control-checkbox" tabindex="-1" type="checkbox" value=""/>
+<!-- /ko-->
+<label class="admin__action-multiselect-label">
+<span>Default Category</span>
+<!-- ko if: $parent.getPath(option) --><!-- /ko -->
+</label>
+</div>
+<!-- ko if: $data.optgroup -->
+<!-- ko template: {name: $parent.optgroupTmpl, data: {root: $parent, current: $data}} -->
+<ul class="admin__action-multiselect-menu-inner">
+<!-- ko if: $data.current.visible() || $data.current.isVisited  -->
+<!-- ko foreach: { data: $data.current.optgroup, as: 'option'}  -->
+<li class="admin__action-multiselect-menu-inner-item _parent">
+<div class="action-menu-item _with-checkbox">
+<!-- ko if: $data.optgroup && $parent.root.showOpenLevelsActionIcon-->
+<div class="admin__action-multiselect-dropdown"></div>
+<!-- /ko-->
+<!--ko if: $parent.root.showCheckbox-->
+<input class="admin__control-checkbox" tabindex="-1" type="checkbox" value=""/>
+<!--/ko-->
+<label class="admin__action-multiselect-label">Gear</label>
+</div>
+<!-- ko if: $data.optgroup -->
+<!-- ko template: {name: $parent.root.optgroupTmpl, data: {root: $parent.root, current: $data}} -->
+<ul class="admin__action-multiselect-menu-inner" style="display: none;">
+<!-- ko if: $data.current.visible() || $data.current.isVisited  --><!-- /ko -->
+</ul>
+<!-- /ko -->
+<!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item _parent">
+<div class="action-menu-item _with-checkbox">
+<!-- ko if: $data.optgroup && $parent.root.showOpenLevelsActionIcon-->
+<div class="admin__action-multiselect-dropdown"></div>
+<!-- /ko-->
+<!--ko if: $parent.root.showCheckbox-->
+<input class="admin__control-checkbox" tabindex="-1" type="checkbox" value=""/>
+<!--/ko-->
+<label class="admin__action-multiselect-label">Collections</label>
+</div>
+<!-- ko if: $data.optgroup -->
+<!-- ko template: {name: $parent.root.optgroupTmpl, data: {root: $parent.root, current: $data}} -->
+<ul class="admin__action-multiselect-menu-inner" style="display: none;">
+<!-- ko if: $data.current.visible() || $data.current.isVisited  --><!-- /ko -->
+</ul>
+<!-- /ko -->
+<!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item _parent">
+<div class="action-menu-item _with-checkbox">
+<!-- ko if: $data.optgroup && $parent.root.showOpenLevelsActionIcon-->
+<div class="admin__action-multiselect-dropdown"></div>
+<!-- /ko-->
+<!--ko if: $parent.root.showCheckbox-->
+<input class="admin__control-checkbox" tabindex="-1" type="checkbox" value=""/>
+<!--/ko-->
+<label class="admin__action-multiselect-label">Training</label>
+</div>
+<!-- ko if: $data.optgroup -->
+<!-- ko template: {name: $parent.root.optgroupTmpl, data: {root: $parent.root, current: $data}} -->
+<ul class="admin__action-multiselect-menu-inner" style="display: none;">
+<!-- ko if: $data.current.visible() || $data.current.isVisited  --><!-- /ko -->
+</ul>
+<!-- /ko -->
+<!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item _parent">
+<div class="action-menu-item _with-checkbox">
+<!-- ko if: $data.optgroup && $parent.root.showOpenLevelsActionIcon-->
+<div class="admin__action-multiselect-dropdown"></div>
+<!-- /ko-->
+<!--ko if: $parent.root.showCheckbox-->
+<input class="admin__control-checkbox" tabindex="-1" type="checkbox" value=""/>
+<!--/ko-->
+<label class="admin__action-multiselect-label">Men</label>
+</div>
+<!-- ko if: $data.optgroup -->
+<!-- ko template: {name: $parent.root.optgroupTmpl, data: {root: $parent.root, current: $data}} -->
+<ul class="admin__action-multiselect-menu-inner" style="display: none;">
+<!-- ko if: $data.current.visible() || $data.current.isVisited  --><!-- /ko -->
+</ul>
+<!-- /ko -->
+<!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item _parent">
+<div class="action-menu-item _with-checkbox">
+<!-- ko if: $data.optgroup && $parent.root.showOpenLevelsActionIcon-->
+<div class="admin__action-multiselect-dropdown"></div>
+<!-- /ko-->
+<!--ko if: $parent.root.showCheckbox-->
+<input class="admin__control-checkbox" tabindex="-1" type="checkbox" value=""/>
+<!--/ko-->
+<label class="admin__action-multiselect-label">Women</label>
+</div>
+<!-- ko if: $data.optgroup -->
+<!-- ko template: {name: $parent.root.optgroupTmpl, data: {root: $parent.root, current: $data}} -->
+<ul class="admin__action-multiselect-menu-inner" style="display: none;">
+<!-- ko if: $data.current.visible() || $data.current.isVisited  --><!-- /ko -->
+</ul>
+<!-- /ko -->
+<!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item _parent">
+<div class="action-menu-item _with-checkbox">
+<!-- ko if: $data.optgroup && $parent.root.showOpenLevelsActionIcon-->
+<div class="admin__action-multiselect-dropdown"></div>
+<!-- /ko-->
+<!--ko if: $parent.root.showCheckbox-->
+<input class="admin__control-checkbox" tabindex="-1" type="checkbox" value=""/>
+<!--/ko-->
+<label class="admin__action-multiselect-label">Promotions</label>
+</div>
+<!-- ko if: $data.optgroup -->
+<!-- ko template: {name: $parent.root.optgroupTmpl, data: {root: $parent.root, current: $data}} -->
+<ul class="admin__action-multiselect-menu-inner" style="display: none;">
+<!-- ko if: $data.current.visible() || $data.current.isVisited  --><!-- /ko -->
+</ul>
+<!-- /ko -->
+<!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item">
+<div class="action-menu-item _last _with-checkbox">
+<!-- ko if: $data.optgroup && $parent.root.showOpenLevelsActionIcon--><!-- /ko-->
+<!--ko if: $parent.root.showCheckbox-->
+<input class="admin__control-checkbox" tabindex="-1" type="checkbox" value=""/>
+<!--/ko-->
+<label class="admin__action-multiselect-label">Sale</label>
+</div>
+<!-- ko if: $data.optgroup --><!-- /ko-->
+</li>
+<li class="admin__action-multiselect-menu-inner-item">
+<div class="action-menu-item _last _with-checkbox">
+<!-- ko if: $data.optgroup && $parent.root.showOpenLevelsActionIcon--><!-- /ko-->
+<!--ko if: $parent.root.showCheckbox-->
+<input class="admin__control-checkbox" tabindex="-1" type="checkbox" value=""/>
+<!--/ko-->
+<label class="admin__action-multiselect-label">What's New</label>
+</div>
+<!-- ko if: $data.optgroup --><!-- /ko-->
+</li>
+<!-- /ko -->
+<!-- /ko -->
+</ul>
+<!-- /ko -->
+<!-- /ko-->
+</li>
+<!-- /ko -->
+</ul>
+<!-- ko if: $data.closeBtn -->
+<div class="admin__action-multiselect-actions-wrap">
+<button class="action-default" type="button">
+<span>Done</span>
+</button>
+</div>
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: element.input_type == 'checkbox' || element.input_type == 'radio' --><!-- /ko -->
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- ko foreach: getRegion('insideGroup') --><!-- ko template: getTemplate() -->
+<div class="admin__field admin__field-group-additional admin__field-small">
+<!-- ko if: $data.label --><!-- /ko -->
+<div class="admin__field-control">
+<!-- ko template: elementTmpl -->
+<button aria-labelledby="" class="action-basic" type="button">
+<span id="">New Category</span>
+</button>
+<!-- ko if: childError --><!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: validateWholeGroup --><!-- /ko -->
+</div>
+<!-- ko foreach: getRegion('outsideGroup') --><!-- /ko -->
+</fieldset>
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="F4MGPUJ">
+<span>Visibility</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-F4MGPUJ" aria-label="notice-F4MGPUJ" class="admin__control-select" id="F4MGPUJ" name="product[visibility]"><option value="1">Not Visible Individually</option><option value="2">Catalog</option><option value="3">Search</option><option value="4">Catalog, Search</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<fieldset class="admin__field">
+<!-- ko if: showLabel --><legend class="admin__field-label">
+<span></span>
+</legend><!-- /ko -->
+<div class="admin__field-control admin__control-grouped-date admin__control-grouped">
+<!-- ko foreach: elems -->
+<!-- ko if: !$data.additionalForGroup --><!-- ko if: visible() -->
+<!-- ko if: element.input_type != 'checkbox' || element.input_type != 'radio' --><!-- ko template: $parent.fieldTemplate -->
+<div class="admin__field admin__field-date">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="LE3FIBY">
+<span>Set Product as New From</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<input aria-describedby="notice-LE3FIBY" autocomplete="on" class="admin__control-text _has-datepicker" id="LE3FIBY" name="product[news_from_date]" type="text" value=""/><button class="ui-datepicker-trigger v-middle" type="button"><span>undefined</span></button>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: element.input_type == 'checkbox' || element.input_type == 'radio' --><!-- /ko -->
+<!-- /ko --><!-- /ko -->
+<!-- ko if: !$data.additionalForGroup --><!-- ko if: visible() -->
+<!-- ko if: element.input_type != 'checkbox' || element.input_type != 'radio' --><!-- ko template: $parent.fieldTemplate -->
+<div class="admin__field admin__field-date">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="EKXMTOQ">
+<span>To</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<input aria-describedby="notice-EKXMTOQ" autocomplete="on" class="admin__control-text _has-datepicker" id="EKXMTOQ" name="product[news_to_date]" type="text" value=""/><button class="ui-datepicker-trigger v-middle" type="button"><span>undefined</span></button>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: element.input_type == 'checkbox' || element.input_type == 'radio' --><!-- /ko -->
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- ko foreach: getRegion('insideGroup') --><!-- /ko -->
+<!-- ko if: validateWholeGroup --><!-- /ko -->
+</div>
+<!-- ko foreach: getRegion('outsideGroup') --><!-- /ko -->
+</fieldset>
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="AIRDYMJ">
+<span>Country of Manufacture</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-AIRDYMJ" aria-label="notice-AIRDYMJ" class="admin__control-select" id="AIRDYMJ" name="product[country_of_manufacture]"><option value=""> </option><option value="AF">Afghanistan</option><option value="AL">Albania</option><option value="DZ">Algeria</option><option value="AS">American Samoa</option><option value="AD">Andorra</option><option value="AO">Angola</option><option value="AI">Anguilla</option><option value="AQ">Antarctica</option><option value="AG">Antigua &amp; Barbuda</option><option value="AR">Argentina</option><option value="AM">Armenia</option><option value="AW">Aruba</option><option value="AU">Australia</option><option value="AT">Austria</option><option value="AZ">Azerbaijan</option><option value="BS">Bahamas</option><option value="BH">Bahrain</option><option value="BD">Bangladesh</option><option value="BB">Barbados</option><option value="BY">Belarus</option><option value="BE">Belgium</option><option value="BZ">Belize</option><option value="BJ">Benin</option><option value="BM">Bermuda</option><option value="BT">Bhutan</option><option value="BO">Bolivia</option><option value="BA">Bosnia &amp; Herzegovina</option><option value="BW">Botswana</option><option value="BV">Bouvet Island</option><option value="BR">Brazil</option><option value="IO">British Indian Ocean Territory</option><option value="VG">British Virgin Islands</option><option value="BN">Brunei</option><option value="BG">Bulgaria</option><option value="BF">Burkina Faso</option><option value="BI">Burundi</option><option value="KH">Cambodia</option><option value="CM">Cameroon</option><option value="CA">Canada</option><option value="CV">Cape Verde</option><option value="BQ">Caribbean Netherlands</option><option value="KY">Cayman Islands</option><option value="CF">Central African Republic</option><option value="TD">Chad</option><option value="CL">Chile</option><option value="CN">China</option><option value="CX">Christmas Island</option><option value="CC">Cocos (Keeling) Islands</option><option value="CO">Colombia</option><option value="KM">Comoros</option><option value="CG">Congo - Brazzaville</option><option value="CD">Congo - Kinshasa</option><option value="CK">Cook Islands</option><option value="CR">Costa Rica</option><option value="HR">Croatia</option><option value="CU">Cuba</option><option value="CW">Curaçao</option><option value="CY">Cyprus</option><option value="CZ">Czechia</option><option value="CI">Côte d’Ivoire</option><option value="DK">Denmark</option><option value="DJ">Djibouti</option><option value="DM">Dominica</option><option value="DO">Dominican Republic</option><option value="EC">Ecuador</option><option value="EG">Egypt</option><option value="SV">El Salvador</option><option value="GQ">Equatorial Guinea</option><option value="ER">Eritrea</option><option value="EE">Estonia</option><option value="SZ">Eswatini</option><option value="ET">Ethiopia</option><option value="FK">Falkland Islands</option><option value="FO">Faroe Islands</option><option value="FJ">Fiji</option><option value="FI">Finland</option><option value="FR">France</option><option value="GF">French Guiana</option><option value="PF">French Polynesia</option><option value="TF">French Southern Territories</option><option value="GA">Gabon</option><option value="GM">Gambia</option><option value="GE">Georgia</option><option value="DE">Germany</option><option value="GH">Ghana</option><option value="GI">Gibraltar</option><option value="GR">Greece</option><option value="GL">Greenland</option><option value="GD">Grenada</option><option value="GP">Guadeloupe</option><option value="GU">Guam</option><option value="GT">Guatemala</option><option value="GG">Guernsey</option><option value="GN">Guinea</option><option value="GW">Guinea-Bissau</option><option value="GY">Guyana</option><option value="HT">Haiti</option><option value="HM">Heard &amp; McDonald Islands</option><option value="HN">Honduras</option><option value="HK">Hong Kong SAR China</option><option value="HU">Hungary</option><option value="IS">Iceland</option><option value="IN">India</option><option value="ID">Indonesia</option><option value="IR">Iran</option><option value="IQ">Iraq</option><option value="IE">Ireland</option><option value="IM">Isle of Man</option><option value="IL">Israel</option><option value="IT">Italy</option><option value="JM">Jamaica</option><option value="JP">Japan</option><option value="JE">Jersey</option><option value="JO">Jordan</option><option value="KZ">Kazakhstan</option><option value="KE">Kenya</option><option value="KI">Kiribati</option><option value="XK">Kosovo</option><option value="KW">Kuwait</option><option value="KG">Kyrgyzstan</option><option value="LA">Laos</option><option value="LV">Latvia</option><option value="LB">Lebanon</option><option value="LS">Lesotho</option><option value="LR">Liberia</option><option value="LY">Libya</option><option value="LI">Liechtenstein</option><option value="LT">Lithuania</option><option value="LU">Luxembourg</option><option value="MO">Macao SAR China</option><option value="MG">Madagascar</option><option value="MW">Malawi</option><option value="MY">Malaysia</option><option value="MV">Maldives</option><option value="ML">Mali</option><option value="MT">Malta</option><option value="MH">Marshall Islands</option><option value="MQ">Martinique</option><option value="MR">Mauritania</option><option value="MU">Mauritius</option><option value="YT">Mayotte</option><option value="MX">Mexico</option><option value="FM">Micronesia</option><option value="MD">Moldova</option><option value="MC">Monaco</option><option value="MN">Mongolia</option><option value="ME">Montenegro</option><option value="MS">Montserrat</option><option value="MA">Morocco</option><option value="MZ">Mozambique</option><option value="MM">Myanmar (Burma)</option><option value="NA">Namibia</option><option value="NR">Nauru</option><option value="NP">Nepal</option><option value="NL">Netherlands</option><option value="NC">New Caledonia</option><option value="NZ">New Zealand</option><option value="NI">Nicaragua</option><option value="NE">Niger</option><option value="NG">Nigeria</option><option value="NU">Niue</option><option value="NF">Norfolk Island</option><option value="KP">North Korea</option><option value="MK">North Macedonia</option><option value="MP">Northern Mariana Islands</option><option value="NO">Norway</option><option value="OM">Oman</option><option value="PK">Pakistan</option><option value="PW">Palau</option><option value="PS">Palestinian Territories</option><option value="PA">Panama</option><option value="PG">Papua New Guinea</option><option value="PY">Paraguay</option><option value="PE">Peru</option><option value="PH">Philippines</option><option value="PN">Pitcairn Islands</option><option value="PL">Poland</option><option value="PT">Portugal</option><option value="QA">Qatar</option><option value="RO">Romania</option><option value="RU">Russia</option><option value="RW">Rwanda</option><option value="RE">Réunion</option><option value="WS">Samoa</option><option value="SM">San Marino</option><option value="SA">Saudi Arabia</option><option value="SN">Senegal</option><option value="RS">Serbia</option><option value="SC">Seychelles</option><option value="SL">Sierra Leone</option><option value="SG">Singapore</option><option value="SX">Sint Maarten</option><option value="SK">Slovakia</option><option value="SI">Slovenia</option><option value="SB">Solomon Islands</option><option value="SO">Somalia</option><option value="ZA">South Africa</option><option value="GS">South Georgia &amp; South Sandwich Islands</option><option value="KR">South Korea</option><option value="ES">Spain</option><option value="LK">Sri Lanka</option><option value="BL">St. Barthélemy</option><option value="SH">St. Helena</option><option value="KN">St. Kitts &amp; Nevis</option><option value="LC">St. Lucia</option><option value="MF">St. Martin</option><option value="PM">St. Pierre &amp; Miquelon</option><option value="VC">St. Vincent &amp; Grenadines</option><option value="SD">Sudan</option><option value="SR">Suriname</option><option value="SJ">Svalbard &amp; Jan Mayen</option><option value="SE">Sweden</option><option value="CH">Switzerland</option><option value="SY">Syria</option><option value="ST">São Tomé &amp; Príncipe</option><option value="TW">Taiwan, Province of China</option><option value="TJ">Tajikistan</option><option value="TZ">Tanzania</option><option value="TH">Thailand</option><option value="TL">Timor-Leste</option><option value="TG">Togo</option><option value="TK">Tokelau</option><option value="TO">Tonga</option><option value="TT">Trinidad &amp; Tobago</option><option value="TN">Tunisia</option><option value="TR">Turkey</option><option value="TM">Turkmenistan</option><option value="TC">Turks &amp; Caicos Islands</option><option value="TV">Tuvalu</option><option value="UM">U.S. Outlying Islands</option><option value="VI">U.S. Virgin Islands</option><option value="UG">Uganda</option><option value="UA">Ukraine</option><option value="AE">United Arab Emirates</option><option value="GB">United Kingdom</option><option value="US">United States</option><option value="UY">Uruguay</option><option value="UZ">Uzbekistan</option><option value="VU">Vanuatu</option><option value="VA">Vatican City</option><option value="VE">Venezuela</option><option value="VN">Vietnam</option><option value="WF">Wallis &amp; Futuna</option><option value="EH">Western Sahara</option><option value="YE">Yemen</option><option value="ZM">Zambia</option><option value="ZW">Zimbabwe</option><option value="AX">Åland Islands</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="SSP3YPF">
+<span>Activity</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-SSP3YPF" class="admin__control-multiselect" id="SSP3YPF" multiple="" name="product[activity]" size="6"><option value="4">Hike</option><option value="5">Outdoor</option><option value="6">Running</option><option value="7">Warmup</option><option value="8">Yoga</option><option value="9">Recreation</option><option value="10">Lounge</option><option value="11">Gym</option><option value="12">Climbing</option><option value="13">Crosstraining</option><option value="14">Post-workout</option><option value="15">Cycling</option><option value="16">Athletic</option><option value="17">Sports</option><option value="18">Hiking</option><option value="19">Overnight</option><option value="20">School</option><option value="21">Trail</option><option value="22">Travel</option><option value="23">Urban</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="D2C1IXH">
+<span>Style General</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-D2C1IXH" class="admin__control-multiselect" id="D2C1IXH" multiple="" name="product[style_general]" size="6"><option value="116">Insulated</option><option value="117">Jacket</option><option value="118">Vest</option><option value="119">Lightweight</option><option value="120">Hooded</option><option value="121">Heavy Duty</option><option value="122">Rain Coat</option><option value="123">Hard Shell</option><option value="124">Soft Shell</option><option value="125">Windbreaker</option><option value="126">&amp;frac12; zip</option><option value="127">&amp;frac14; zip</option><option value="128">Full Zip</option><option value="129">Reversible</option><option value="130">Bra</option><option value="131">Hoodie</option><option value="132">Sweatshirt</option><option value="133">Polo</option><option value="134">Tank</option><option value="135">Tee</option><option value="136">Pullover</option><option value="137">Hoodie</option><option value="138">Cardigan</option><option value="139">Henley</option><option value="140">Tunic</option><option value="141">Camisole</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="Y5XS8Q0">
+<span>Material</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-Y5XS8Q0" class="admin__control-multiselect" id="Y5XS8Q0" multiple="" name="product[material]" size="6"><option value="31">Burlap</option><option value="142">Cocona&amp;reg; performance fabric</option><option value="32">Canvas</option><option value="143">Wool</option><option value="33">Cotton</option><option value="144">Fleece</option><option value="34">Faux Leather</option><option value="145">Hemp</option><option value="146">Jersey</option><option value="35">Leather</option><option value="147">LumaTech&amp;trade;</option><option value="36">Mesh</option><option value="148">Lycra&amp;reg;</option><option value="37">Nylon</option><option value="149">Microfiber</option><option value="38">Polyester</option><option value="39">Rayon</option><option value="150">Spandex</option><option value="151">HeatTec&amp;reg;</option><option value="40">Ripstop</option><option value="152">EverCool&amp;trade;</option><option value="41">Suede</option><option value="42">Foam</option><option value="153">Organic Cotton</option><option value="43">Metal</option><option value="154">TENCEL</option><option value="155">CoolTech&amp;trade;</option><option value="44">Plastic</option><option value="156">Khaki</option><option value="45">Rubber</option><option value="157">Linen</option><option value="46">Synthetic</option><option value="47">Stainless Steel</option><option value="158">Wool</option><option value="48">Silicone</option><option value="159">Terry</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="LQ3L3BG">
+<span>Sleeve</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-LQ3L3BG" class="admin__control-multiselect" id="LQ3L3BG" multiple="" name="product[sleeve]" size="6"><option value="160">Sleeve</option><option value="161">Long-Sleeve</option><option value="162">Short-Sleeve</option><option value="163">Sleeveless</option><option value="164">Tank</option><option value="165">Strap</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="KNLXJP4">
+<span>Size</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-KNLXJP4" aria-label="notice-KNLXJP4" class="admin__control-select" id="KNLXJP4" name="product[size]"><option value=""> </option><option value="91">55 cm</option><option value="166">XS</option><option value="92">65 cm</option><option value="167">S</option><option value="93">75 cm</option><option value="168">M</option><option value="94">6 foot</option><option value="169">L</option><option value="95">8 foot</option><option value="170">XL</option><option value="96">10 foot</option><option value="171">28</option><option value="172">29</option><option value="173">30</option><option value="174">31</option><option value="175">32</option><option value="176">33</option><option value="177">34</option><option value="178">36</option><option value="179">38</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="QSD5UPH">
+<span>Collar</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-QSD5UPH" class="admin__control-multiselect" id="QSD5UPH" multiple="" name="product[collar]" size="6"><option value="180">N/A</option><option value="181">? zip</option><option value="182">Boat Neck</option><option value="183">Crew</option><option value="184">Full zip</option><option value="185">V-neck</option><option value="186">Ballet</option><option value="187">Scoop</option><option value="188">High Collar</option><option value="189">Stand Collar</option><option value="190">Roll Neck</option><option value="191">Square Neck</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="EBREXJY">
+<span>Pattern</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-EBREXJY" class="admin__control-multiselect" id="EBREXJY" multiple="" name="product[pattern]" size="6"><option value="192">Color-Blocked</option><option value="193">Checked</option><option value="194">Color-Blocked</option><option value="195">Graphic Print</option><option value="196">Solid</option><option value="197">Solid-Highlight</option><option value="198">Striped</option><option value="199">Camo</option><option value="200">Geometric</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="RDI37L2">
+<span>Climate</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-RDI37L2" class="admin__control-multiselect" id="RDI37L2" multiple="" name="product[climate]" size="6"><option value="201">All-Weather</option><option value="202">Cold</option><option value="203">Cool</option><option value="204">Indoor</option><option value="205">Mild</option><option value="206">Rainy</option><option value="207">Spring</option><option value="208">Warm</option><option value="209">Windy</option><option value="210">Wintry</option><option value="211">Hot</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="TPBJ7BG">
+<span>Color</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<select aria-describedby="notice-TPBJ7BG" aria-label="notice-TPBJ7BG" class="admin__control-select" id="TPBJ7BG" name="product[color]"><option value=""> </option><option value="49">Black</option><option value="50">Blue</option><option value="51">Brown</option><option value="52">Gray</option><option value="53">Green</option><option value="54">Lavender</option><option value="55">Multi</option><option value="56">Orange</option><option value="57">Purple</option><option value="58">Red</option><option value="59">White</option><option value="60">Yellow</option></select>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="H24ECKL">
+<span>Eco Collection</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<div class="admin__actions-switch">
+<input class="admin__actions-switch-checkbox" id="H24ECKL" name="product[eco_collection]" type="checkbox" value=""/>
+<label class="admin__actions-switch-label" for="H24ECKL">
+<span class="admin__actions-switch-text"></span>
+</label>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="O7HKAR4">
+<span>Performance Fabric</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<div class="admin__actions-switch">
+<input class="admin__actions-switch-checkbox" id="O7HKAR4" name="product[performance_fabric]" type="checkbox" value=""/>
+<label class="admin__actions-switch-label" for="O7HKAR4">
+<span class="admin__actions-switch-text"></span>
+</label>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="WDMWB76">
+<span>Erin Recommends</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<div class="admin__actions-switch">
+<input class="admin__actions-switch-checkbox" id="WDMWB76" name="product[erin_recommends]" type="checkbox" value=""/>
+<label class="admin__actions-switch-label" for="WDMWB76">
+<span class="admin__actions-switch-text"></span>
+</label>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="FO1FNLL">
+<span>New</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<div class="admin__actions-switch">
+<input class="admin__actions-switch-checkbox" id="FO1FNLL" name="product[new]" type="checkbox" value=""/>
+<label class="admin__actions-switch-label" for="FO1FNLL">
+<span class="admin__actions-switch-text"></span>
+</label>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="admin__field">
+<div class="admin__field-label">
+<!-- ko if: $data.label --><label for="Y5B6T2M">
+<span>Sale</span>
+</label><!-- /ko -->
+</div>
+<div class="admin__field-control">
+<!-- ko ifnot: hasAddons() --><!-- ko template: elementTmpl -->
+<div class="admin__actions-switch">
+<input class="admin__actions-switch-checkbox" id="Y5B6T2M" name="product[sale]" type="checkbox" value=""/>
+<label class="admin__actions-switch-label" for="Y5B6T2M">
+<span class="admin__actions-switch-text"></span>
+</label>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasAddons() --><!-- /ko -->
+<!-- ko if: $data.tooltip --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+<!-- ko if: error --><!-- /ko -->
+<!-- ko if: $data.notice --><!-- /ko -->
+<!-- ko if: $data.additionalInfo --><!-- /ko -->
+<!-- ko if: $data.hasService() --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko --></fieldset><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper _show" style="display: none;">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Sources</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _show">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><fieldset class="admin__fieldset"><!-- ko template: getTemplate() -->
+<div class="admin__field-complex admin__control-grouped">
+<!-- ko if: label --><!-- /ko -->
+<div class="admin__field-complex-elements"><!-- ko template: getTemplate() -->
+<!-- ko if: visible --><!-- ko template: elementTmpl -->
+<button aria-labelledby="" class="action-basic" type="button">
+<span id="">Advanced Inventory</span>
+</button>
+<!-- ko if: childError --><!-- /ko -->
+<!-- /ko --><!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko if: visible --><!-- ko template: elementTmpl -->
+<button aria-labelledby="" class="action-basic" type="button">
+<span id="">Assign Sources</span>
+</button>
+<!-- ko if: childError --><!-- /ko -->
+<!-- /ko --><!-- /ko -->
+<!-- /ko --></div>
+<!-- ko if: $data.content --><!-- /ko -->
+<!-- ko if: $data.text --><!-- /ko -->
+</div>
+<!-- /ko --><!-- ko template: getTemplate() -->
+<div class="admin__field admin__field-wide _empty _no-header">
+<!-- ko if: $data.label --><!-- /ko -->
+<div class="admin__field-control">
+<div class="admin__control-table-pagination" style="display: none;">
+<div class="admin__data-grid-pager-wrap">
+<select class="admin__control-select">
+<option value="5">5</option>
+<option selected="selected" value="20">20</option>
+<option value="30">30</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="200">200</option>
+<option value="500">500</option>
+</select>
+<label class="admin__control-support-text">per page</label>
+<div class="admin__data-grid-pager">
+<button class="action-previous" disabled="" title="Previous Page" type="button"></button>
+<input class="admin__control-text" id="1" type="number" value=""/>
+<label class="admin__control-support-text" for="1">of 1</label>
+<button class="action-next" disabled="" title="Next Page" type="button"></button>
+</div>
+</div>
+</div>
+<div class="admin__control-table-wrapper">
+<!-- ko if: $data.showSpinner --><!-- /ko -->
+<table class="admin__dynamic-rows data-grid">
+<!-- ko if: $data.columnsHeader --><!-- /ko -->
+<tbody>
+<!-- ko repeat: {foreach: elems, item: '$record'} --><!-- /ko -->
+</tbody>
+</table>
+</div>
+<!-- ko if: $data.addButton --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- /ko --></fieldset><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Content</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper _show">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Configurations</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _show">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><fieldset class="admin__fieldset"><!-- ko template: getTemplate() -->
+<div class="admin__field-complex">
+<!-- ko if: label --><!-- /ko -->
+<div class="admin__field-complex-elements"><!-- ko template: getTemplate() -->
+<!-- ko if: visible --><!-- /ko -->
+<!-- /ko --><!-- ko template: getTemplate() -->
+<!-- ko if: visible --><!-- ko template: elementTmpl -->
+<button aria-labelledby="" class="action-basic" type="button">
+<span id="">Create Configurations</span>
+</button>
+<!-- ko if: childError --><!-- /ko -->
+<!-- /ko --><!-- /ko -->
+<!-- /ko --></div>
+<!-- ko if: $data.content -->
+<!-- ko with: {contentUnsanitizedHtml: $data.content} -->
+<div class="admin__field-complex-content">Configurable products allow customers to choose options (Ex: shirt color). You need to create a simple product for each configuration (Ex: a product for each color).</div>
+<!-- /ko -->
+<!-- /ko -->
+<!-- ko if: $data.text --><!-- /ko -->
+</div>
+<!-- /ko --><!-- ko template: getTemplate() -->
+<div class="admin__field admin__field-wide _empty _no-header" style="display: none;">
+<!-- ko if: $data.label --><label class="admin__field-label">
+<span>Current Variations</span>
+</label><!-- /ko -->
+<div class="admin__field-control">
+<div class="admin__control-table-pagination" style="display: none;">
+<div class="admin__data-grid-pager-wrap">
+<select class="admin__control-select">
+<option value="5">5</option>
+<option selected="selected" value="20">20</option>
+<option value="30">30</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="200">200</option>
+<option value="500">500</option>
+</select>
+<label class="admin__control-support-text">per page</label>
+<div class="admin__data-grid-pager">
+<button class="action-previous" disabled="" title="Previous Page" type="button"></button>
+<input class="admin__control-text" id="2" type="number" value=""/>
+<label class="admin__control-support-text" for="2">of 1</label>
+<button class="action-next" disabled="" title="Next Page" type="button"></button>
+</div>
+</div>
+</div>
+<div class="admin__control-table-wrapper">
+<!-- ko if: $data.showSpinner --><!-- /ko -->
+<table class="admin__dynamic-rows data-grid">
+<!-- ko if: $data.columnsHeader --><!-- /ko -->
+<tbody>
+<!-- ko repeat: {foreach: elems, item: '$record'} --><!-- /ko -->
+</tbody>
+</table>
+</div>
+<!-- ko if: $data.addButton --><!-- /ko -->
+<!-- ko if: $data.showFallbackReset && $data.isDifferedFromDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --></fieldset><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Product Reviews</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Images And Videos</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Search Engine Optimization</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Related Products, Up-Sells, and Cross-Sells</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Customizable Options</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__fieldset-product-websites admin__collapsible-block-wrapper">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Product in Websites</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Product Salable Quantity</span>
+<div class="admin__field-saleable-qty admin__field-tooltip">
+<a class="admin__field-tooltip-action action-help" tabindex="1" target="_blank"></a>
+<div class="admin__field-tooltip-content">Aggregated inventory available to purchase for a stock. The amount aggregates assigned source's Quantity subtracting the Out-of-Stock Threshold (or MinQty).</div>
+</div>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span class="admin__page-nav-item-message-icon"></span>
+<span class="admin__page-nav-item-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span class="admin__page-nav-item-message-icon"></span>
+<span class="admin__page-nav-item-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Design</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Schedule Design Update</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Gift Options</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper admin__collapsible-block-wrapper">
+<!-- ko if: label --><div class="fieldset-wrapper-title" tabindex="0">
+<strong class="admin__collapsible-title">
+<span>Downloadable Information</span>
+<!-- ko if: collapsible --><span class="admin__page-nav-item-messages">
+<span class="admin__page-nav-item-message _changed">
+<span aria-labelledby="changed-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="changed-message-tooltip">Changes have been made to this section that have not been saved.</span>
+</span>
+<span class="admin__page-nav-item-message _error">
+<span aria-labelledby="error-message-tooltip" class="admin__page-nav-item-message-icon" role="tooltip" tabindex="0">
+</span>
+<span class="admin__page-nav-item-message-tooltip" id="error-message-tooltip">This tab contains invalid data. Please resolve this before saving.</span>
+</span>
+<span class="admin__page-nav-item-message-loader">
+<span class="spinner">
+<!-- ko repeat: 8 --><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><!-- /ko -->
+</span>
+</span>
+</span><!-- /ko -->
+</strong>
+</div><!-- /ko -->
+<div class="admin__fieldset-wrapper-content admin__collapsible-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<div class="fieldset-wrapper">
+<!-- ko if: label --><!-- /ko -->
+<div class="admin__fieldset-wrapper-content _hide">
+<!-- ko if: opened() || _wasOpened || initializeFieldsetDataByDefault --><fieldset class="admin__fieldset"><!-- ko template: getTemplate() -->
+<div class="admin__scope-old"><div class="productFormConfigurable">
+<!-- ko template: getTemplate() -->
+<!-- /ko -->
+</div>
+<div class="productFormConfigurable" id="product-variations-matrix">
+<div></div>
+</div>
+</div>
+<!-- ko if: showSpinner --><!-- /ko -->
+<!-- /ko --></fieldset><!-- /ko -->
+</div>
+</div>
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<!-- /ko --><!-- /ko -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+</div></div></div></main>
+<footer class="page-footer"><div class="page-footer-content row"><div class="footer-legal"><p class="copyright col-m-6"><a class="link-copyright" href="http://magento.com" target="_blank" title="Magento"></a>
+Copyright © 2026 Magento Commerce Inc. All rights reserved.</p><div class="footer-legal-system col-m-6"><p class="magento-version">
+<strong>Magento</strong>
+    ver. 2.4.6</p>
+<a class="link-report" href="https://www.adobe.com/privacy/policy.html" id="footer_privacy" target="_blank">
+    Privacy Policy</a> |<a class="link-account-activity" href="http://localhost:7780/admin/security/session/activity/" id="footer_account_activity" target="_blank">
+    Account Activity</a> |
+    <a class="link-report" href="https://github.com/magento/magento2/issues" id="footer_bug_tracking" target="_blank">
+        Report an Issue    </a>
+</div></div></div></footer></div><!--
+/**
+ * Copyright &copy; Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--><div>
+<div class="entry-edit form-inline">
+<!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<!--
+/**
+ * Copyright &copy; Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+--><div>
+<div class="entry-edit form-inline">
+<!-- ko template: getTemplate() -->
+<!-- ko foreach: {data: elems, as: 'element'} -->
+<!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+<!-- /ko --><!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+</div>
+</div>
+<div class="modals-wrapper"><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-0" aria-labelledby="modal-title-0" class="modal-popup" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-0">
+
+                    Choose Affected Attribute Set
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+</header>
+<div class="modal-content" id="modal-content-0"><div class="no-display affected-attribute-set" style="display: block;">
+<div class="entry-edit form-inline">
+<form><div></div>
+<fieldset class="fieldset admin__fieldset" id="product_template_selecte">
+<div class="messages">
+</div>
+<div class="admin__field field field-current-affected-attribute-set admin__field-option with-addon no-label">
+<div class="admin__field-control control">
+<div class="admin__field"><input checked="checked" class="admin__control-radio" formelementhookid="elemIdpLm1KbUOWK" id="current-affected-attribute-set" name="affected-attribute-set" type="radio" value=""/><label class="addafter" for="current-affected-attribute-set">Add configurable attributes to the current Attribute Set ("<span>Top</span>")</label></div> </div>
+</div>
+<div class="admin__field field field-new-affected-attribute-set admin__field-option with-addon no-label">
+<div class="admin__field-control control">
+<div class="admin__field"><input class="admin__control-radio" formelementhookid="elemIdTAmc4KvqI9" id="new-affected-attribute-set" name="affected-attribute-set" type="radio" value=""/><label class="addafter" for="new-affected-attribute-set">Add configurable attributes to the new Attribute Set based on current</label></div> </div>
+</div>
+<div class="admin__field field field-new-attribute-set-name no-display required _required">
+<label class="label admin__field-label" for="new-attribute-set-name"><span>New attribute set name</span></label>
+<div class="admin__field-control control">
+<input class="input-text admin__control-text required-entry _required" formelementhookid="elemIdrKCWebUOym" id="new-attribute-set-name" name="new-attribute-set-name" type="text" value=""/> </div>
+</div>
+<div class="admin__field field field-existing-affected-attribute-set admin__field-option with-addon required _required no-label">
+<div class="admin__field-control control">
+<div class="admin__field"><input class="admin__control-radio no-display required-entry _required" formelementhookid="elemIdulWtFjTRT1" id="existing-affected-attribute-set" name="affected-attribute-set" type="radio" value=""/><label class="addafter" for="existing-affected-attribute-set">Add configurable attributes to the existing Attribute Set</label></div> </div>
+</div>
+<div class="admin__field field field-choose-affected-attribute-set no-display required _required">
+<label class="label admin__field-label" for="choose-affected-attribute-set"><span>Choose existing Attribute Set</span></label>
+<div class="admin__field-control control">
+<select class="required-entry _required select admin__control-select" formelementhookid="elemIdpLnYzOkbMJ" id="choose-affected-attribute-set" name="attribute-set-name">
+<option id="optIdFJlgC9p3" value="4">Default</option>
+<option id="optId9lrCeAC0" value="9">Top</option>
+<option id="optIdtOQbZO6L" value="10">Bottom</option>
+<option id="optIdDtpHUJ4p" value="11">Gear</option>
+<option id="optIdZfjULw71" value="12">Sprite Stasis Ball</option>
+<option id="optIdFTqn2Lqe" value="13">Sprite Yoga Strap</option>
+<option id="optIdmAAFmgDE" value="14">Downloadable</option>
+<option id="optIdd4ykOiFj" value="15">Bag</option>
+</select>
+</div>
+</div>
+</fieldset>
+</form></div>
+</div></div>
+<footer class="modal-footer">
+<button class="action-primary" type="button"><span>Confirm</span></button>
+<button class="action-close" type="button"><span>Cancel</span></button>
+</footer>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-10" aria-labelledby="modal-title-10" class="modal-slide pagebuilder_modal_form_pagebuilder_modal_form_modal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-10">
+
+                    Edit
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+</header>
+<div class="modal-content" id="modal-content-10"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-11" aria-labelledby="modal-title-11" class="modal-slide pagebuilder_stage_template_pagebuilder_stage_template_modal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-11">
+
+                    Apply Template
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+</header>
+<div class="modal-content" id="modal-content-11"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-12" class="modal-slide notification_area_notification_area_modalContainer_modal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+</header>
+<div class="modal-content" id="modal-content-12"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-13" aria-labelledby="modal-title-13" class="modal-slide product_form_product_form_advanced_inventory_modal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-13">
+
+                    Advanced Inventory
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+<div class="page-main-actions">
+<div class="page-actions">
+<div class="page-actions-buttons">
+<button class="action-primary" type="button"><span>Done</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<div class="modal-content" id="modal-content-13"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-14" aria-labelledby="modal-title-14" class="modal-slide product_form_product_form_assign_sources_configurable_modal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-14">
+
+                    Assign Sources
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+<div class="page-main-actions">
+<div class="page-actions">
+<div class="page-actions-buttons">
+<button class="action-secondary" type="button"><span>Cancel</span>
+</button>
+<button class="action-primary" type="button"><span>Done</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<div class="modal-content" id="modal-content-14"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-15" aria-labelledby="modal-title-15" class="modal-slide product_form_product_form_create_category_modal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-15">
+
+                    New Category
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+</header>
+<div class="modal-content" id="modal-content-15"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-16" aria-labelledby="modal-title-16" class="modal-slide product_form_product_form_import_options_modal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-16">
+
+                    Select Product
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+<div class="page-main-actions">
+<div class="page-actions">
+<div class="page-actions-buttons">
+<button class="action-primary" type="button"><span>Import</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<div class="modal-content" id="modal-content-16"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-17" aria-labelledby="modal-title-17" class="modal-slide product_form_product_form_advanced_pricing_modal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-17">
+
+                    Advanced Pricing
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+<div class="page-main-actions">
+<div class="page-actions">
+<div class="page-actions-buttons">
+<button class="action-primary" type="button"><span>Done</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<div class="modal-content" id="modal-content-17"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-18" aria-labelledby="modal-title-18" class="modal-slide product_form_product_form_add_attribute_modal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-18">
+
+                    Add Attribute
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+<div class="page-main-actions">
+<div class="page-actions">
+<div class="page-actions-buttons">
+<button class="" type="button"><span>Cancel</span>
+</button>
+<button class="action-primary" type="button"><span>Add Selected</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<div class="modal-content" id="modal-content-18"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-19" aria-labelledby="modal-title-19" class="modal-slide product_form_product_form_configurable_associated_product_modal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-19">
+
+                    Select Associated Product
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+<div class="page-main-actions">
+<div class="page-actions">
+<div class="page-actions-buttons">
+<button class="action-primary" type="button"><span>Done</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<div class="modal-content" id="modal-content-19"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-20" aria-labelledby="modal-title-20" class="modal-popup product_form_product_form_configurable_attribute_set_handler_modal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-20">
+
+                    Choose Affected Attribute Set
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+</header>
+<div class="modal-content" id="modal-content-20"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-21" aria-labelledby="modal-title-21" class="modal-slide product_form_product_form_sources_assign_sources_modal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-21">
+
+                    Assign Sources
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+<div class="page-main-actions">
+<div class="page-actions">
+<div class="page-actions-buttons">
+<button class="action-secondary" type="button"><span>Cancel</span>
+</button>
+<button class="action-primary" type="button"><span>Done</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<div class="modal-content" id="modal-content-21"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside><!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<aside aria-describedby="modal-content-24" aria-labelledby="modal-title-24" class="modal-slide product_form_product_form_configurableModal" role="dialog" tabindex="0">
+<div tabindex="0"></div>
+<div class="modal-inner-wrap">
+<header class="modal-header">
+<h1 class="modal-title" id="modal-title-24">
+
+                    Create Product Configurations
+
+
+
+            </h1>
+<button class="action-close" type="button">
+<span>Close</span>
+</button>
+</header>
+<div class="modal-content" id="modal-content-24"><div class="modal-component">
+<!-- ko if: state() || $data.modal --><!-- /ko -->
+</div></div>
+</div>
+<div tabindex="0"></div>
+</aside></div><div class="admin__menu-overlay" style="display: none;"></div><div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="ui-datepicker-div"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" title="Previous"><span class="ui-icon ui-icon-circle-triangle-w">Previous</span></a><a class="ui-datepicker-next ui-corner-all" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><select aria-label="Select month" class="ui-datepicker-month"><option value="0">Jan</option><option value="1">Feb</option><option value="2">Mar</option><option value="3">Apr</option><option value="4">May</option><option value="5">Jun</option><option value="6">Jul</option><option value="7">Aug</option><option value="8">Sep</option><option selected="selected" value="9">Oct</option><option value="10">Nov</option><option value="11">Dec</option></select><select aria-label="Select year" class="ui-datepicker-year"><option value="1926">1926</option><option value="1927">1927</option><option value="1928">1928</option><option value="1929">1929</option><option value="1930">1930</option><option value="1931">1931</option><option value="1932">1932</option><option value="1933">1933</option><option value="1934">1934</option><option value="1935">1935</option><option value="1936">1936</option><option value="1937">1937</option><option value="1938">1938</option><option value="1939">1939</option><option value="1940">1940</option><option value="1941">1941</option><option value="1942">1942</option><option value="1943">1943</option><option value="1944">1944</option><option value="1945">1945</option><option value="1946">1946</option><option value="1947">1947</option><option value="1948">1948</option><option value="1949">1949</option><option value="1950">1950</option><option value="1951">1951</option><option value="1952">1952</option><option value="1953">1953</option><option value="1954">1954</option><option value="1955">1955</option><option value="1956">1956</option><option value="1957">1957</option><option value="1958">1958</option><option value="1959">1959</option><option value="1960">1960</option><option value="1961">1961</option><option value="1962">1962</option><option value="1963">1963</option><option value="1964">1964</option><option value="1965">1965</option><option value="1966">1966</option><option value="1967">1967</option><option value="1968">1968</option><option value="1969">1969</option><option value="1970">1970</option><option value="1971">1971</option><option value="1972">1972</option><option value="1973">1973</option><option value="1974">1974</option><option value="1975">1975</option><option value="1976">1976</option><option value="1977">1977</option><option value="1978">1978</option><option value="1979">1979</option><option value="1980">1980</option><option value="1981">1981</option><option value="1982">1982</option><option value="1983">1983</option><option value="1984">1984</option><option value="1985">1985</option><option value="1986">1986</option><option value="1987">1987</option><option value="1988">1988</option><option value="1989">1989</option><option value="1990">1990</option><option value="1991">1991</option><option value="1992">1992</option><option value="1993">1993</option><option value="1994">1994</option><option value="1995">1995</option><option value="1996">1996</option><option value="1997">1997</option><option value="1998">1998</option><option value="1999">1999</option><option value="2000">2000</option><option value="2001">2001</option><option value="2002">2002</option><option value="2003">2003</option><option value="2004">2004</option><option value="2005">2005</option><option value="2006">2006</option><option value="2007">2007</option><option value="2008">2008</option><option value="2009">2009</option><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option selected="selected" value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option><option value="2031">2031</option><option value="2032">2032</option><option value="2033">2033</option><option value="2034">2034</option><option value="2035">2035</option><option value="2036">2036</option><option value="2037">2037</option><option value="2038">2038</option><option value="2039">2039</option><option value="2040">2040</option><option value="2041">2041</option><option value="2042">2042</option><option value="2043">2043</option><option value="2044">2044</option><option value="2045">2045</option><option value="2046">2046</option><option value="2047">2047</option><option value="2048">2048</option><option value="2049">2049</option><option value="2050">2050</option><option value="2051">2051</option><option value="2052">2052</option><option value="2053">2053</option><option value="2054">2054</option><option value="2055">2055</option><option value="2056">2056</option><option value="2057">2057</option><option value="2058">2058</option><option value="2059">2059</option><option value="2060">2060</option><option value="2061">2061</option><option value="2062">2062</option><option value="2063">2063</option><option value="2064">2064</option><option value="2065">2065</option><option value="2066">2066</option><option value="2067">2067</option><option value="2068">2068</option><option value="2069">2069</option><option value="2070">2070</option><option value="2071">2071</option><option value="2072">2072</option><option value="2073">2073</option><option value="2074">2074</option><option value="2075">2075</option><option value="2076">2076</option><option value="2077">2077</option><option value="2078">2078</option><option value="2079">2079</option><option value="2080">2080</option><option value="2081">2081</option><option value="2082">2082</option><option value="2083">2083</option><option value="2084">2084</option><option value="2085">2085</option><option value="2086">2086</option><option value="2087">2087</option><option value="2088">2088</option><option value="2089">2089</option><option value="2090">2090</option><option value="2091">2091</option><option value="2092">2092</option><option value="2093">2093</option><option value="2094">2094</option><option value="2095">2095</option><option value="2096">2096</option><option value="2097">2097</option><option value="2098">2098</option><option value="2099">2099</option><option value="2100">2100</option><option value="2101">2101</option><option value="2102">2102</option><option value="2103">2103</option><option value="2104">2104</option><option value="2105">2105</option><option value="2106">2106</option><option value="2107">2107</option><option value="2108">2108</option><option value="2109">2109</option><option value="2110">2110</option><option value="2111">2111</option><option value="2112">2112</option><option value="2113">2113</option><option value="2114">2114</option><option value="2115">2115</option><option value="2116">2116</option><option value="2117">2117</option><option value="2118">2118</option><option value="2119">2119</option><option value="2120">2120</option><option value="2121">2121</option><option value="2122">2122</option><option value="2123">2123</option><option value="2124">2124</option><option value="2125">2125</option><option value="2126">2126</option></select></div></div><table class="ui-datepicker-calendar"><thead><tr><th class="ui-datepicker-week-end"><span title="Sunday">Sun</span></th><th><span title="Monday">Mon</span></th><th><span title="Tuesday">Tue</span></th><th><span title="Wednesday">Wed</span></th><th><span title="Thursday">Thu</span></th><th><span title="Friday">Fri</span></th><th class="ui-datepicker-week-end"><span title="Saturday">Sat</span></th></tr></thead><tbody><tr><td class="ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">27</span></td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">28</span></td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">29</span></td><td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"><span class="ui-state-default">30</span></td><td class=""><a class="ui-state-default" href="">1</a></td><td class=""><a class="ui-state-default" href="">2</a></td><td class="ui-datepicker-week-end"><a class="ui-state-default" href="">3</a></td></tr><tr><td class="ui-datepicker-week-end"><a class="ui-state-default" href="">4</a></td><td class=""><a class="ui-state-default" href="">5</a></td><td class=""><a class="ui-state-default" href="">6</a></td><td class=""><a class="ui-state-default" href="">7</a></td><td class=""><a class="ui-state-default" href="">8</a></td><td class="ui-datepicker-days-cell-over ui-datepicker-current-day ui-datepicker-today"><a class="ui-state-default ui-state-active ui-state-hover" href="">9</a></td><td class="ui-datepicker-week-end"><a class="ui-state-default" href="">10</a></td></tr><tr><td class="ui-datepicker-week-end"><a class="ui-state-default" href="">11</a></td><td class=""><a class="ui-state-default" href="">12</a></td><td class=""><a class="ui-state-default" href="">13</a></td><td class=""><a class="ui-state-default" href="">14</a></td><td class=""><a class="ui-state-default" href="">15</a></td><td class=""><a class="ui-state-default" href="">16</a></td><td class="ui-datepicker-week-end"><a class="ui-state-default" href="">17</a></td></tr><tr><td class="ui-datepicker-week-end"><a class="ui-state-default" href="">18</a></td><td class=""><a class="ui-state-default" href="">19</a></td><td class=""><a class="ui-state-default" href="">20</a></td><td class=""><a class="ui-state-default" href="">21</a></td><td class=""><a class="ui-state-default" href="">22</a></td><td class=""><a class="ui-state-default" href="">23</a></td><td class="ui-datepicker-week-end"><a class="ui-state-default" href="">24</a></td></tr><tr><td class="ui-datepicker-week-end"><a class="ui-state-default" href="">25</a></td><td class=""><a class="ui-state-default" href="">26</a></td><td class=""><a class="ui-state-default" href="">27</a></td><td class=""><a class="ui-state-default" href="">28</a></td><td class=""><a class="ui-state-default" href="">29</a></td><td class=""><a class="ui-state-default" href="">30</a></td><td class="ui-datepicker-week-end"><a class="ui-state-default" href="">31</a></td></tr></tbody></table><div class="ui-datepicker-buttonpane ui-widget-content"><button class="ui-datepicker-current ui-state-default ui-priority-secondary ui-corner-all" type="button">Go Today</button><button class="ui-datepicker-close ui-state-default ui-priority-primary ui-corner-all" type="button">Close</button></div></div></body></html>

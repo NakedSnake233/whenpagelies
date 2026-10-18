@@ -1,0 +1,12 @@
+{
+  "id": "shopping_admin-463",
+  "site": "shopping_admin",
+  "family": "fam-247",
+  "start_url": "http://localhost:7780/admin/catalog/product/edit/id/996/",
+  "intent": "Increase the price of the product on the current page by 15%",
+  "webarena_task_id": 463,
+  "instantiation": {
+    "amount": "15%",
+    "action": "Increase"
+  }
+}

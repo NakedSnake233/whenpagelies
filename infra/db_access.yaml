@@ -1,0 +1,14 @@
+{
+  "shopping_admin": {
+    "host": "127.0.0.1",
+    "dbname": "magentodb",
+    "username": "magentouser",
+    "credential_source": "container:/var/www/magento2/app/etc/env.php"
+  },
+  "reddit": {
+    "host": "localhost",
+    "dbname": "postmill",
+    "username": "postmill",
+    "credential_source": "container:/etc/nginx/conf.d/default.conf (FastCGI DATABASE_URL; .env is placeholder)"
+  }
+}

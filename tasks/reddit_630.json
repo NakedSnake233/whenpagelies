@@ -1,0 +1,13 @@
+{
+  "id": "reddit-630",
+  "site": "reddit",
+  "family": "fam-15",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Create a post in f/headphones. Title it \"noise-cancelling headphones recommendations?\" and in post details ask \"Hey, looking for good noise-cancelling headphones under $200, any suggestions?\"",
+  "webarena_task_id": 630,
+  "instantiation": {
+    "category": "noise-cancelling headphones",
+    "price": "$200",
+    "forum": "f/headphones"
+  }
+}

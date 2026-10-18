@@ -1,0 +1,13 @@
+{
+  "id": "shopping_admin-781",
+  "site": "shopping_admin",
+  "family": "fam-742",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "Increase the price of black fitness tshirts from Desiree with size XS by 37%",
+  "webarena_task_id": 781,
+  "instantiation": {
+    "amount": "37%",
+    "action": "Increase",
+    "config": "black fitness tshirts from Desiree with size XS"
+  }
+}

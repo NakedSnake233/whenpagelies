@@ -1,0 +1,13 @@
+{
+  "id": "shopping_admin-782",
+  "site": "shopping_admin",
+  "family": "fam-742",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "Increase the price of all blue running tshirts in extra small and small sizes by 23%",
+  "webarena_task_id": 782,
+  "instantiation": {
+    "amount": "23%",
+    "action": "Increase",
+    "config": "all blue running tshirts in extra small and small sizes"
+  }
+}

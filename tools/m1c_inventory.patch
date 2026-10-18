@@ -1,0 +1,13 @@
+--- a/tests/test_runner_m3.py
++++ b/tests/test_runner_m3.py
+@@ -17,4 +17,8 @@
+     tasks = [load_task(p) for p in (ROOT / 'tasks').glob('*_*.json') if p.name != 'webarena_candidates.json']
+-    assert len(tasks) == 34
+-    assert len({t['family'] for t in tasks}) == 7
++    from proxy.catalog import load_catalog
++    entries = [entry for site in ('reddit', 'shopping_admin')
++               for entry in load_catalog(ROOT / f'catalog/{site}.yaml').entries
++               if entry.get('implemented')]
++    assert len(tasks) == sum(len(entry['task_ids']) for entry in entries)
++    assert len({t['family'] for t in tasks}) == len(entries)
+     for name in ['reddit_399', 'shopping_admin_453']:

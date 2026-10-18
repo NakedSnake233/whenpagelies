@@ -1,0 +1,11 @@
+{
+  "id": "reddit-403",
+  "site": "reddit",
+  "family": "fam-6",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Change my bio to \"Awesome Prompt Artist\" in the discussion forum",
+  "webarena_task_id": 403,
+  "instantiation": {
+    "content": "Awesome Prompt Artist"
+  }
+}

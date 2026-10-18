@@ -1,0 +1,11 @@
+{
+  "id": "reddit-621",
+  "site": "reddit",
+  "family": "fam-12",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Ask for advice in a forum for relations. Title it \"cheat\" and in post details ask \"Please help\"",
+  "webarena_task_id": 621,
+  "instantiation": {
+    "issue": "cheat"
+  }
+}

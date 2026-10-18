@@ -1,0 +1,12 @@
+{
+  "id": "reddit-637",
+  "site": "reddit",
+  "family": "fam-6100",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Create a post in the most appropriate forum. Title it \"sony headphones recommendations\" and in post details ask \"I need recommendations for sony headphones within a budget of $500 please\"",
+  "webarena_task_id": 637,
+  "instantiation": {
+    "category": "sony headphones",
+    "price": "$500"
+  }
+}

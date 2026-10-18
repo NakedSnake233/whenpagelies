@@ -1,0 +1,12 @@
+{
+  "id": "reddit-399",
+  "site": "reddit",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Change my bio to \"I am a robot\" in the discussion forum",
+  "webarena_task_id": 399,
+  "notes": "Derived from tasks/webarena_candidates.json; task fixtures live in config/tasks under M2 path ownership.",
+  "family": "fam-6",
+  "instantiation": {
+    "content": "I am a robot"
+  }
+}

@@ -1,0 +1,4 @@
+# Fixed historical limits for budget regression tests, independent of live plans.
+workspace_monthly_usd: 50
+provider_month_anchor: {day: 26, hour: 8, minute: 44, second: 0}
+fractions: {five_hours: 0.18, seven_days: 0.45, month: 0.95}

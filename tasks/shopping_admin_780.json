@@ -1,0 +1,13 @@
+{
+  "id": "shopping_admin-780",
+  "site": "shopping_admin",
+  "family": "fam-742",
+  "start_url": "http://localhost:7780/admin/catalog/product/edit/id/1481/",
+  "intent": "Increase the price of white Ingrid Running with size L and above by $17",
+  "webarena_task_id": 780,
+  "instantiation": {
+    "amount": "$17",
+    "action": "Increase",
+    "config": "white Ingrid Running with size L and above"
+  }
+}

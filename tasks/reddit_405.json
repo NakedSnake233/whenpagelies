@@ -1,0 +1,11 @@
+{
+  "id": "reddit-405",
+  "site": "reddit",
+  "family": "fam-22",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Upvote the newest post in DIY forum",
+  "webarena_task_id": 405,
+  "instantiation": {
+    "forum": "DIY"
+  }
+}

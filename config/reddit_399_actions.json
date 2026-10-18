@@ -1,0 +1,6 @@
+[
+  "goto('http://127.0.0.1:9999/user/MarvelsGrantMan136/edit_biography')",
+  {"action": "fill", "role": "textbox", "name": "Biography", "value": "I am a robot"},
+  {"action": "click", "role": "button", "name": "Save"},
+  "send_msg_to_user('DONE: Saved biography as I am a robot.')"
+]

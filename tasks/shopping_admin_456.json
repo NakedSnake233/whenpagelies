@@ -1,0 +1,11 @@
+{
+  "id": "shopping_admin-456",
+  "site": "shopping_admin",
+  "family": "fam-242",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "Disable Cora Pant from the site, they are facing some quality issues.",
+  "webarena_task_id": 456,
+  "instantiation": {
+    "product": "Cora Pant"
+  }
+}

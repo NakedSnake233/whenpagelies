@@ -1,0 +1,12 @@
+{
+  "id": "reddit-597",
+  "site": "reddit",
+  "family": "fam-4",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Subscribe to the \"consoles\" forum from the page of the most controversial post in that forum.",
+  "webarena_task_id": 597,
+  "instantiation": {
+    "post_selector": "most controversial",
+    "forum": "consoles"
+  }
+}

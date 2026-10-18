@@ -1,0 +1,11 @@
+{
+  "id": "reddit-628",
+  "site": "reddit",
+  "family": "fam-13",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Create a discussion post titled \"long distance relationship\" in a relevant forum and ask users for their opinions with the simple prompt, \"your opinion\"",
+  "webarena_task_id": 628,
+  "instantiation": {
+    "topic": "long distance relationship"
+  }
+}

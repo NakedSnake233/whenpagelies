@@ -1,0 +1,13 @@
+{
+  "id": "reddit-641",
+  "site": "reddit",
+  "family": "fam-16",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Post a notice in books forum titled \"Harry Potter Meet up!\". Set post details to \"virtual meetup for Harry Potter on July 8th\"",
+  "webarena_task_id": 641,
+  "instantiation": {
+    "interest": "Harry Potter",
+    "date": "July 8th",
+    "forum": "books forum"
+  }
+}

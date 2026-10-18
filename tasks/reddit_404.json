@@ -1,0 +1,11 @@
+{
+  "id": "reddit-404",
+  "site": "reddit",
+  "family": "fam-22",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Upvote the newest post in books forum",
+  "webarena_task_id": 404,
+  "instantiation": {
+    "forum": "books"
+  }
+}

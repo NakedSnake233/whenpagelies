@@ -1,0 +1,12 @@
+{
+  "id": "reddit-638",
+  "site": "reddit",
+  "family": "fam-6100",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Create a post in the most appropriate forum. Title it \"Must have product at last for ever recommendations\" and in post details ask \"I need recommendations for Must have product at last for ever within a budget of $30 please\"",
+  "webarena_task_id": 638,
+  "instantiation": {
+    "category": "Must have product at last for ever",
+    "price": "$30"
+  }
+}

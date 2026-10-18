@@ -1,0 +1,11 @@
+{
+  "id": "reddit-406",
+  "site": "reddit",
+  "family": "fam-22",
+  "start_url": "http://127.0.0.1:9999",
+  "intent": "Upvote the newest post in future technology forum",
+  "webarena_task_id": 406,
+  "instantiation": {
+    "forum": "future technology"
+  }
+}

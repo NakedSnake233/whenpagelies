@@ -1,0 +1,13 @@
+{
+  "id": "shopping_admin-778",
+  "site": "shopping_admin",
+  "family": "fam-742",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "Reduce the price of size 28 Sahara leggings by 13.5%",
+  "webarena_task_id": 778,
+  "instantiation": {
+    "amount": "13.5%",
+    "action": "Reduce",
+    "config": "size 28 Sahara leggings"
+  }
+}

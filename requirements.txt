@@ -1,0 +1,13 @@
+mitmproxy
+playwright
+browsergym-core
+webarena-verified
+httpx
+pyyaml
+pymysql
+psycopg[binary]
+pandas
+matplotlib
+pytest
+python-dotenv
+tenacity

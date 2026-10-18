@@ -1,0 +1,8 @@
+{
+  "id": "shopping_admin-453",
+  "site": "shopping_admin",
+  "start_url": "http://localhost:7780/admin",
+  "intent": "Disable Teton pullover hoodie from the site, they are facing some quality issues.",
+  "webarena_task_id": 453,
+  "notes": "Derived from tasks/webarena_candidates.json; task fixtures live in config/tasks under M2 path ownership."
+}
