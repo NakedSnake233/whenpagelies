@@ -86,9 +86,9 @@ B0 is the base agent; B1 adds a verification instruction; B2 adds reflection aft
 
 ## Traces
 
-Trace archive: to be added
+See [traces/README.md](traces/README.md) for the trace sample, manifest and full archive release plan.
 
-Full traces are excluded from this release. The compact episode data contain only analysis fields, without prompts, model text, URLs, paths, request headers, HARs or screenshots.
+Apart from the sample in traces/, full traces are excluded from this release. The compact episode data in data/ contain only analysis fields, without prompts, model text, URLs, paths, request headers, HARs or screenshots.
 
 ## Tests and limitations
 
