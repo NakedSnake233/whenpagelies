@@ -8,6 +8,7 @@ These analyses were added during the paper's internal review. They are recompute
 | `prefix_groups.csv` | Per (model, task) in the main study: whether the pre-write prefixes are identical across conditions. |
 | `job1.md` | How the flags were computed. |
 | `robustness.json`, `robustness.md` | Results of `tools/review/robustness.py`. |
+| `mitigation_itt.json` | Exposure by policy and the 21 policy-vs-B0 comparisons over all episodes, exposed or not (`tools/review/mitigation_itt.py`) |
 | `rb_audit.csv`, `rb_audit_result.md` | Manual audit of the read-back label on 60 episodes from `traces/sample.tar.gz`, built by `tools/review/rb_audit_dump.py`. |
 | `judge/*.jsonl`, `judge_summary.json` | LLM-judge verdicts for the 843 exposed B0 episodes of the main study under C0/F1/F3/F4/F5 (`tools/review/llm_judge.py`), and their summary (`tools/review/judge_analysis.py`). |
 
