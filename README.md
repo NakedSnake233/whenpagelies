@@ -90,6 +90,10 @@ See [traces/README.md](traces/README.md) for the trace sample, manifest and full
 
 Apart from the sample in traces/, full traces are excluded from this release. The compact episode data in data/ contain only analysis fields, without prompts, model text, URLs, paths, request headers, HARs or screenshots.
 
+## Review analyses
+
+Robustness analyses, validity flags, a read-back audit and LLM-judge results added during review are in [analysis/review/](analysis/review/README.md).
+
 ## Tests and limitations
 
 Pure unit tests can run without sites:
