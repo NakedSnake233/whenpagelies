@@ -22,11 +22,20 @@ BID_REMINDER = 'Elements must be referenced by the bracketed numeric bid shown i
 PREFIX_REMINDER = 'send_msg_to_user must start with DONE: or NOT DONE:; reply with the corrected action.'
 
 
-def parse_action(text, policy='B0', metadata=None):
-    from agent.action_adapter import to_action_call
+def parse_action(text, policy='B0', metadata=None, model=None):
+    from agent.action_adapter import first_of_many, to_action_call
+    from agent.llm import CONFIG
     from browsergym.core.action import functions
     from agent.env import report_verification
     allowed = ALLOWED_ACTIONS | ({'report_verification'} if policy in VRV_POLICIES else set())
+    selected = None
+    if (model == 'gpt-5.6-luna' and
+            CONFIG['models'][model].get('action_adapter') == 'first_of_many'):
+        selected = first_of_many(text)
+        if selected is not None:
+            text = f'```action\n{selected[0]}\n```'
+            if metadata is not None:
+                metadata.update(lenient_parse='first_of_many', n_actions_in_reply=selected[1])
     native = to_action_call(text)
     if native is not None:
         text = native
@@ -65,7 +74,7 @@ def parse_action(text, policy='B0', metadata=None):
         if not isinstance(next(iter(bound.arguments.values())), str):
             raise ActionParseError(FORMAT_REMINDER)
     if metadata is not None:
-        metadata['lenient_parse'] = lenient and native is None
+        metadata['lenient_parse'] = 'first_of_many' if selected else lenient and native is None
     return block
 
 
@@ -171,7 +180,7 @@ def _run_steps(env, client, controller, system, obs, max_steps, trace, state, ne
             row['action_llm_call'] = dict(usage=reply.usage.copy(), cost=reply.cost)
             account(reply)
             try:
-                action = parse_action(reply.text, controller.name, row)
+                action = parse_action(reply.text, controller.name, row, model=getattr(client, 'model', None))
             except ActionParseError as exc:
                 action = 'noop()'
                 row['error'] = str(exc)

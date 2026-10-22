@@ -82,17 +82,20 @@ def plan_key(row, task=None):
     return (row['model'], row['policy'], row['condition'], task or row['task'], row['seed'])
 
 
-def queue_snapshot(path):
+def queue_snapshot(path, sweep=None):
     # Do not instantiate runner.sweep.Queue: its constructor writes schema/WAL.
     db = sqlite3.connect(path.resolve().as_uri() + '?mode=ro', uri=True, timeout=5)
     db.row_factory = sqlite3.Row
     try:
         db.execute('PRAGMA query_only=ON')
         db.execute('BEGIN')
-        rows = [dict(r) for r in db.execute(
-            "SELECT * FROM queue WHERE (name='m5-main' AND policy='B0') OR name='m5-mitigation'")]
+        where = "(q.name='m5-main' AND q.policy='B0') OR q.name='m5-mitigation'"
+        params = ()
+        if sweep is not None:
+            where, params = 'q.name=?', (sweep,)
+        rows = [dict(r) for r in db.execute('SELECT q.* FROM queue q WHERE ' + where, params)]
         history = [dict(r) for r in db.execute('''SELECT h.* FROM history h JOIN queue q
-            ON q.id=h.queue_id WHERE (q.name='m5-main' AND q.policy='B0') OR q.name='m5-mitigation' ''')]
+            ON q.id=h.queue_id WHERE ''' + where, params)]
         return rows, history
     finally:
         db.close()
@@ -137,7 +140,7 @@ def derive(row):
     return result
 
 
-def capture(root):
+def capture(root, *, queue_file='m5_queue.sqlite', sweep=None):
     """Capture queue membership then an append-only prefix; read only closed artifacts.
 
     Queue history establishes sweep provenance (matching a plan alone is unsafe).
@@ -147,7 +150,7 @@ def capture(root):
     root = root.resolve()
     cutoff = time.time_ns()
     tasks, indexed_paths = indexed_tasks(root)
-    queue, history = queue_snapshot(root / 'runs/m5_queue.sqlite')
+    queue, history = queue_snapshot(root / 'runs' / queue_file, sweep=sweep)
     superseded_path = root / 'runs/superseded.jsonl'
     superseded_data = bounded_read(superseded_path) if superseded_path.exists() else b''
     superseded_rows, superseded_partial = json_lines(superseded_data)

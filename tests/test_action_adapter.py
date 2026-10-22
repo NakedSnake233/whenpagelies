@@ -77,3 +77,69 @@ def test_trace_marks_native_format(monkeypatch):
         native('click', bid='68'), native('send_msg_to_user', text='DONE: saved')])
     assert len(actions) == 2 and state['claim'] == 'DONE'
     assert all(row['native_format'] and not row['error'] for row in rows)
+
+
+@pytest.mark.parametrize('text,count', [
+    ('```action\nclick("68")\n```\n```action\nsend_msg_to_user("DONE: saved")\n```', 2),
+    ('```action\nclick("68")\nsend_msg_to_user("DONE: saved")\nnoop()\n```', 3),
+    ('click("68"); send_msg_to_user("DONE: saved")', 2),
+])
+def test_luna_first_of_many(text, count):
+    metadata = {}
+    assert parse_action(text, metadata=metadata, model='gpt-5.6-luna') == 'click("68")'
+    assert metadata == {'lenient_parse': 'first_of_many', 'n_actions_in_reply': count}
+
+
+@pytest.mark.parametrize('first', ['unknown()', 'click()', 'click("bad")', 'click(str(68))',
+                                  'click(**{})', 'report_verification("holds", "seen")'])
+def test_luna_invalid_first_uses_normal_validation(first):
+    with pytest.raises(ActionParseError) as baseline:
+        parse_action(first)
+    metadata = {}
+    with pytest.raises(ActionParseError) as adapted:
+        parse_action(f'```action\n{first}\nnoop()\n```', metadata=metadata, model='gpt-5.6-luna')
+    assert str(adapted.value) == str(baseline.value)
+    assert metadata == {'lenient_parse': 'first_of_many', 'n_actions_in_reply': 2}
+
+
+@pytest.mark.parametrize('model', [None, 'deepseek-v4.1-flash', 'qwen3.7-plus', 'minimax-m3', 'mimo-v2.6-flash'])
+@pytest.mark.parametrize('text', ['```action\nnoop()\nnoop()\n```',
+                                 '```action\nnoop()\n```\n```action\nnoop()\n```'])
+def test_other_models_remain_strict(model, text):
+    with pytest.raises(ActionParseError) as baseline:
+        parse_action(text)
+    with pytest.raises(ActionParseError) as actual:
+        parse_action(text, model=model)
+    assert str(actual.value) == str(baseline.value)
+
+
+def test_luna_adapter_can_be_disabled(monkeypatch):
+    from agent.llm import CONFIG
+    monkeypatch.delitem(CONFIG['models']['gpt-5.6-luna'], 'action_adapter')
+    with pytest.raises(ActionParseError):
+        parse_action('```action\nnoop()\nnoop()\n```', model='gpt-5.6-luna')
+
+
+def test_luna_trace_and_dispatch(monkeypatch):
+    from tests.test_agent_parse import scripted_run
+    # The existing helper uses Reply directly; attach the real model identity
+    # at the run_agent boundary to exercise production dispatch and tracing.
+    import tests.test_agent_parse as helper
+    original = helper.run_agent
+    def run(env, client, *args, **kwargs):
+        client.model = 'gpt-5.6-luna'
+        return original(env, client, *args, **kwargs)
+    monkeypatch.setattr(helper, 'run_agent', run)
+    actions, _, state, rows = scripted_run(monkeypatch, [
+        '```action\nclick("68")\nsend_msg_to_user("DONE: premature")\n```',
+        'send_msg_to_user("NOT DONE: stop")'])
+    assert actions == ['click("68")', 'send_msg_to_user("NOT DONE: stop")']
+    assert state['claim'] == 'NOT DONE'
+    assert rows[0]['lenient_parse'] == 'first_of_many'
+    assert rows[0]['n_actions_in_reply'] == 2
+
+
+def test_luna_malformed_fence_is_not_repaired():
+    text = '```action\nnoop()\n`````action\nnoop()\n```'
+    with pytest.raises(ActionParseError):
+        parse_action(text, model='gpt-5.6-luna')

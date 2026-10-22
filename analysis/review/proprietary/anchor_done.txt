@@ -1,0 +1,8 @@
+F1: anchor-step discarded DONE = 30/40 exposed episodes
+F3: anchor-step discarded DONE = 33/41 exposed episodes
+Total steps: 4233
+Total n_adapted_steps: 2623
+Adapted share: 2623/4233 = 0.6196550909520435 = 61.96550909520435%
+Total n_parse_error_steps: 35
+Exported episode cost (255/256): 8.4539585
+Luna budget total (all calls, including smoke tests and failed attempts): 9.31011462; calls: 4468

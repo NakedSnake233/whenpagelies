@@ -66,3 +66,33 @@ def to_action_call(text: str) -> str | None:
     except (ValueError, SyntaxError, TypeError):
         raise ActionParseError(FORMAT_REMINDER) from None
     return f"{name}({', '.join(f'{key}={value!r}' for key, value in kwargs.items())})"
+
+
+def first_of_many(text: str) -> tuple[str, int] | None:
+    """Extract the first top-level call; the public parser still validates it.
+
+    Count statements, not nested calls or call-like text inside arguments.
+    Refuse malformed blocks and non-call statements rather than skipping them.
+    """
+    blocks = re.findall(r'```action\s*\n(.*?)```', text, re.DOTALL)
+    if blocks:
+        if len(blocks) != len(re.findall(r'```action(?=\s|$)', text)):
+            return None
+    elif '```' in text:
+        return None
+    else:
+        blocks = [text]
+    calls = []
+    try:
+        for block in blocks:
+            block = block.strip()
+            nodes = ast.parse(block).body
+            if not nodes:
+                return None
+            for node in nodes:
+                if not isinstance(node, ast.Expr) or not isinstance(node.value, ast.Call):
+                    return None
+                calls.append(ast.get_source_segment(block, node.value))
+    except SyntaxError:
+        return None
+    return (calls[0], len(calls)) if len(calls) > 1 else None

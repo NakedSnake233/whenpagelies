@@ -1,0 +1,17 @@
+{
+  "started_at": 1792633817.3194265,
+  "status": "complete",
+  "before": {
+    "returncode": 0,
+    "log": "logs/r2_pristine_before.log"
+  },
+  "child_pid": 1796396,
+  "child_returncode": 0,
+  "after": {
+    "returncode": 0,
+    "log": "logs/r2_pristine_after.log"
+  },
+  "markers_after": [],
+  "signals": [],
+  "finished_at": 1792635234.54601
+}

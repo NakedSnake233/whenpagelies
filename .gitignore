@@ -16,5 +16,6 @@ data/*
 !data/README.md
 !data/episodes_main.jsonl.gz
 !data/episodes_mitigation.jsonl.gz
+!data/episodes_proprietary.jsonl.gz
 
 config/pristine_manifest.json

@@ -1,0 +1,2764 @@
+[
+  {
+    "episode": "reddit-399-gpt-5.6-luna-B0-C0-s0-21d93c61",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-399-gpt-5.6-luna-B0-F1-s0-1bf9062f",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-399-gpt-5.6-luna-B0-F3-s0-242124e6",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-399-gpt-5.6-luna-B0-F4-s0-f69538ee",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-400-gpt-5.6-luna-B0-C0-s0-3fe819e2",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-400-gpt-5.6-luna-B0-F1-s0-ed034ada",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-400-gpt-5.6-luna-B0-F3-s0-96bf1069",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-400-gpt-5.6-luna-B0-F4-s0-ed0851d4",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-401-gpt-5.6-luna-B0-C0-s0-faedd78f",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-401-gpt-5.6-luna-B0-F1-s0-73d4a18b",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-401-gpt-5.6-luna-B0-F3-s0-ff1b5e9e",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-401-gpt-5.6-luna-B0-F4-s0-ed332aff",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 6,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-402-gpt-5.6-luna-B0-C0-s0-4a50961d",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-402-gpt-5.6-luna-B0-F1-s0-bdd995c7",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-402-gpt-5.6-luna-B0-F3-s0-a7587614",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-402-gpt-5.6-luna-B0-F4-s0-2b52092e",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 6,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-403-gpt-5.6-luna-B0-C0-s0-8f96f896",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-403-gpt-5.6-luna-B0-F1-s0-2625b94a",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-403-gpt-5.6-luna-B0-F3-s0-364ca467",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-403-gpt-5.6-luna-B0-F4-s0-40a9a158",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-404-gpt-5.6-luna-B0-C0-s0-5588e63b",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-404-gpt-5.6-luna-B0-F1-s0-e873ad94",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-404-gpt-5.6-luna-B0-F3-s0-87d54aca",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-404-gpt-5.6-luna-B0-F4-s0-dcfe0c69",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-405-gpt-5.6-luna-B0-C0-s0-3a3fa2c7",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-405-gpt-5.6-luna-B0-F1-s0-fc22517a",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-405-gpt-5.6-luna-B0-F3-s0-a2cc9daa",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-405-gpt-5.6-luna-B0-F4-s0-4749eba4",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 10,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-406-gpt-5.6-luna-B0-C0-s0-f510f4ed",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-406-gpt-5.6-luna-B0-F1-s0-814a302e",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-406-gpt-5.6-luna-B0-F4-s0-ea7e12bb",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-408-gpt-5.6-luna-B0-C0-s0-8c6043bc",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-408-gpt-5.6-luna-B0-F3-s0-0475ac08",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-408-gpt-5.6-luna-B0-F4-s0-fd195249",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 5,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-597-gpt-5.6-luna-B0-C0-s0-452f1fc9",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-597-gpt-5.6-luna-B0-F1-s0-90e1a1ab",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-597-gpt-5.6-luna-B0-F3-s0-23bef90e",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-597-gpt-5.6-luna-B0-F4-s0-11c8c82c",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 12,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 15,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-598-gpt-5.6-luna-B0-C0-s0-28cae7de",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-598-gpt-5.6-luna-B0-F1-s0-b263629d",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": true,
+    "b": true,
+    "c": true,
+    "events": [
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-598-gpt-5.6-luna-B0-F3-s0-b52fa510",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-598-gpt-5.6-luna-B0-F4-s0-78a3d867",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 8,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": false,
+        "later_any_page": false,
+        "next_done": true
+      }
+    ]
+  },
+  {
+    "episode": "reddit-620-gpt-5.6-luna-B0-C0-s0-61a6b20f",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-620-gpt-5.6-luna-B0-F1-s0-ee38948d",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-620-gpt-5.6-luna-B0-F3-s0-f7a5cc53",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-620-gpt-5.6-luna-B0-F4-s0-479cba5c",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 8,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-621-gpt-5.6-luna-B0-C0-s0-f68e709e",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-621-gpt-5.6-luna-B0-F1-s0-fbcdc511",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-621-gpt-5.6-luna-B0-F3-s0-cfa5bdb0",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-621-gpt-5.6-luna-B0-F4-s0-6c807a54",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 12,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 13,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-622-gpt-5.6-luna-B0-C0-s0-240ab9ad",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 10,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-622-gpt-5.6-luna-B0-F1-s0-e60c94e8",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-622-gpt-5.6-luna-B0-F3-s0-1725487f",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-622-gpt-5.6-luna-B0-F4-s0-d249817b",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-623-gpt-5.6-luna-B0-C0-s0-b3121950",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-623-gpt-5.6-luna-B0-F1-s0-7a56d62c",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 11,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-623-gpt-5.6-luna-B0-F3-s0-5e2d91da",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-623-gpt-5.6-luna-B0-F4-s0-8c25bfd0",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 7,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-624-gpt-5.6-luna-B0-C0-s0-4f13398f",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-624-gpt-5.6-luna-B0-F1-s0-4646b554",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-624-gpt-5.6-luna-B0-F3-s0-6c46bc95",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-624-gpt-5.6-luna-B0-F4-s0-a87e32cd",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 8,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 9,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 11,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 12,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 13,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-625-gpt-5.6-luna-B0-C0-s0-34a571d5",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-625-gpt-5.6-luna-B0-F1-s0-49b94bd4",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-625-gpt-5.6-luna-B0-F3-s0-f1399315",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-625-gpt-5.6-luna-B0-F4-s0-baba42bd",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": true,
+    "b": true,
+    "c": true,
+    "events": [
+      {
+        "step": 14,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-626-gpt-5.6-luna-B0-C0-s0-d32e5660",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-626-gpt-5.6-luna-B0-F1-s0-aeee78f5",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-626-gpt-5.6-luna-B0-F3-s0-e058c07c",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-626-gpt-5.6-luna-B0-F4-s0-533d6203",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 12,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-627-gpt-5.6-luna-B0-C0-s0-054d7e9f",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-627-gpt-5.6-luna-B0-F1-s0-630e5783",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-627-gpt-5.6-luna-B0-F3-s0-9f8d93e1",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-627-gpt-5.6-luna-B0-F4-s0-5f1c811a",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 7,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-628-gpt-5.6-luna-B0-C0-s0-71010f7e",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-628-gpt-5.6-luna-B0-F1-s0-cb9f01d2",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-628-gpt-5.6-luna-B0-F3-s0-89e5ac53",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-628-gpt-5.6-luna-B0-F4-s0-017f25f8",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-629-gpt-5.6-luna-B0-F3-s0-fe494800",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-630-gpt-5.6-luna-B0-C0-s0-45edb835",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-630-gpt-5.6-luna-B0-F1-s0-893b3e02",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-630-gpt-5.6-luna-B0-F3-s0-a3ab3a3b",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-630-gpt-5.6-luna-B0-F4-s0-99c743ed",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 8,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-631-gpt-5.6-luna-B0-C0-s0-87d20e01",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-631-gpt-5.6-luna-B0-F1-s0-d8ae9f9f",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-631-gpt-5.6-luna-B0-F3-s0-a0967352",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-631-gpt-5.6-luna-B0-F4-s0-91b48575",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": true,
+    "b": true,
+    "c": true,
+    "events": [
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 11,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 12,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-632-gpt-5.6-luna-B0-C0-s0-72847b84",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-632-gpt-5.6-luna-B0-F1-s0-c7b994a1",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-632-gpt-5.6-luna-B0-F3-s0-aaf0cfad",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-632-gpt-5.6-luna-B0-F4-s0-606f946a",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": true,
+    "b": true,
+    "c": true,
+    "events": [
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-633-gpt-5.6-luna-B0-C0-s0-a08084f6",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-633-gpt-5.6-luna-B0-F1-s0-103cc564",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-633-gpt-5.6-luna-B0-F3-s0-07515697",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-633-gpt-5.6-luna-B0-F4-s0-ca700253",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 12,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 15,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 16,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-634-gpt-5.6-luna-B0-C0-s0-818aa037",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-634-gpt-5.6-luna-B0-F1-s0-641a6a80",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-634-gpt-5.6-luna-B0-F3-s0-78efe2b5",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-634-gpt-5.6-luna-B0-F4-s0-6d5a5ee9",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 9,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-635-gpt-5.6-luna-B0-C0-s0-5041f7a3",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-635-gpt-5.6-luna-B0-F1-s0-a0912a7d",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-635-gpt-5.6-luna-B0-F3-s0-a71f5676",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-635-gpt-5.6-luna-B0-F4-s0-d63d5c4c",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 11,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-636-gpt-5.6-luna-B0-C0-s0-9c050ab0",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 11,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-636-gpt-5.6-luna-B0-F1-s0-fcd24593",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-636-gpt-5.6-luna-B0-F3-s0-21c262cc",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-636-gpt-5.6-luna-B0-F4-s0-02f1938c",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-637-gpt-5.6-luna-B0-C0-s0-ab976b13",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-637-gpt-5.6-luna-B0-F1-s0-9b5b1c57",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-637-gpt-5.6-luna-B0-F3-s0-3ba771ca",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-637-gpt-5.6-luna-B0-F4-s0-9887a63c",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-638-gpt-5.6-luna-B0-F1-s0-ae71f8f8",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-638-gpt-5.6-luna-B0-F4-s0-d5bcf3bc",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 11,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 12,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 14,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-639-gpt-5.6-luna-B0-C0-s0-3ac54fe3",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-639-gpt-5.6-luna-B0-F1-s0-2f4702d6",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-639-gpt-5.6-luna-B0-F3-s0-0f140530",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-639-gpt-5.6-luna-B0-F4-s0-35982a40",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": true,
+    "b": true,
+    "c": true,
+    "events": [
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 13,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 14,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-640-gpt-5.6-luna-B0-C0-s0-26089054",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-640-gpt-5.6-luna-B0-F1-s0-0bb614f6",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-640-gpt-5.6-luna-B0-F3-s0-222a072b",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-640-gpt-5.6-luna-B0-F4-s0-48250248",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 8,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 9,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-641-gpt-5.6-luna-B0-C0-s0-63433e6d",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 10,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-641-gpt-5.6-luna-B0-F1-s0-0b7b6446",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-641-gpt-5.6-luna-B0-F3-s0-752927f2",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-641-gpt-5.6-luna-B0-F4-s0-ad8c4b3d",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 8,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 11,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 12,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 13,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 14,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 15,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 16,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 17,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 18,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 19,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 20,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 21,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 22,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 23,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 24,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 27,
+        "later_navigation": true,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 29,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-642-gpt-5.6-luna-B0-C0-s0-5280d1db",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-642-gpt-5.6-luna-B0-F1-s0-4147d5dd",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-642-gpt-5.6-luna-B0-F3-s0-3e12d1af",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-642-gpt-5.6-luna-B0-F4-s0-5e3056b5",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": true,
+    "c": true,
+    "events": []
+  },
+  {
+    "episode": "reddit-643-gpt-5.6-luna-B0-C0-s0-7ce1493a",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 12,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-643-gpt-5.6-luna-B0-F1-s0-fa80cc66",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 10,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-643-gpt-5.6-luna-B0-F3-s0-2288c2a1",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-643-gpt-5.6-luna-B0-F4-s0-0c5fa483",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 10,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 11,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 12,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 14,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "reddit-644-gpt-5.6-luna-B0-C0-s0-ed12e69e",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-644-gpt-5.6-luna-B0-F1-s0-4fa48353",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 9,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-644-gpt-5.6-luna-B0-F3-s0-75f46558",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 23,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "reddit-644-gpt-5.6-luna-B0-F4-s0-f22fd054",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 7,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": false,
+        "later_any_page": false,
+        "next_done": true
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-457-gpt-5.6-luna-B0-F3-s0-53f2a0de",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 11,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 12,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-458-gpt-5.6-luna-B0-C0-s0-4ac78576",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 3,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "shopping_admin-458-gpt-5.6-luna-B0-F1-s0-0035a5ee",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 4,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 5,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 17,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 27,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-458-gpt-5.6-luna-B0-F3-s0-62f875a2",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 3,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "shopping_admin-458-gpt-5.6-luna-B0-F4-s0-fe130cdc",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 3,
+    "a": true,
+    "b": true,
+    "c": true,
+    "events": [
+      {
+        "step": 9,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-459-gpt-5.6-luna-B0-C0-s0-83fd2b38",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 3,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 22,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 27,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-459-gpt-5.6-luna-B0-F3-s0-b2952c6e",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 3,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 14,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 23,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 27,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-460-gpt-5.6-luna-B0-F1-s0-dce5e694",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 5,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 21,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-460-gpt-5.6-luna-B0-F4-s0-d9ce76ac",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 26,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 28,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-461-gpt-5.6-luna-B0-C0-s0-1205b9a8",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 10,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 14,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 15,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 21,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 28,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-462-gpt-5.6-luna-B0-C0-s0-8e105305",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 21,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 22,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 29,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-462-gpt-5.6-luna-B0-F3-s0-9c7f5320",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 20,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 28,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-462-gpt-5.6-luna-B0-F4-s0-a5b39b78",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 24,
+    "a": false,
+    "b": true,
+    "c": true,
+    "events": []
+  },
+  {
+    "episode": "shopping_admin-463-gpt-5.6-luna-B0-F3-s0-1b4dd450",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 20,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "shopping_admin-768-gpt-5.6-luna-B0-C0-s0-f0902b28",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 12,
+    "a": false,
+    "b": false,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "shopping_admin-768-gpt-5.6-luna-B0-F1-s0-5addbf17",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "shopping_admin-768-gpt-5.6-luna-B0-F3-s0-f4e7dd07",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 7,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "shopping_admin-768-gpt-5.6-luna-B0-F4-s0-923556df",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": true,
+    "start_step": 6,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "shopping_admin-769-gpt-5.6-luna-B0-F1-s0-7009012e",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 9,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 11,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 16,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 21,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 25,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-770-gpt-5.6-luna-B0-C0-s0-6bd8867e",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 16,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 17,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 24,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 25,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 28,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-770-gpt-5.6-luna-B0-F1-s0-16bd33b6",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 7,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 11,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 13,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 14,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 17,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 19,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 24,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 30,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": false,
+        "later_any_page": false,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-770-gpt-5.6-luna-B0-F3-s0-2991abd8",
+    "condition": "F3",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 8,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "shopping_admin-770-gpt-5.6-luna-B0-F4-s0-c6f4d9da",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 9,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 10,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 11,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 22,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 23,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 25,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-778-gpt-5.6-luna-B0-C0-s0-77e38929",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 9,
+    "a": false,
+    "b": true,
+    "c": false,
+    "events": []
+  },
+  {
+    "episode": "shopping_admin-778-gpt-5.6-luna-B0-F4-s0-f3d8a779",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 6,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 8,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      },
+      {
+        "step": 9,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": true,
+        "later_any_page": false,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-780-gpt-5.6-luna-B0-F1-s0-2714402d",
+    "condition": "F1",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 15,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 16,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 20,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-781-gpt-5.6-luna-B0-C0-s0-a7f933ca",
+    "condition": "C0",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 16,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 17,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 18,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 30,
+        "later_navigation": false,
+        "later_navigation_page": false,
+        "later_nonmessage": false,
+        "later_any_page": false,
+        "next_done": false
+      }
+    ]
+  },
+  {
+    "episode": "shopping_admin-781-gpt-5.6-luna-B0-F4-s0-bad32894",
+    "condition": "F4",
+    "anchor": "action interval + matching mutating request",
+    "has_final_message": false,
+    "start_step": 14,
+    "a": true,
+    "b": true,
+    "c": false,
+    "events": [
+      {
+        "step": 18,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 22,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      },
+      {
+        "step": 24,
+        "later_navigation": true,
+        "later_navigation_page": true,
+        "later_nonmessage": true,
+        "later_any_page": true,
+        "next_done": false
+      }
+    ]
+  }
+]

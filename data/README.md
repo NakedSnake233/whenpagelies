@@ -42,3 +42,5 @@ Missing measurements are null, never imputed as zero. Flags are booleans; counts
 | `cbr_prompted` | Check-before-retry reminder count. |
 | `extra_llm_calls` | Auxiliary policy LLM call count. |
 | `policy_cost` | Auxiliary policy estimated cost in USD (already included in cost). |
+
+`episodes_proprietary.jsonl.gz`: gpt-5.6-luna B0 replication, C0/F1/F3/F4 on 64 tasks, 21–22 Oct 2026; 255/256 episodes. Adds `n_adapted_steps` and `n_parse_error_steps`; protocol, exclusions, costs, guard evidence and reproduction commands are in [the review README](../analysis/review/README.md#proprietary-model-replication-gpt-56-luna).

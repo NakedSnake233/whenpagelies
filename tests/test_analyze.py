@@ -919,3 +919,24 @@ def test_outcome_harm_counts_bounds_and_appended_csv_columns(study):
     # Paired tables retain only the latest common exposed seed (the harmless CF).
     assert paired['n_pairs'] == 1
     assert paired['harm_B0'] == paired['harm_policy'] == 0
+
+
+def test_named_sweep_capture_keeps_latest_valid(study):
+    root, add, db = study
+    add('r2-old', stream='r2-luna-b0')
+    add('r2-new', stream='r2-luna-b0', G=False)
+    add('r2-harness', stream='r2-luna-b0', error_kind='infrastructure', G=None)
+    add('r2-budget', stream='r2-luna-b0', error_kind='budget', G=None)
+    add('smoke', stream='r2-smoke', task=2)
+    add('main', stream='m5-main', task=2)
+    # Exercise the alternate filename without opening any real sweep database.
+    target = sqlite3.connect(root / 'runs/r2_queue.sqlite')
+    db.backup(target)
+    target.close()
+    rows, errors, _, deferred, _, queue, meta = a.capture(
+        root, queue_file='r2_queue.sqlite', sweep='r2-luna-b0')
+    assert [r['episode'] for r in rows] == ['r2-new']
+    assert [r['episode'] for r in errors] == ['r2-harness']
+    assert [r['episode'] for r in deferred] == ['r2-budget']
+    assert {q['name'] for q in queue} == {'r2-luna-b0'}
+    assert meta['selection_counts']['duplicate_valid_plans'] == 1
