@@ -30,7 +30,7 @@ models:
     monthly_cap: 60
   gpt-5.6-luna:
     action_adapter: first_of_many
-    enabled: false  # retained for auxiliary direct-client use, outside the study roster
+    enabled: false  # set to true to rerun the proprietary replication (B0 only; see analysis/review/README.md)
     format: responses
     input: 0.20
     output: 1.20

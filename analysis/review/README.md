@@ -50,7 +50,7 @@ mkdir -p analysis/review/proprietary
 WPL_DATA=data WPL_PROP=data/episodes_proprietary.jsonl.gz WPL_OUT=analysis/review/proprietary python tools/review/proprietary.py > analysis/review/proprietary/proprietary.md
 ```
 
-The remaining commands require the archived completed artifacts and queue/budget databases in `runs/`. Export reports include historical snapshot times; compressed bytes may differ on regeneration. The two exports have disjoint task/condition/seed keys; merge their rows in export order:
+The remaining commands require the archived completed artifacts and queue/budget databases in `runs/`. Export reports include historical snapshot times; compressed bytes may differ on regeneration. The two exports have disjoint task/condition/seed keys; merge their rows sorted by task and condition. To reproduce the released gzip bytes, omit the gzip filename header, set mtime to zero, and write UTF-8 bytes directly (a text wrapper adds a flush boundary):
 
 ```sh
 python -m tools.export_r2 --sweep r2-luna-b0 --out analysis/review/proprietary/episodes_main_sweep.jsonl.gz --report analysis/review/proprietary/export_main.md --validate --original-runs runs
@@ -64,9 +64,11 @@ for name in ('episodes_main_sweep.jsonl.gz', 'episodes_retry_sweep.jsonl.gz'):
     with gzip.open(out / name, 'rt') as f:
         rows.extend(json.loads(line) for line in f)
 assert len(rows) == len({(r['task'], r['condition'], r['seed']) for r in rows}) == 255
-with gzip.open('data/episodes_proprietary.jsonl.gz', 'wt') as f:
-    for row in rows:
-        f.write(json.dumps(row, sort_keys=True, allow_nan=False) + '\n')
+rows.sort(key=lambda r: (r['task'], r['condition']))
+with open('data/episodes_proprietary.jsonl.gz', 'wb') as raw:
+    with gzip.GzipFile(filename='', fileobj=raw, mode='wb', mtime=0) as f:
+        for row in rows:
+            f.write((json.dumps(row, sort_keys=True, allow_nan=False) + '\n').encode('utf-8'))
 PY
 python tools/review/adapter_audit.py --export data/episodes_proprietary.jsonl.gz --out-dir analysis/review/proprietary
 mv analysis/review/proprietary/report.md analysis/review/proprietary/adapter_audit_report.md
