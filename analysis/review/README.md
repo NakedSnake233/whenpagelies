@@ -106,3 +106,5 @@ Reproduce from the repository root (numpy/scipy required):
 mkdir -p analysis/review/round3
 PYTHONDONTWRITEBYTECODE=1 WPL_DATA=data WPL_R3=data/episodes_r3.jsonl.gz WPL_OUT=analysis/review/round3 python tools/review/round3.py > analysis/review/round3/round3.md
 ```
+
+`round3/diagnostics.md` reports parse-error rates and composition (DeepSeek-V4.1-Flash replies failed to parse far more often in round 3, mostly as native tool-call markup under VRV and as empty replies under B0) and the timing of VRV’s last read-back, last verification report and DONE claim relative to the rollback. Reproduce with `python tools/review/round3_diagnostics.py --runs-round3 <dir> --runs-original <dir>` (requires the full run directories).
