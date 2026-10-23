@@ -34,6 +34,8 @@ def episode_row(record, trace):
     for key in POLICY_MEANS:
         row.setdefault(key, 0.0 if key == 'policy_cost' else 0)
     result = {key: row[key] for key in FIELDS}
+    for key in ('claim_before_rollback', 'rollback_delay_s'):
+        result[key] = row[key]
     result['n_adapted_steps'] = sum(s.get('lenient_parse') == 'first_of_many' for s in trace)
     result['n_parse_error_steps'] = sum(
         s.get('action') == 'noop()' and s.get('error') in PARSE_ERRORS for s in trace)
@@ -83,6 +85,8 @@ def summary(rows):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--sweep', default='r2-luna-b0')
+    parser.add_argument('--model', help='Keep only this model')
+    parser.add_argument('--policy', help='Keep only this policy')
     parser.add_argument('--out', required=True, type=Path)
     parser.add_argument('--report', type=Path)
     parser.add_argument('--validate', action='store_true')
@@ -99,8 +103,12 @@ def main():
         if mismatches:
             raise SystemExit('Validation failed; export not written.')
     selected, _, _, _, _, queue, metadata = capture(ROOT, queue_file='r2_queue.sqlite', sweep=args.sweep)
-    # This sweep has one model/policy, making analyze's plan key equivalent to
-    # (task, condition, seed). Fail rather than silently combine future variants.
+    def matches(row):
+        return ((args.model is None or row['model'] == args.model)
+                and (args.policy is None or row['policy'] == args.policy))
+    selected = [r for r in selected if matches(r)]
+    queue = [q for q in queue if matches(q)]
+    # Check the filtered queue, including unfinished planned episodes.
     if len({(q['model'], q['policy']) for q in queue}) > 1:
         raise ValueError(f'Expected a single model and policy in {args.sweep}')
     rows = [episode_row(r, r['_trace']) for r in selected]

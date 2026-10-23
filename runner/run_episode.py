@@ -1,4 +1,5 @@
 """Run with .venv/bin/python -m runner.run_episode --help."""
+from proxy.plan import CONDITIONS, rollback_timeout
 import argparse
 import fcntl
 import importlib
@@ -115,7 +116,7 @@ def run_episode(args):
     from runner.storage import write_json
     from runner.deadline import BrowserDeadline, browser_deadline
     from runner.evaluation import evaluate as benchmark_evaluate
-    from runner.metrics import evidence, wait_rollbacks
+    from runner.metrics import evidence, wait_rollbacks, rows
     from runner.worker_proxy import WorkerProxy
     from proxy.plan import Plan, write_plan
     from proxy.catalog import load_catalog
@@ -170,7 +171,12 @@ def run_episode(args):
             if active.exists():
                 interrupted = Path(json.loads(active.read_text())['baseline_path'])
                 try:
-                    wait_rollbacks(interrupted.parent)
+                    # Recovery uses the old episode's scheduled delay, which may
+                    # differ from the condition/catalog of this new episode.
+                    pending_delay = max((e.get('delay_s', 0) for e in
+                                         rows(interrupted.parent / 'proxy_events.jsonl')
+                                         if e['event'] == 'rollback_scheduled'), default=0)
+                    wait_rollbacks(interrupted.parent, timeout=max(60, pending_delay + 30))
                 except (TimeoutError, RuntimeError):
                     # The former worker no longer holds the site lock. Its proxy
                     # is parent-bound; canceled timers are superseded by verified undo.
@@ -257,7 +263,7 @@ def run_episode(args):
             state['error_kind'] = 'infrastructure'
         if baseline is not None:
             try:
-                wait_rollbacks(directory)
+                wait_rollbacks(directory, timeout=rollback_timeout(args.condition, entry))
                 state.update(module.evaluate(task, baseline))
                 if not (directory / 'proxy.jsonl').exists() and state['steps']:
                     raise RuntimeError('proxy produced no flow log')
@@ -308,7 +314,7 @@ def parser():
     p.add_argument('--task', required=True)
     p.add_argument('--model', choices=list(CONFIG['models']), default='deepseek-v4.1-flash')
     p.add_argument('--policy', choices=POLICIES, default='B0')
-    p.add_argument('--condition', choices=['C0', *[f'F{i}' for i in range(1, 7)]], default='C0')
+    p.add_argument('--condition', choices=CONDITIONS, default='C0')
     p.add_argument('--seed', type=int, default=0)
     p.add_argument('--worker', type=int, default=0)
     p.add_argument('--proxy-port', type=int, default=0)

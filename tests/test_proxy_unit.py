@@ -266,3 +266,36 @@ def test_catalog_wrong_container_types_have_clear_errors(proxy, field, value):
     path.write_text(yaml.safe_dump(data))
     with pytest.raises(CatalogError, match="create-item"):
         load_catalog(path)
+
+
+@pytest.mark.parametrize('condition,delay', [('F3s2', 2.0), ('F3s30', 30.0), ('F3', .5), ('F1', .5)])
+def test_rollback_delay_dispatch(proxy, monkeypatch, condition, delay):
+    from types import SimpleNamespace
+    calls, timers = [], []
+    class Timer:
+        def __init__(self, seconds, callback):
+            self.seconds, self.callback = seconds, callback
+            timers.append(self)
+        def start(self):
+            pass
+    monkeypatch.setattr('proxy.osd_faults.threading.Timer', Timer)
+    monkeypatch.setattr('proxy.osd_faults.importlib.import_module',
+                        lambda name: SimpleNamespace(rollback=lambda *args: calls.append(args)))
+    path = proxy.catalog_dir / 'toy.yaml'
+    data = yaml.safe_load(path.read_text())
+    data['entries'][0]['f1'] = {'mode': 'none'}
+    data['entries'][0]['f3'] = {'delay_s': .5, 'compensator': 'fake:rollback'}
+    path.write_text(yaml.safe_dump(data))
+    plan = configure(proxy, condition)
+    assert read_plan(proxy.plan_path) == plan
+    flow = request()
+    proxy.request(flow)
+    assert flow.metadata['osd'].rollback_delay == delay
+    finish(proxy, flow)
+    assert len(timers) == 1 and timers[0].seconds == delay
+    assert not calls
+    timers[0].callback()
+    assert len(calls) == 1 and calls[0][0].fault == condition
+    events = [json.loads(s) for s in (proxy.runs_dir / 'unit/proxy_events.jsonl').read_text().splitlines()]
+    assert sum(e['event'] == 'rollback_scheduled' for e in events) == 1
+    assert sum(e['event'] == 'rollback_done' for e in events) == 1

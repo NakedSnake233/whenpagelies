@@ -26,7 +26,8 @@ def test_task_inventory_and_legacy_locations():
     assert all('__' not in t['start_url'] for t in tasks)
 
 
-def test_evidence_timing_retries_and_origin(tmp_path):
+@pytest.mark.parametrize("condition", ["F3", "F3s2", "F3s30"])
+def test_evidence_timing_retries_and_origin(tmp_path, condition):
     base = dict(matched_entry='fam-6', method='POST', url='http://local/write')
     lines(tmp_path / 'proxy.jsonl', [base | {'ts': 10}, base | {'ts': 15},
         base | dict(method='GET', url='http://local/user/a/edit', ts=9),
@@ -36,11 +37,11 @@ def test_evidence_timing_retries_and_origin(tmp_path):
     lines(tmp_path / 'proxy_events.jsonl', [dict(event='fired', ts=9.5), dict(event='rollback_done', ts=19)])
     lines(tmp_path / 'trace.jsonl', [dict(step=2, started_at=9, ended_at=10.5)])
     task = dict(family='fam-6', site='reddit', start_url='http://local/')
-    r = evidence(tmp_path, task, {}, 20, 'F3')
+    r = evidence(tmp_path, task, {}, 20, condition)
     assert r == dict(fault_fired=True, fired_step=2, fired_time=9.5, n_matched_writes=2,
                     rollback_before_claim=True, readback_after_write=True, readback_any=True, readback_agent=False, n_readbacks=1, n_readbacks_agent=0)
-    assert evidence(tmp_path, task, {}, 18, 'F3')['rollback_before_claim'] is False
-    assert evidence(tmp_path, task, {}, None, 'F3')['readback_after_write'] is False
+    assert evidence(tmp_path, task, {}, 18, condition)['rollback_before_claim'] is False
+    assert evidence(tmp_path, task, {}, None, condition)['readback_after_write'] is False
 
 
 def test_rollback_wait_terminal_errors_and_timeout(tmp_path):
@@ -352,3 +353,29 @@ def test_final_dispatch_correction_excludes_observation_delay(tmp_path):
     assert result['final_message_at']==2 and result['final_message_observed_at']==3
     assert not result['rollback_before_claim'] and not result['readback_after_write']
     assert original['final_message_at']==3
+
+
+@pytest.mark.parametrize('delay', [2., 30., 80.])
+def test_event_based_wait_and_timeout_formula(tmp_path, monkeypatch, delay):
+    from proxy.plan import rollback_timeout
+    import runner.metrics as metrics
+    assert rollback_timeout('F3', {'f3': {'delay_s': delay}}) == max(60, delay + 30)
+    assert rollback_timeout('F3s2') == rollback_timeout('F3s30') == 60
+    clock = [0.]
+    path = tmp_path / 'proxy_events.jsonl'
+    lines(path, [{'event': 'rollback_scheduled', 'delay_s': delay}])
+    monkeypatch.setattr(metrics.time, 'monotonic', lambda: clock[0])
+    def sleep(seconds):
+        clock[0] += seconds
+        if clock[0] >= delay:
+            lines(path, [{'event': 'rollback_scheduled'}, {'event': 'rollback_done'}])
+    monkeypatch.setattr(metrics.time, 'sleep', sleep)
+    wait_rollbacks(tmp_path, timeout=max(60, delay + 30))
+    assert delay <= clock[0] < delay + .2
+
+
+@pytest.mark.parametrize('condition', ['F3s2', 'F3s30'])
+def test_episode_cli_delay_alias(condition):
+    from runner.run_episode import parser
+    args = parser().parse_args(['--task', 'tasks/reddit_404.json', '--condition', condition])
+    assert args.condition == condition

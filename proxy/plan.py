@@ -7,7 +7,21 @@ import re
 import tempfile
 
 
-FAULTS = {"C0", *(f"F{i}" for i in range(1, 7))}
+# None preserves the catalog delay for the historical F3 condition.
+F3_DELAYS = {"F3": None, "F3s2": 2.0, "F3s30": 30.0}
+CONDITIONS = ("C0", *(f"F{i}" for i in range(1, 7)), "F3s2", "F3s30")
+FAULTS = set(CONDITIONS)
+
+
+def rollback_delay(condition, entry=None):
+    if condition == "F1":
+        return 0.5
+    fixed = F3_DELAYS.get(condition)
+    return fixed if fixed is not None else (entry or {}).get("f3", {}).get("delay_s", 0.5)
+
+
+def rollback_timeout(condition, entry=None):
+    return max(60, rollback_delay(condition, entry) + 30)
 SAFE_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9_.-]*\Z")
 
 
@@ -26,7 +40,7 @@ class Plan:
             if not isinstance(value, str) or not SAFE_ID.fullmatch(value):
                 raise ValueError(f"plan.{name}: expected a safe nonempty identifier")
         if not isinstance(self.fault, str) or self.fault not in FAULTS:
-            raise ValueError("plan.fault: expected C0 or F1-F6")
+            raise ValueError("plan.fault: expected C0, F1-F6, F3s2 or F3s30")
         if type(self.seed) is not int:
             raise ValueError("plan.seed: expected integer")
         if not isinstance(self.target, list) or not all(isinstance(x, str) for x in self.target):

@@ -1,4 +1,5 @@
 """Derive episode evidence only from timestamped proxy and agent artifacts."""
+from proxy.plan import F3_DELAYS
 import ast
 from datetime import datetime
 import json
@@ -152,6 +153,6 @@ def evidence(directory, task, entry, claim_time, condition):
     return dict(fault_fired=bool(fired), fired_step=step, fired_time=fired['ts'] if fired else None,
                 n_matched_writes=len(writes), rollback_before_claim=(
                     bool(undo) and bool(claim_time) and all(e['ts'] <= claim_time for e in undo)
-                    if condition in ('F1', 'F3') else None),
+                    if condition in ('F1', *F3_DELAYS) else None),
                 readback_after_write=bool(reads), readback_any=bool(reads),
                 readback_agent=bool(initiated), n_readbacks=len(reads), n_readbacks_agent=len(initiated))

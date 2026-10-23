@@ -44,3 +44,5 @@ Missing measurements are null, never imputed as zero. Flags are booleans; counts
 | `policy_cost` | Auxiliary policy estimated cost in USD (already included in cost). |
 
 `episodes_proprietary.jsonl.gz`: gpt-5.6-luna B0 replication, C0/F1/F3/F4 on 64 tasks, 21–22 Oct 2026; 255/256 episodes. Adds `n_adapted_steps` and `n_parse_error_steps`; protocol, exclusions, costs, guard evidence and reproduction commands are in [the review README](../analysis/review/README.md#proprietary-model-replication-gpt-56-luna).
+
+`episodes_r3.jsonl.gz`: 826 round-3 episodes, 22–23 Oct 2026: MiMo-V2.6-Flash B0/VRV mitigation replication (472, including 8 transport-failure retries), DeepSeek-V4.1-Flash B0 F3s2/F3s30 (128), VRV F3s2/F3/F3s30 (177), and a budget-limited B0 C0/F1/F3/F4 repeat (49/256). Adds `claim_before_rollback` and `rollback_delay_s`; conditions F3s2/F3s30 roll back 2 s/30 s after the write response. Same harness copy, sites, catalog and resets; pristine drift 0 before/after. Costs, guard evidence and reproduction are in [the review README](../analysis/review/README.md#round-3-second-mitigation-model-rollback-delays-repeat-runs).

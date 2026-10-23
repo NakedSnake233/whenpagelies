@@ -19,3 +19,6 @@ data/*
 !data/episodes_proprietary.jsonl.gz
 
 config/pristine_manifest.json
+
+!data/episodes_r3.jsonl.gz
+!analysis/review/round3/r2_pristine*.log

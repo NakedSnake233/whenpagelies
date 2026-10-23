@@ -18,7 +18,7 @@ from urllib.parse import parse_qsl, urlencode
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from mitmproxy import http
 from proxy.catalog import load_catalog, origin_key
-from proxy.plan import Plan, read_plan
+from proxy.plan import Plan, read_plan, F3_DELAYS, rollback_delay
 
 
 @dataclass
@@ -182,8 +182,8 @@ class FaultProxy:
                 self.fake_ack(state, flow)
             elif state.applied == "F2":
                 self.partial_commit(state, flow)
-            elif state.applied == "F3":
-                state.rollback_delay = state.entry.get("f3", {}).get("delay_s", 0.5)
+            elif state.applied in F3_DELAYS:
+                state.rollback_delay = rollback_delay(state.applied, state.entry)
             state.episode.fired += 1
             self.event(state, "fired", count=state.episode.fired, url=flow.request.pretty_url)
         except Exception as exc:
@@ -282,7 +282,7 @@ class FaultProxy:
                 return
             if self.record and state.entry and state.forwarded:
                 self.record_response(state, flow)
-            if state.applied in {"F3", "F1->F3"}:
+            if state.applied in {*F3_DELAYS, "F1->F3"}:
                 self.schedule_rollback(state, flow)
             elif state.applied == "F4":
                 flow.response = http.Response.make(502, b"<html><head><title>502 Bad Gateway</title></head>\r\n<body><center><h1>502 Bad Gateway</h1></center><hr><center>nginx</center></body></html>\r\n", {"Content-Type": "text/html"})

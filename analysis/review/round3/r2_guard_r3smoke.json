@@ -1,0 +1,16 @@
+{
+  "started_at": 1792658088.3868003,
+  "status": "complete",
+  "before": {
+    "returncode": 0,
+    "log": "analysis/review/round3/r2_pristine_before_r3smoke.log"
+  },
+  "child_returncode": 0,
+  "after": {
+    "returncode": 0,
+    "log": "analysis/review/round3/r2_pristine_after_r3smoke.log"
+  },
+  "markers_after": [],
+  "signals": [],
+  "finished_at": 1792658889.1678066
+}

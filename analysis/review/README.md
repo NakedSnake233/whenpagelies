@@ -82,3 +82,27 @@ python -m tools.replay_luna_adapter --old-parser .tmp/pre_luna_agent.py
 Replay requires the saved pre-adapter parser and 75 recorded replies for each of the four other models. `adapter_stats.txt` retains only sections (a), (c), (d), (f).
 
 The five `r2_guard*.json` / `r2_pristine*.log` files are historical execution evidence, not derivable from episode tables. The isolated-run guard recorded child status and ran `python -m tools.pristine_state check` immediately before and after each sweep. Those checks require the original site snapshots and live sites; no live-site checks are needed for offline analysis. Main logs were archived with `_main` suffixes before retry. Guard JSON retains its original relative log references; the retry's before-check status is in `r2_guard.json`.
+
+## Round 3: second mitigation model, rollback delays, repeat runs
+
+Run 22–23 Oct 2026 using the same harness copy, sites, catalog and resets. MiMo-V2.6-Flash B0 and VRV covered the 59 mitigation tasks under C0/F1/F3/F4: 472 exported episodes, including 8 successful transport-failure retries. DeepSeek-V4.1-Flash B0 covered F3 delays of 2 s and 30 s on 64 tasks; VRV covered 2, 8 and 30 s on 59 tasks. A DeepSeek-V4.1-Flash B0 repeat under C0/F1/F3/F4 stopped at the local budget limit after 49 of 256 episodes. The operational workspace allowance was USD 135; that local `config/budget.yaml` change is not part of this release.
+
+F3s2 and F3s30 roll back 2 s and 30 s after the write response (F3 remains 8 s). Exports add `claim_before_rollback` and `rollback_delay_s`, alongside the adapter/parse-error counters, and support `--model` and `--policy` filters. The main-study claim-timing supplement is in `round3/main_f3_claim_timing.json`.
+
+Exported-episode costs (sum of `cost`, USD; estimates, not invoices):
+
+| Model | Policy | Episodes | Cost |
+|---|---|---:|---:|
+| DeepSeek-V4.1-Flash | B0 | 177 | 4.748280 |
+| DeepSeek-V4.1-Flash | VRV | 177 | 6.046460 |
+| MiMo-V2.6-Flash | B0 | 236 | 2.278230 |
+| MiMo-V2.6-Flash | VRV | 236 | 3.855615 |
+
+The 826 episodes total USD 16.928584. Guard evidence for the live fault check, smoke run and round-3 run is in `round3/`: pristine drift was 0 before and after each. The live fault check exited with status 1 because one assertion, the shop probe under F3s2, cannot finish within the 2 s rollback window; the rollback timings recorded in the round-3 export confirm that the fault fired as scheduled. Archived guard references are repository-relative and process IDs are omitted. Export reports describe component exports before merging; their output paths identify historical intermediate files. `round3/stop_watcher.md` records the budget stop without raw process information.
+
+Reproduce from the repository root (numpy/scipy required):
+
+```sh
+mkdir -p analysis/review/round3
+PYTHONDONTWRITEBYTECODE=1 WPL_DATA=data WPL_R3=data/episodes_r3.jsonl.gz WPL_OUT=analysis/review/round3 python tools/review/round3.py > analysis/review/round3/round3.md
+```

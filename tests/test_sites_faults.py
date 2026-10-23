@@ -16,7 +16,7 @@ import uuid
 from urllib.parse import urlencode, urljoin
 import pytest
 from playwright.sync_api import sync_playwright
-from proxy.plan import Plan, write_plan
+from proxy.plan import Plan, write_plan, F3_DELAYS, rollback_delay
 from probes.site_common import task_data, mutations
 from probes.reddit import POST_FAMILIES
 
@@ -36,7 +36,7 @@ CASES = [
     ("reddit", 640),
     ("reddit", 635),
 ]
-CONDITIONS = ["C0", "F1", "F2", "F3", "F4", "F5", "F6"]
+CONDITIONS = ["C0", "F1", "F2", "F3", "F4", "F5", "F6", "F3s2", "F3s30"]
 pytestmark = pytest.mark.sites
 
 
@@ -371,10 +371,19 @@ def test_site_fault(site, tid, fault, readback="page"):
                 assert all(
                     not r["body"] for r in result["details"]
                 ), "stripped body must stay absent"
-            elif fault == "F3":
-                time.sleep(max(0, started + 2 - time.monotonic()))
+            elif fault in F3_DELAYS:
+                from runner.metrics import rows, wait_rollbacks
+                events = directory / "proxy_events.jsonl"
+                wait_until(lambda: any(e['event'] == 'rollback_scheduled' for e in rows(events)))
+                scheduled = next(e for e in rows(events) if e['event'] == 'rollback_scheduled')
+                delay = rollback_delay(fault, {'f3': {'delay_s': 8}})
+                assert scheduled['delay_s'] == delay
+                # Check the committed write shortly before the scheduled deadline.
+                time.sleep(max(0, scheduled['ts'] + delay - min(1.0, delay / 2) - time.time()))
+                assert time.time() < scheduled['ts'] + delay
                 assert probe.evaluate(task, b)["G"]
-                time.sleep(max(0, started + 12 - time.monotonic()))
+                wait_rollbacks(directory, timeout=delay + 30)
+                assert any(e['event'] == 'rollback_done' for e in rows(events))
                 assert not probe.evaluate(task, b)["G"]
             else:
                 assert probe.evaluate(task, b)["G"]

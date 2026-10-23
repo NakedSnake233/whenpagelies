@@ -784,8 +784,8 @@ def test_grouped_mitigation_metrics_populations_and_export(study):
         stream='m5-mitigation', policy='B1')
     _, tables = a.analyze(root)
     rows = tables['mitigation_paired_by_group']
-    groups = {'C0', 'F1', 'F3', 'F4', 'F5', 'F6', 'silent', 'lostack', 'faults'}
-    assert len(rows) == (len(a.POLICIES)-1) * 9 * 2
+    groups = {'C0', 'F1', 'F3', 'F4', 'F5', 'F6', 'F3s2', 'F3s30', 'silent', 'lostack', 'faults'}
+    assert len(rows) == (len(a.POLICIES)-1) * len(groups) * 2
     assert {(r['policy'], r['group'], r['population']) for r in rows} == set(product(
         a.POLICIES[1:], groups, ('exposed', 'itt')))
     def cell(group, population='exposed', policy='B1'):
@@ -940,3 +940,75 @@ def test_named_sweep_capture_keeps_latest_valid(study):
     assert [r['episode'] for r in deferred] == ['r2-budget']
     assert {q['name'] for q in queue} == {'r2-luna-b0'}
     assert meta['selection_counts']['duplicate_valid_plans'] == 1
+
+
+@pytest.mark.parametrize('condition', ['F3s2', 'F3s30'])
+def test_delay_alias_analysis_and_export(study, condition):
+    from tools.export_r2 import episode_row, summary
+    root, add, _ = study
+    add('delay-alias', condition=condition, fault_fired=True, G=False,
+        rollback_before_claim=False, fired_time=10., final_message_at=11.,
+        site='reddit', tokens={}, n_readbacks_agent=0)
+    record = json.loads((root / 'runs/delay-alias/record.json').read_text())
+    row = a.derive(record)
+    assert row['exposed'] and row['claim_before_rollback'] and row['FS']
+    timing = next(r for r in a.composition_tables([row], [])['writes']
+                  if r['model'] == row['model'] and r['condition'] == condition)
+    assert timing['n_done_before_rollback'] == 1
+    assert timing['median_fault_to_claim_seconds'] == 1.
+    exported = episode_row(record, [])
+    assert exported['condition'] == condition and exported['exposed']
+    assert any(line.startswith(f'| {condition} | 1 | 1 |') for line in summary([exported]))
+    result = a.headline([row], [row], {})
+    assert result['fault_FS']['n'] == 0
+    assert result['policies']['B0']['FS']['n'] == 0
+    assert a.MITIGATION_GROUPS[condition] == (condition,)
+    assert condition not in a.MITIGATION_GROUPS['faults']
+
+
+@pytest.mark.parametrize('condition,site,family,delay', [
+    ('C0', 'reddit', 'fam-6', None), ('F1', 'reddit', 'fam-6', None),
+    ('F3', 'reddit', 'fam-6', 8), ('F3', 'reddit', 'unknown', None),
+    ('F3s2', 'reddit', 'fam-6', 2.0), ('F3s30', 'reddit', 'fam-6', 30.0),
+])
+@pytest.mark.parametrize('before', [True, False, None])
+def test_export_shared_f3_timing(study, condition, site, family, delay, before):
+    from tools.export_r2 import episode_row
+    _, add, _ = study
+    record = add('timing', condition=condition, site=site, family=family,
+                 tokens={}, n_readbacks_agent=0, rollback_before_claim=before)
+    exported = episode_row(record, [])
+    assert exported['rollback_delay_s'] == delay
+    expected = not before if condition in a.F3_DELAYS else None
+    assert exported['claim_before_rollback'] is expected
+    assert a.derive(record)['rollback_delay_s'] == delay
+
+
+@pytest.mark.parametrize('filters,expected', [
+    ([], None), (['--model', 'one'], None), (['--policy', 'B0'], None),
+    (['--model', 'one', '--policy', 'VRV'], ['one-VRV']),
+    (['--model', 'two', '--policy', 'B0'], ['two-B0']),
+    (['--model', 'absent'], []),
+])
+def test_export_model_policy_filters(study, monkeypatch, filters, expected):
+    import gzip
+    import sys
+    from tools import export_r2 as e
+    root, add, db = study
+    for model, policy in [('one', 'B0'), ('one', 'VRV'), ('two', 'B0')]:
+        add(f'{model}-{policy}', stream='mixed', model=model, policy=policy,
+            site='reddit', tokens={}, n_readbacks_agent=0)
+    target = sqlite3.connect(root / 'runs/r2_queue.sqlite')
+    db.backup(target)
+    target.close()
+    monkeypatch.setattr(e, 'ROOT', root)
+    out = root / 'out.gz'
+    monkeypatch.setattr(sys, 'argv', ['export', '--sweep', 'mixed', '--out', str(out), *filters])
+    if expected is None:
+        with pytest.raises(ValueError, match='single model and policy'):
+            e.main()
+        assert not out.exists()
+    else:
+        e.main()
+        with gzip.open(out, 'rt') as f:
+            assert [json.loads(line)['episode'] for line in f] == expected

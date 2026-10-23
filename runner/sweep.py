@@ -1,4 +1,5 @@
 """Resumable SQLite sweep: add, run --workers N, status. All paths are repository-local."""
+from proxy.plan import CONDITIONS
 import argparse
 import fcntl
 import itertools
@@ -307,7 +308,7 @@ def main():
     add.add_argument('--tasks', nargs='+', required=True)
     add.add_argument('--models', nargs='+', choices=list(CONFIG['models']), required=True)
     add.add_argument('--policies', nargs='+', default=['B0'], choices=POLICIES)
-    add.add_argument('--conditions', nargs='+', default=['C0'], choices=['C0', *[f'F{i}' for i in range(1,7)]])
+    add.add_argument('--conditions', nargs='+', default=['C0'], choices=CONDITIONS)
     add.add_argument('--seeds', nargs='+', type=int, default=[0])
     execute = sub.add_parser('run')
     execute.add_argument('--workers', type=int, choices=range(1, 17), default=2)
