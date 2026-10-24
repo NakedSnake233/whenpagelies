@@ -191,7 +191,7 @@ def write_table(out):
     ns = [out['models'][k]['by_condition'][c]['n_exposed'] for k, _ in MODELS for c in CONDS]
     ns = [out['models'][k]['by_condition'][c]['n_exposed'] for k, _ in MODELS for c in CONDS]
     L = [r'\begin{table}[t]',
-         r'\caption{Outcomes of exposed B0 episodes by model (\%). CS clean success, FS false success, MS missed success, \D excess or misdirected effect (e.g., a duplicate post), RB agent read the state back after the write (under \fault{F2}, by opening the post). Bold: differs from \fault{C0} on the same tasks (paired exact McNemar, $p<0.05$). Exposed episodes per cell: ' + str(min(ns)) + '--' + str(max(ns)) + r' (\Cref{app:models}). $^{\dagger}$Proprietary model, run under four conditions.}',
+         r'\caption{Outcomes of exposed B0 episodes by model (\%). CS clean success, FS false success, MS missed success, \D excess or misdirected effect (e.g., a duplicate post), RB agent read the state back after the write (under \fault{F2}, by opening the post). Bold (outcome rows): differs from \fault{C0} on the same tasks (paired exact McNemar, $p<0.05$). Exposed episodes per cell: ' + str(min(ns)) + '--' + str(max(ns)) + r' (\Cref{app:models}). $^{\dagger}$Proprietary model, run under four conditions.}',
          r'\label{tab:main}', r'\footnotesize', r'\setlength{\tabcolsep}{2.6pt}', r'\renewcommand{\arraystretch}{0.92}',
          r'\begin{tabular}{@{}llrrrrr@{}}', r'\toprule',
          r'Fault & Outcome & DeepSeek & MiMo & MiniMax & Qwen & Luna$^{\dagger}$ \\', r'\midrule']
