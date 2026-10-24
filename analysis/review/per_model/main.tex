@@ -1,0 +1,41 @@
+\begin{table}[t]
+\caption{Outcomes of exposed B0 episodes by model (\%). CS clean success, FS false success, MS missed success, \D excess or misdirected effect (e.g., a duplicate post), RB agent read the state back after the write (under \fault{F2}, by opening the post), EFP/EFF evaluator passes a wrong state / fails a right state. Bold: differs from \fault{C0} on the same tasks (paired exact McNemar, $p<0.05$). Exposed episodes per cell: 13--53 (\Cref{app:models}). $^{\dagger}$Proprietary model, run under four conditions.}
+\label{tab:main}
+\footnotesize
+\setlength{\tabcolsep}{2.6pt}
+\renewcommand{\arraystretch}{0.92}
+\begin{tabular}{@{}llrrrrr@{}}
+\toprule
+Fault & Outcome & DeepSeek & MiMo & MiniMax & Qwen & Luna$^{\dagger}$ \\
+\midrule
+\fault{C0} none & CS & 89 & 80 & 56 & 84 & 83 \\
+ & FS & 6 & 17 & 29 & 16 & 2 \\
+ & \D & 6 & 13 & 24 & 16 & 14 \\
+\addlinespace[1.5pt]
+\fault{F1} fake ack & FS & \textbf{86} & \textbf{91} & \textbf{88} & \textbf{98} & \textbf{83} \\
+ & RB & 8 & 7 & 3 & 2 & 8 \\
+ & EFP & 80 & 76 & 58 & 81 & 83 \\
+\addlinespace[1.5pt]
+\fault{F2} partial & FS & \textbf{29} & 14 & 85 & \textbf{50} & -- \\
+ & RB & 71 & 86 & 8 & 50 & -- \\
+\addlinespace[1.5pt]
+\fault{F3} rollback & FS & \textbf{94} & \textbf{98} & \textbf{91} & \textbf{93} & \textbf{85} \\
+ & RB & 4 & 7 & 3 & 2 & 0 \\
+ & EFP & 87 & 77 & 60 & 73 & 80 \\
+\addlinespace[1.5pt]
+\fault{F4} lost ack & CS & \textbf{40} & \textbf{25} & \textbf{24} & \textbf{25} & \textbf{29} \\
+ & MS & 6 & \textbf{18} & \textbf{59} & \textbf{48} & 12 \\
+ & \D & \textbf{54} & \textbf{60} & 14 & 25 & \textbf{60} \\
+ & RB & 44 & 35 & 31 & 25 & 43 \\
+ & EFF & 32 & 35 & 72 & 73 & 29 \\
+\addlinespace[1.5pt]
+\fault{F5} misl.\ error & CS & \textbf{41} & \textbf{32} & 46 & \textbf{45} & -- \\
+ & MS & \textbf{25} & \textbf{39} & 17 & \textbf{27} & -- \\
+ & \D & \textbf{35} & \textbf{34} & 25 & 27 & -- \\
+ & EFF & 51 & 52 & 46 & 64 & -- \\
+\addlinespace[1.5pt]
+\fault{F6} stale read & CS & 87 & 82 & 61 & 76 & -- \\
+ & \D & 11 & 14 & 21 & 20 & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

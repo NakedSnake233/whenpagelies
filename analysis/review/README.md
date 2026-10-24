@@ -124,3 +124,13 @@ Reproduce the analysis from the repository root (numpy/scipy required):
 mkdir -p analysis/review/round3b
 PYTHONDONTWRITEBYTECODE=1 python tools/review/repeat_ds.py > analysis/review/round3b/repeat_ds.md
 ```
+## Per-model results
+
+The paper reports every B0 outcome per model. Table 3 (`per_model/main.tex`) is produced by `tools/review/per_model.py` from the released episode rows, with `data/writes.csv`, `data/readback.csv` and the standard and skeptical judge verdicts in `analysis/review/judge/`. The proprietary-model column uses `analysis/review/proprietary/proprietary_raw.json`. The script also produces `per_model_raw.json` and a Markdown report.
+
+Reproduce from the repository root with numpy/scipy installed:
+
+```sh
+mkdir -p analysis/review/per_model
+PYTHONDONTWRITEBYTECODE=1 python tools/review/per_model.py > analysis/review/per_model/per_model.md
+```
