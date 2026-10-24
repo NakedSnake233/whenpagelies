@@ -3,8 +3,8 @@
 Inputs: data/episodes_main.jsonl.gz, data/writes.csv and data/readback.csv (released per-model
 write and read-back statistics), analysis/review/judge/{standard,skeptical}__gpt-5.6-luna.jsonl (LLM-judge verdicts),
 analysis/review/proprietary/proprietary_raw.json (GPT-5.6-Luna, for the table's last column).
-Outputs (WPL_TABLES, default analysis/review/per_model): per_model_raw.json and main.tex (the paper's
-per-model Table 3); markdown on stdout.  WPL_DATA overrides the data directory.
+Outputs (WPL_TABLES, default analysis/review/per_model): per_model_raw.json, main.tex (the paper's
+per-model Table 3) and evaluator.tex (Table 5); markdown on stdout.  WPL_DATA overrides the data directory.
 
 Rates are over exposed episodes.  Paired tests are exact McNemar tests on (task) pairs within a
 model, each fault against C0 over tasks exposed under both (robustness.py).
@@ -25,6 +25,7 @@ ROOT = HERE.parents[1]
 DATA = Path(os.environ.get('WPL_DATA', ROOT / 'data'))
 TABLES = Path(os.environ.get('WPL_TABLES', ROOT / 'analysis' / 'review' / 'per_model'))
 MODELS = [('deepseek-v4.1-flash', 'DeepSeek'), ('mimo-v2.6-flash', 'MiMo'), ('minimax-m3', 'MiniMax'), ('qwen3.7-plus', 'Qwen')]
+NAMES = {'deepseek-v4.1-flash': 'DeepSeek-V4.1-Flash', 'mimo-v2.6-flash': 'MiMo-V2.6-Flash', 'minimax-m3': 'MiniMax-M3', 'qwen3.7-plus': 'Qwen3.7-Plus'}
 CONDS = ['C0', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6']
 POST = {'fam-12', 'fam-13', 'fam-15', 'fam-16', 'fam-6100'}
 PRICE = 'fam-247'
@@ -181,16 +182,16 @@ def write_table(out):
         return x
 
     rows = [('C0', 'none', [('CS', 'CS', False), ('FS', 'FS', False), ('\\D', 'D', False)]),
-            ('F1', 'fake ack', [('FS', 'FS', True), ('RB', 'RB', False), ('EFP', 'EFP', False)]),
+            ('F1', 'fake ack', [('FS', 'FS', True), ('RB', 'RB', False)]),
             ('F2', 'partial', [('FS', 'FS', True), ('RB', 'RB', False)]),
-            ('F3', 'rollback', [('FS', 'FS', True), ('RB', 'RB', False), ('EFP', 'EFP', False)]),
-            ('F4', 'lost ack', [('CS', 'CS', True), ('MS', 'MS', True), ('\\D', 'D', True), ('RB', 'RB', False), ('EFF', 'EFF', False)]),
-            ('F5', 'misl.\\ error', [('CS', 'CS', True), ('MS', 'MS', True), ('\\D', 'D', True), ('EFF', 'EFF', False)]),
+            ('F3', 'rollback', [('FS', 'FS', True), ('RB', 'RB', False)]),
+            ('F4', 'lost ack', [('CS', 'CS', True), ('MS', 'MS', True), ('\\D', 'D', True), ('RB', 'RB', False)]),
+            ('F5', 'misl.\\ error', [('CS', 'CS', True), ('MS', 'MS', True), ('\\D', 'D', True)]),
             ('F6', 'stale read', [('CS', 'CS', True), ('\\D', 'D', True)])]
     ns = [out['models'][k]['by_condition'][c]['n_exposed'] for k, _ in MODELS for c in CONDS]
     ns = [out['models'][k]['by_condition'][c]['n_exposed'] for k, _ in MODELS for c in CONDS]
     L = [r'\begin{table}[t]',
-         r'\caption{Outcomes of exposed B0 episodes by model (\%). CS clean success, FS false success, MS missed success, \D excess or misdirected effect (e.g., a duplicate post), RB agent read the state back after the write (under \fault{F2}, by opening the post), EFP/EFF evaluator passes a wrong state / fails a right state. Bold: differs from \fault{C0} on the same tasks (paired exact McNemar, $p<0.05$). Exposed episodes per cell: ' + str(min(ns)) + '--' + str(max(ns)) + r' (\Cref{app:models}). $^{\dagger}$Proprietary model, run under four conditions.}',
+         r'\caption{Outcomes of exposed B0 episodes by model (\%). CS clean success, FS false success, MS missed success, \D excess or misdirected effect (e.g., a duplicate post), RB agent read the state back after the write (under \fault{F2}, by opening the post). Bold: differs from \fault{C0} on the same tasks (paired exact McNemar, $p<0.05$). Exposed episodes per cell: ' + str(min(ns)) + '--' + str(max(ns)) + r' (\Cref{app:models}). $^{\dagger}$Proprietary model, run under four conditions.}',
          r'\label{tab:main}', r'\footnotesize', r'\setlength{\tabcolsep}{2.6pt}', r'\renewcommand{\arraystretch}{0.92}',
          r'\begin{tabular}{@{}llrrrrr@{}}', r'\toprule',
          r'Fault & Outcome & DeepSeek & MiMo & MiniMax & Qwen & Luna$^{\dagger}$ \\', r'\midrule']
@@ -207,6 +208,28 @@ def write_table(out):
             L.append(r'\addlinespace[1.5pt]')
     L += [r'\bottomrule', r'\end{tabular}', r'\end{table}']
     (TABLES / 'main.tex').write_text('\n'.join(L) + '\n')
+    write_evaluator_table(out, prop)
+
+
+def write_evaluator_table(out, prop):
+    """Evaluator and LLM-judge errors per model."""
+    pb = prop['by_condition']
+    L = [r'\begin{table}[t]',
+         r'\caption{Evaluator and LLM-judge errors by model (\% of exposed B0 episodes). False pass: graded success although the backend state is wrong; false fail: graded failure although it is right. The judges read the trajectory, not the pages (\Cref{app:judge}). $^{\dagger}$Not judged; run under four conditions.}',
+         r'\label{tab:evaluator}', r'\footnotesize', r'\setlength{\tabcolsep}{2.4pt}',
+         r'\begin{tabular}{@{}lrrrrrrrr@{}}', r'\toprule',
+         r' & \multicolumn{4}{c}{Trace evaluator} & \multicolumn{2}{c}{LLM judge} & \multicolumn{2}{c}{Sceptical judge} \\',
+         r'\cmidrule(lr){2-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}',
+         r' & \multicolumn{2}{c}{false pass} & \multicolumn{2}{c}{false fail} & f.\ pass & f.\ fail & f.\ pass & f.\ fail \\',
+         r'Model & \fault{F1} & \fault{F3} & \fault{F4} & \fault{F5} & \fault{F1}+\fault{F3} & \fault{F4}+\fault{F5} & \fault{F1}+\fault{F3} & \fault{C0} \\', r'\midrule']
+    for model, _ in MODELS:
+        d = out['models'][model]
+        bc = d['by_condition']
+        cells = [bc['F1']['EFP'], bc['F3']['EFP'], bc['F4']['EFF'], bc['F5']['EFF'], d['silent']['JFP'], d['lost']['JFF'], d['silent']['SFP'], bc['C0']['SFF']]
+        L.append(NAMES[model] + ' & ' + ' & '.join(r0(c) for c in cells) + r' \\')
+    L += [r'\midrule', r'GPT-5.6-Luna$^{\dagger}$ & ' + ' & '.join([r0(pb['F1']['EFP']), r0(pb['F3']['EFP']), r0(pb['F4']['EFF']), '--', '--', '--', '--', '--']) + r' \\']
+    L += [r'\bottomrule', r'\end{tabular}', r'\end{table}']
+    (TABLES / 'evaluator.tex').write_text('\n'.join(L) + '\n')
 
 
 if __name__ == '__main__':

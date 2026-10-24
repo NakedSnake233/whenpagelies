@@ -1,0 +1,21 @@
+\begin{table}[t]
+\caption{Evaluator and LLM-judge errors by model (\% of exposed B0 episodes). False pass: graded success although the backend state is wrong; false fail: graded failure although it is right. The judges read the trajectory, not the pages (\Cref{app:judge}). $^{\dagger}$Not judged; run under four conditions.}
+\label{tab:evaluator}
+\footnotesize
+\setlength{\tabcolsep}{2.4pt}
+\begin{tabular}{@{}lrrrrrrrr@{}}
+\toprule
+ & \multicolumn{4}{c}{Trace evaluator} & \multicolumn{2}{c}{LLM judge} & \multicolumn{2}{c}{Sceptical judge} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+ & \multicolumn{2}{c}{false pass} & \multicolumn{2}{c}{false fail} & f.\ pass & f.\ fail & f.\ pass & f.\ fail \\
+Model & \fault{F1} & \fault{F3} & \fault{F4} & \fault{F5} & \fault{F1}+\fault{F3} & \fault{F4}+\fault{F5} & \fault{F1}+\fault{F3} & \fault{C0} \\
+\midrule
+DeepSeek-V4.1-Flash & 80 & 87 & 32 & 51 & 87 & 15 & 46 & 43 \\
+MiMo-V2.6-Flash & 76 & 77 & 35 & 52 & 87 & 26 & 49 & 39 \\
+MiniMax-M3 & 58 & 60 & 72 & 46 & 68 & 47 & 43 & 29 \\
+Qwen3.7-Plus & 81 & 73 & 73 & 64 & 90 & 51 & 52 & 33 \\
+\midrule
+GPT-5.6-Luna$^{\dagger}$ & 83 & 80 & 29 & -- & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}

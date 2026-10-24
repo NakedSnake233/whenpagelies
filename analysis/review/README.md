@@ -126,7 +126,7 @@ PYTHONDONTWRITEBYTECODE=1 python tools/review/repeat_ds.py > analysis/review/rou
 ```
 ## Per-model results
 
-The paper reports every B0 outcome per model. Table 3 (`per_model/main.tex`) is produced by `tools/review/per_model.py` from the released episode rows, with `data/writes.csv`, `data/readback.csv` and the standard and skeptical judge verdicts in `analysis/review/judge/`. The proprietary-model column uses `analysis/review/proprietary/proprietary_raw.json`. The script also produces `per_model_raw.json` and a Markdown report.
+The paper reports every B0 outcome per model. Table 3 (`per_model/main.tex`) is produced by `tools/review/per_model.py` from the released episode rows, with `data/writes.csv`, `data/readback.csv` and the standard and skeptical judge verdicts in `analysis/review/judge/`. The proprietary-model column uses `analysis/review/proprietary/proprietary_raw.json`. The script also writes `per_model/evaluator.tex` (the paper's Table 5: evaluator and LLM-judge errors by model), `per_model_raw.json` and a Markdown report. Table 3 no longer carries the evaluator columns.
 
 Reproduce from the repository root with numpy/scipy installed:
 
