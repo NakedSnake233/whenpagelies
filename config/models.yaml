@@ -48,3 +48,39 @@ models:
     output: 0.28
     cached: 0.0028
     monthly_cap: 60
+providers:
+  opencode:
+    model_ids:
+      deepseek-v4.1-flash: deepseek-v4.1-flash
+      kimi-k2.6: kimi-k2.6
+      glm-5.2: glm-5.2
+      qwen3.7-plus: qwen3.7-plus
+      gpt-5.6-luna: gpt-5.6-luna
+      minimax-m3: minimax-m3
+      mimo-v2.6-flash: mimo-v2.6-flash
+  lmuai:
+    models:
+      deepseek-v4.1-flash:
+        model_id: deepseek-v4.1-flash
+        key_env: DEEPSEEK_API_KEY
+        format: chat
+        prices_estimated: true
+        input: 0.3
+        output: 1.2
+        cached: 0.006
+      qwen3.7-plus:
+        model_id: qwen3.7-plus
+        key_env: QWEN_API_KEY
+        format: chat
+        prices_estimated: true
+        input: 0.8
+        output: 3.2
+        cached: 0.08
+      mimo-v2.6-flash:
+        model_id: mimo-v2.6-flash
+        key_env: MIMO_API_KEY
+        format: chat
+        prices_estimated: true
+        input: 0.28
+        output: 0.56
+        cached: 0.0056

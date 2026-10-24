@@ -19,6 +19,10 @@ class SecretTests(unittest.TestCase):
         self.path_patch = patch.object(secrets, '_credential_path', return_value=self.path)
         self.path_patch.start()
         self.addCleanup(self.path_patch.stop)
+        self.lmuai_path = Path(self.directory.name) / 'lmuai.env'
+        self.lmuai_patch = patch.object(secrets, '_lmuai_path', return_value=self.lmuai_path)
+        self.lmuai_patch.start()
+        self.addCleanup(self.lmuai_patch.stop)
 
     def write(self, text):
         self.path.write_bytes(text.encode())
@@ -73,6 +77,65 @@ class SecretTests(unittest.TestCase):
         self.assertEqual(result['lines'][1], {'length': 12, 'starts_oc_or_sk': True})
         self.assertNotIn('oc_fake', str(result))
         self.assertNotIn('oc_bare_fake', str(result))
+
+    def test_lmuai_file_precedence(self):
+        self.write('QWEN_API_KEY=fake-shared\nLMUAI_BASE_URL=https://shared.invalid/v1')
+        self.lmuai_path.write_text('QWEN_API_KEY=fake-dedicated\n'
+                                   'LMUAI_BASE_URL=https://dedicated.invalid/v1/')
+        settings = secrets.load_lmuai_settings('QWEN_API_KEY')
+        self.assertEqual(settings.get('key'), 'fake-dedicated')
+        self.assertEqual(settings.get('base_url'), 'https://dedicated.invalid/v1')
+        os.environ['QWEN_API_KEY'] = 'fake-environment'
+        os.environ['LMUAI_BASE_URL'] = 'https://environment.invalid/v1/'
+        settings = secrets.load_lmuai_settings('QWEN_API_KEY')
+        self.assertEqual(settings.get('key'), 'fake-environment')
+        self.assertEqual(settings.get('base_url'), 'https://environment.invalid/v1')
+        self.assertNotIn('fake-environment', str(settings) + repr(settings))
+        self.assertNotIn('environment.invalid', str(settings) + repr(settings))
+
+    def test_lmuai_named_fallback(self):
+        self.write('# fake values only\nexport QWEN_API_KEY="fake-qwen"\n'
+                   'DEEPSEEK_API_KEY=fake-deep\nMIMO_API_KEY=fake-mimo\n'
+                   'LMUAI_BASE_URL=https://shared.invalid/v1/\n')
+        for name, value in [('QWEN_API_KEY', 'fake-qwen'),
+                            ('DEEPSEEK_API_KEY', 'fake-deep'), ('MIMO_API_KEY', 'fake-mimo')]:
+            settings = secrets.load_lmuai_settings(name)
+            self.assertEqual(settings.get('key'), value)
+            self.assertEqual(settings.get('base_url'), 'https://shared.invalid/v1')
+            self.assertNotIn(value, str(settings) + repr(settings))
+            self.assertNotIn('shared.invalid', str(settings) + repr(settings))
+        with self.assertRaises(RuntimeError) as error:
+            secrets.load_opencode_key()
+        self.assertNotIn('fake-', str(error.exception) + repr(error.exception))
+        with self.path.open('a') as stream:
+            stream.write('OPENCODE_API_KEY=oc_fake\n')
+        self.assertEqual(secrets.load_opencode_key(), 'oc_fake')
+        os.environ['QWEN_API_KEY'] = 'fake-environment'
+        os.environ['LMUAI_BASE_URL'] = 'https://environment.invalid/v1/'
+        settings = secrets.load_lmuai_settings('QWEN_API_KEY')
+        self.assertEqual(settings.get('key'), 'fake-environment')
+        self.assertEqual(settings.get('base_url'), 'https://environment.invalid/v1')
+
+    def test_lmuai_bare_fallback_is_missing(self):
+        self.write('oc_bare_fake')
+        with self.assertRaisesRegex(RuntimeError, '^Required model credential is missing$') as error:
+            secrets.load_lmuai_settings('QWEN_API_KEY')
+        self.assertNotIn('oc_bare_fake', str(error.exception) + repr(error.exception))
+        self.assertIsNone(error.exception.__context__)
+        self.assertEqual(secrets.load_opencode_key(), 'oc_bare_fake')
+
+    def test_lmuai_existing_file_does_not_fall_back(self):
+        self.write('QWEN_API_KEY=fake-shared')
+        self.lmuai_path.write_text('OTHER=fake-other')
+        with self.assertRaisesRegex(RuntimeError, '^Required model credential is missing$'):
+            secrets.load_lmuai_settings('QWEN_API_KEY')
+
+    def test_lmuai_mixed_fallback_is_not_named_file(self):
+        self.write('QWEN_API_KEY=fake-shared\noc_bare_fake')
+        with self.assertRaisesRegex(RuntimeError, '^Required model credential is missing$') as error:
+            secrets.load_lmuai_settings('QWEN_API_KEY')
+        for value in ('fake-shared', 'oc_bare_fake'):
+            self.assertNotIn(value, str(error.exception) + repr(error.exception))
 
 
 if __name__ == '__main__':

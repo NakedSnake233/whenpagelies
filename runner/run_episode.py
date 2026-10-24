@@ -120,6 +120,7 @@ def run_episode(args):
     from runner.worker_proxy import WorkerProxy
     from proxy.plan import Plan, write_plan
     from proxy.catalog import load_catalog
+    from tools.providers import provider_name
     task = load_task(args.task)
     episode = '-'.join(map(identifier, [task['id'], args.model, args.policy, args.condition,
                                         f's{args.seed}', uuid.uuid4().hex[:8]]))
@@ -128,7 +129,7 @@ def run_episode(args):
     directory.chmod(0o700)
     har = directory / 'network.har'
     real_task = 'webarena_task_id' in task
-    state = dict(episode=episode, task=task['id'], site=task['site'], family=task.get('family'),
+    state = dict(provider=provider_name(), episode=episode, task=task['id'], site=task['site'], family=task.get('family'),
                  model=args.model, policy=args.policy, condition=args.condition, seed=args.seed,
                  worker=args.worker, proxy_port=args.proxy_port, dry_run=bool(args.dry_run),
                  steps=0, claim='NONE', final_message='', final_message_at=None,
@@ -138,6 +139,7 @@ def run_episode(args):
                  rollback_before_claim=None, readback_after_write=False, readback_any=False,
                  readback_agent=False, n_readbacks=0, n_readbacks_agent=0,
                  eval_pass=None, eval_detail='', restore_ok=None, browser_killed=False)
+    write_json(directory / 'trace_header.json', dict(provider=state['provider'], model=args.model, episode=episode))
     start = time.monotonic()
     episode_started_at = time.time()
     state['started_at'] = episode_started_at

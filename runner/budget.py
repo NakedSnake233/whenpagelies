@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
+from tools.providers import provider_name, budget_path
 
 CONFIG_PATH = Path(__file__).resolve().parents[1] / 'config/budget.yaml'
 MONTHLY_PAUSE = 'GoUsageLimitError monthly'
@@ -20,8 +21,12 @@ class BudgetExceeded(RuntimeError):
 
 
 class Budget:
-    def __init__(self, path='runs/budget.sqlite', config=None):
+    def __init__(self, path=None, config=None):
         self.config = yaml.safe_load(CONFIG_PATH.read_text()) if config is None else config
+        self.provider = provider_name()
+        if self.provider != 'opencode':
+            self.config = self.config['providers'][self.provider]
+        path = budget_path() if path is None else path
         self.cap = float(self.config['workspace_monthly_usd'])
         self._amount(self.cap)
         anchor = self.config['provider_month_anchor']
@@ -32,9 +37,13 @@ class Budget:
         Path(path).parent.mkdir(parents=True, exist_ok=True)
         self.path = str(path)
         with self.connect() as db:
+            # Serialize schema inspection and migration across worker startup.
+            db.execute('BEGIN IMMEDIATE')
             db.execute('''CREATE TABLE IF NOT EXISTS calls (
                 id TEXT PRIMARY KEY, model TEXT NOT NULL, episode TEXT NOT NULL,
                 timestamp REAL NOT NULL, cost REAL NOT NULL, status TEXT NOT NULL)''')
+            if 'provider' not in {r[1] for r in db.execute('PRAGMA table_info(calls)')}:
+                db.execute("ALTER TABLE calls ADD COLUMN provider TEXT NOT NULL DEFAULT 'opencode'")
             db.execute('CREATE INDEX IF NOT EXISTS calls_window ON calls(model, timestamp)')
             db.execute('CREATE INDEX IF NOT EXISTS workspace_window ON calls(timestamp)')
             db.execute('''CREATE TABLE IF NOT EXISTS workspace_pause (
@@ -94,6 +103,7 @@ class Budget:
     def reserve(self, model, cap, estimated_cost, episode='', now=None):
         """Pending/uncertain calls count; serialize both account and model checks."""
         self._amount(estimated_cost)
+        cap = self.config.get('per_model_monthly_usd', cap)
         self._amount(cap)
         with self.connect() as db:
             db.execute('BEGIN IMMEDIATE')
@@ -124,8 +134,8 @@ class Budget:
                                     break
                         raise BudgetExceeded(f'{scope}: {label} budget would be exceeded', max(1, frees-now+1))
             call_id = uuid.uuid4().hex
-            db.execute('INSERT INTO calls VALUES (?,?,?,?,?,?)',
-                       (call_id, model, episode, now, estimated_cost, 'reserved'))
+            db.execute('INSERT INTO calls (id,model,episode,timestamp,cost,status,provider) VALUES (?,?,?,?,?,?,?)',
+                       (call_id, model, episode, now, estimated_cost, 'reserved', self.provider))
         return call_id
 
     def settle(self, call_id, cost, status='complete'):
@@ -139,6 +149,6 @@ class Budget:
         """Record a known charge (also useful for importing existing accounting)."""
         self._amount(cost)
         with self.connect() as db:
-            db.execute('INSERT INTO calls VALUES (?,?,?,?,?,?)',
+            db.execute('INSERT INTO calls (id,model,episode,timestamp,cost,status,provider) VALUES (?,?,?,?,?,?,?)',
                        (uuid.uuid4().hex, model, episode, time.time() if now is None else now,
-                        cost, 'complete'))
+                        cost, 'complete', self.provider))

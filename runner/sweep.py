@@ -16,6 +16,7 @@ from agent.browser import ROOT
 from agent.llm import CONFIG
 from runner.run_episode import load_task, POLICIES
 from runner.budget import Budget, MONTHLY_PAUSE
+from tools.providers import budget_path
 from runner.worker_proxy import WorkerProxy, die_with_parent
 
 DEFAULT_DB = ROOT / 'runs/queue.sqlite'
@@ -71,14 +72,14 @@ class Queue:
                 raise ValueError(f'disabled or unknown sweep model: {model}')
 
     def paused(self):
-        return Budget(ROOT / 'runs/budget.sqlite').paused()
+        return Budget(budget_path()).paused()
 
     def resume(self):
         # Allow the previously rejected rows to retry immediately after upgrade.
         with self.connect() as db:
             db.execute("UPDATE queue SET available_at=0,retry_after=0 WHERE status='deferred' AND error LIKE ?",
                        ('%' + MONTHLY_PAUSE + '%',))
-        Budget(ROOT / 'runs/budget.sqlite').resume()
+        Budget(budget_path()).resume()
 
     def claim(self, name, worker, site=None):
         with self.connect() as db:
@@ -102,7 +103,7 @@ class Queue:
     def _finish(self, db, row, record):
         error = record['error']
         if 'LLM HTTP 429' in error and MONTHLY_PAUSE in error:
-            Budget(ROOT / 'runs/budget.sqlite').pause()
+            Budget(budget_path()).pause()
         status, available, delay = 'done', 0, 0
         attempts = row['attempts']
         deferrals = row.get('deferrals', 0)
@@ -294,7 +295,7 @@ def status(args):
             print(json.dumps(dict(row)))
         counts = dict(db.execute('SELECT status,COUNT(*) FROM queue WHERE name=? GROUP BY status', (args.name,)))
         print(json.dumps({'name': args.name, 'counts': counts}))
-    budget = Budget(ROOT / 'runs/budget.sqlite')
+    budget = Budget(budget_path())
     print(json.dumps({'workspace_spend': budget.workspace_spend(), 'workspace_paused': budget.paused()}))
     with budget.connect() as db:
         print(json.dumps({'spend_per_model': dict(db.execute('SELECT model,SUM(cost) FROM calls GROUP BY model'))}))

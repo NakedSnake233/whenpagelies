@@ -1,0 +1,45 @@
+{
+  "exports": {
+    "r3b-repeat": 203,
+    "r3b-retry": 4
+  },
+  "episodes": 207,
+  "by_condition": {
+    "F3": 52,
+    "F4": 53,
+    "C0": 51,
+    "F1": 51
+  },
+  "by_exposure": {
+    "False": 56,
+    "True": 151
+  },
+  "exposed_by_condition": {
+    "F4": 39,
+    "C0": 36,
+    "F1": 38,
+    "F3": 38
+  },
+  "cost": 6.52412571,
+  "mean_steps": 15.347826086956522,
+  "mean_n_parse_error_steps": 0.9710144927536232,
+  "ledger_total": 7.423322971999999,
+  "ledger_by_status": [
+    [
+      "complete",
+      3317,
+      6.968745272
+    ],
+    [
+      "http_error",
+      3,
+      0.0
+    ],
+    [
+      "reserved",
+      30,
+      0.4545777
+    ]
+  ],
+  "sha256": "2d0b2bd5c3ebf5f944c42391b2347d42b0aba749e3f3bc6b0e2effa91c91123c"
+}

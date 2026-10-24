@@ -93,3 +93,65 @@ def diagnose_key_file():
 if __name__ == '__main__':
     import json
     print(json.dumps(diagnose_key_file(), indent=2))
+
+
+class EnvValues:
+    """Parsed credentials: values are available only through explicit get()."""
+    __slots__ = ('__values',)
+
+    def __init__(self, values):
+        self.__values = values
+
+    def __repr__(self):
+        return '<EnvValues [REDACTED]>'
+
+    __str__ = __repr__
+
+    def get(self, name, default=None):
+        return self.__values.get(name, default)
+
+
+def parse_env_file(path):
+    try:
+        text = Path(path).read_text(encoding='utf-8')
+    except (OSError, UnicodeError):
+        raise RuntimeError('Provider credential file is unavailable') from None
+    values = {}
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+        if line.startswith('export '):
+            line = line[7:].lstrip()
+        name, sep, raw = line.partition('=')
+        if not sep or not re.fullmatch(r'[A-Za-z_][A-Za-z0-9_]*', name.strip()):
+            raise ValueError('Invalid credential assignment')
+        value = _parse_value(raw)
+        if raw.strip().startswith(('"', "'")) and not re.fullmatch(
+                r'''(?:"[^"]*"|'[^']*')\s*(?:#.*)?''', raw.strip()):
+            raise ValueError('Invalid credential value')
+        values[name.strip()] = value
+    return EnvValues(values)
+
+
+def _lmuai_path():
+    return _credential_path().with_name('lmuai.env')
+
+
+def load_lmuai_settings(key_name):
+    path = _lmuai_path()
+    values = EnvValues({})
+    if path.exists():
+        values = parse_env_file(path)
+    elif _credential_path().exists():
+        try:
+            values = parse_env_file(_credential_path())
+        except ValueError:
+            # The shared file may hold a bare OpenCode key, not assignments.
+            # Only a fully valid named file can supply lmuai settings.
+            pass
+    key = os.environ.get(key_name) or values.get(key_name)
+    if not key:
+        raise RuntimeError('Required model credential is missing')
+    base = os.environ.get('LMUAI_BASE_URL') or values.get('LMUAI_BASE_URL') or 'https://api.lmuai.ai/v1'
+    return EnvValues({'key': key, 'base_url': base.rstrip('/')})

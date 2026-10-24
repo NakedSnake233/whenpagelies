@@ -29,7 +29,9 @@ def test_har_scrubbing(tmp_path):
     assert p.stat().st_mode & 0o777 == 0o600
 
 
-def test_crash_records_artifacts_and_zero_api_dry_run(monkeypatch, tmp_path):
+@pytest.mark.parametrize('provider', ['opencode', 'lmuai'])
+def test_crash_records_artifacts_and_zero_api_dry_run(monkeypatch, tmp_path, provider):
+    monkeypatch.setenv('OSD_PROVIDER', provider)
     monkeypatch.setattr('runner.run_episode.ROOT', tmp_path)
     monkeypatch.setattr('runner.run_episode.probe', lambda *a: None)
     monkeypatch.setattr('agent.llm.load_opencode_key', lambda: pytest.fail('dry run loaded API key'))
@@ -44,6 +46,9 @@ def test_crash_records_artifacts_and_zero_api_dry_run(monkeypatch, tmp_path):
     record = run_episode(args)
     assert record['claim'] == 'NONE' and 'browser unavailable' in record['error']
     directory = tmp_path/'runs'/record['episode']
+    assert record['provider'] == provider
+    assert json.loads((directory/'trace_header.json').read_text()) == dict(
+        provider=provider, model=args.model, episode=record['episode'])
     assert (directory/'trace.jsonl').exists()
     assert json.loads((directory/'record.json').read_text()) == record
     assert json.loads((tmp_path/'runs/records.jsonl').read_text()) == record

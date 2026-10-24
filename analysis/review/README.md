@@ -108,3 +108,19 @@ PYTHONDONTWRITEBYTECODE=1 WPL_DATA=data WPL_R3=data/episodes_r3.jsonl.gz WPL_OUT
 ```
 
 `round3/diagnostics.md` reports parse-error rates and composition (DeepSeek-V4.1-Flash replies failed to parse far more often in round 3, mostly as native tool-call markup under VRV and as empty replies under B0) and the timing of VRV’s last read-back, last verification report and DONE claim relative to the rollback. Reproduce with `python tools/review/round3_diagnostics.py --runs-round3 <dir> --runs-original <dir>` (requires the full run directories).
+
+
+## Round 3b: DeepSeek repeat through a second provider
+
+On 24 Oct 2026, the 207 remaining repeat cells (deepseek-v4.1-flash, B0, seed 1, C0/F1/F3/F4) ran through a second OpenAI-compatible provider serving the same model identifier because the first gateway's quota was exhausted. Selection used `OSD_PROVIDER=lmuai`, with per-model keys from a local env file (not included). The provider probe summary is `round3b/probe.md`; matching request identifiers do not independently verify backend model identity.
+
+Accounting used a separate local ledger, `runs/budget_lmuai.sqlite`, with USD 15 workspace and per-model caps, all window fractions 1.0, and a UTC month anchor at day 1, 00:00:00. The local `config/budget.yaml` changes remain excluded. To reproduce provider runs, add a `providers.lmuai` section locally with `workspace_monthly_usd: 15`, `per_model_monthly_usd: 15`, `provider_month_anchor: {day: 1, hour: 0, minute: 0, second: 0}` and `fractions: {five_hours: 1.0, seven_days: 1.0, month: 1.0}`. Prices are estimates at 2× the first gateway's list prices; the 207 exported episodes sum to USD 6.52412571 (`cost`), not an invoice or total ledger spend.
+
+Four cells were rerun: two browser crashes and two transport failures. The merged export contains 203 repeat episodes and four successful retries. Smoke, repeat and retry pristine checks reported drift 0 on both sites. The smoke guard and pristine files were overwritten and no separate archive is available; `round3b/smoke_checks.md` records the contemporaneous diagnosis. The repeat's archived guard and before/after logs are included. The retry's guard wrapper ended early; its unchanged running-state guard, before-check log and manual post-check are included, with the recovery note. The manual check confirms final pristine state but does not restore guard coverage for the unguarded interval. Generic guard log references are historical repository-relative paths; process IDs are omitted.
+
+Reproduce the analysis from the repository root (numpy/scipy required):
+
+```sh
+mkdir -p analysis/review/round3b
+PYTHONDONTWRITEBYTECODE=1 python tools/review/repeat_ds.py > analysis/review/round3b/repeat_ds.md
+```

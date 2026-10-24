@@ -53,7 +53,7 @@ class LLMClient(AgentLLMClient):
         headers = {k: safe_diagnostic(v, self.key) for k, v in response.headers.items()
                    if k.lower() == 'retry-after' or re.fullmatch(r'(?:x-)?ratelimit-[a-z0-9-]+', k.lower())
                    or re.fullmatch(r'x-rate-limit-[a-z0-9-]+', k.lower())}
-        record = dict(timestamp=time.time(), episode=self.episode_id, model=self.model,
+        record = dict(provider=self.provider, timestamp=time.time(), episode=self.episode_id, model=self.model,
                       status=429, headers=headers, body=safe_diagnostic(response.text, self.key)[:300],
                       retry_after=self.rate_limit_retry)
         self.diagnostics.parent.mkdir(parents=True, exist_ok=True)

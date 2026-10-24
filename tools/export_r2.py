@@ -15,7 +15,7 @@ from tools.analyze import (ROOT, CONDITIONS, POLICY_MEANS, bounded_read,
                            budget_deferred, capture, derive, harness_reason, json_lines)
 
 FIELDS = '''CF CS D DUP EFF EFP FS G MS cbr_prompted claim condition cost eligible
- episode eval_pass exposed extra_llm_calls family fired harm model n_done_refused
+ episode eval_pass exposed extra_llm_calls family fired harm model provider n_done_refused
  n_matched_writes n_readbacks_agent n_verifications policy policy_cost readback_agent
  seconds seed site steps study task tokens'''.split()
 # These are the three ActionParseError messages emitted by agent.agent and
@@ -57,11 +57,11 @@ def validate(released, runs, count=40):
         if torn or budget_deferred(record) or harness_reason(record):
             raise ValueError('Invalid original validation episode')
         actual = episode_row(record, trace)
-        if set(expected) != set(FIELDS):
+        if set(expected) != set(FIELDS) - {'provider'} and set(expected) != set(FIELDS):
             mismatches.append({'episode': expected['episode'], 'field': '<schema>'})
         for key in FIELDS:
-            if key != 'study' and (actual[key] != expected.get(key)
-                                  or type(actual[key]) is not type(expected.get(key))):
+            if key != 'study' and (actual[key] != expected.get(key, 'opencode' if key == 'provider' else None)
+                                  or type(actual[key]) is not type(expected.get(key, 'opencode' if key == 'provider' else None))):
                 mismatches.append({'episode': expected['episode'], 'field': key})
     return mismatches
 
@@ -85,6 +85,7 @@ def summary(rows):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--sweep', default='r2-luna-b0')
+    parser.add_argument('--provider', choices=('opencode', 'lmuai'))
     parser.add_argument('--model', help='Keep only this model')
     parser.add_argument('--policy', help='Keep only this policy')
     parser.add_argument('--out', required=True, type=Path)
@@ -106,7 +107,7 @@ def main():
     def matches(row):
         return ((args.model is None or row['model'] == args.model)
                 and (args.policy is None or row['policy'] == args.policy))
-    selected = [r for r in selected if matches(r)]
+    selected = [r for r in selected if matches(r) and (args.provider is None or r.get('provider', 'opencode') == args.provider)]
     queue = [q for q in queue if matches(q)]
     # Check the filtered queue, including unfinished planned episodes.
     if len({(q['model'], q['policy']) for q in queue}) > 1:

@@ -143,7 +143,7 @@ def _run_steps(env, client, controller, system, obs, max_steps, trace, state, ne
         current['last_action'] = last_action or current['last_action']
         prompt = controller.decorate(json.dumps({**current, 'history': history[-8:]}, ensure_ascii=False))
         started = time.monotonic()
-        row = dict(started_at=time.time(), step=step, url=current['url'], ax_chars=len(current['ax']),
+        row = dict(provider=state.get('provider', 'opencode'), started_at=time.time(), step=step, url=current['url'], ax_chars=len(current['ax']),
                    prompt_chars=len(system) + len(prompt), prompt_tokens=0,
                    usage=ZERO_USAGE.copy(), cost=0, raw_model_text='', action='', error='',
                    side_effecting=False, mutating_requests=[], policy_event=[], extra_llm_calls=[],

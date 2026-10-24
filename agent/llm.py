@@ -12,22 +12,23 @@ import yaml
 from runner.budget import Budget
 from runner.storage import write_json
 from tools.llm_diagnostics import provider_reason, redact_error_body
-from tools.secrets import load_opencode_key
+from tools.secrets import load_opencode_key, load_lmuai_settings
+from tools.providers import provider_name, model_config, budget_path
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG = yaml.safe_load((ROOT / 'config/models.yaml').read_text())
 ZERO_USAGE = dict(input=0, cached_input=0, output=0, reasoning=0)
 
 
-def rates(model, when=None):
-    config = CONFIG['models'][model]
+def rates(model, when=None, provider=None):
+    config = model_config(CONFIG, model, provider)
     when = (when or datetime.now(timezone.utc)).astimezone(timezone.utc)
     peak = when.weekday() < 5 and (1 <= when.hour < 4 or 6 <= when.hour < 10)
     return {**config, **(config.get('peak', {}) if peak else {})}
 
 
-def cost_for(model, usage, when=None, cache_write=0):
-    price = rates(model, when)
+def cost_for(model, usage, when=None, cache_write=0, provider=None):
+    price = rates(model, when, provider)
     cached = usage['cached_input']
     # Output already INCLUDES reasoning; never charge reasoning twice.
     uncached = max(0, usage['input'] - cached - cache_write)
@@ -109,13 +110,24 @@ def normalise(data, api_format):
 
 class LLMClient:
     def __init__(self, model, episode_id, budget=None, transport=None, sleep=time.sleep,
-                 max_retries=5, max_tokens=4096):
+                 max_retries=5, max_tokens=4096, record_error_body=True):
         self.model, self.episode_id = model, episode_id
-        self.config = CONFIG['models'][model]
-        self.key = load_opencode_key()
-        self.budget = budget if budget is not None else Budget(ROOT / 'runs/budget.sqlite')
+        self.provider = provider_name()
+        self.config = model_config(CONFIG, model, self.provider)
+        if self.provider == 'opencode':
+            self.key = load_opencode_key()
+            self.base_url = CONFIG['base_url']
+            self.model_id = CONFIG['providers']['opencode']['model_ids'][model]
+        else:
+            settings = load_lmuai_settings(self.config['key_env'])
+            self.key, self.base_url = settings.get('key'), settings.get('base_url')
+            self.model_id = self.config['model_id']
+        self.budget = budget if budget is not None else Budget(budget_path())
+        if self.budget.provider != self.provider:
+            raise ValueError('Budget provider does not match client provider')
         self.client = httpx.Client(trust_env=True, timeout=180, transport=transport)
         self.sleep, self.max_retries, self.max_tokens = sleep, max_retries, max_tokens
+        self.record_error_body = record_error_body
 
     def close(self):
         self.client.close()
@@ -124,7 +136,9 @@ class LLMClient:
         fmt = self.config['format']
         headers = {'Authorization': f'Bearer {self.key}', 'User-Agent': 'osd-bench-agent/0.1',
                    'x-opencode-session': self.episode_id}
-        body = {'model': self.model}
+        if self.provider != 'opencode':
+            headers.pop('x-opencode-session')
+        body = {'model': self.model_id}
         if fmt == 'messages':
             path = '/messages'
             headers.update({'x-api-key': self.key, 'anthropic-version': '2023-06-01'})
@@ -144,11 +158,11 @@ class LLMClient:
         price = {**self.config, **self.config.get('peak', {})}
         estimate = (estimate_input * price['input'] + self.max_tokens * price['output']) / 1e6
         for attempt in range(self.max_retries + 1):
-            reservation = self.budget.reserve(self.model, self.config['monthly_cap'], estimate,
+            reservation = self.budget.reserve(self.model, self.config.get('monthly_cap', self.budget.config.get('per_model_monthly_usd', 15)), estimate,
                                               self.episode_id)
             when = datetime.now(timezone.utc)
             try:
-                response = self.client.post(CONFIG['base_url'] + path, headers=headers, json=body)
+                response = self.client.post(self.base_url.rstrip('/') + path, headers=headers, json=body)
             except (httpx.TimeoutException, httpx.TransportError):
                 # Unknown provider outcome: keep the reservation to fail conservatively.
                 if attempt == self.max_retries:
@@ -164,6 +178,8 @@ class LLMClient:
                     self.sleep(min(2**attempt, 30))
                     continue
                 if 400 <= response.status_code < 500 and response.status_code != 429:
+                    if not self.record_error_body:
+                        raise RuntimeError(f'LLM HTTP {response.status_code}')
                     safe_body = redact_error_body(response.text, self.key)
                     reason = provider_reason(safe_body) or 'provider error (no type/code)'
                     directory = ROOT / 'runs' / self.episode_id
@@ -179,7 +195,7 @@ class LLMClient:
             try:
                 reply = normalise(response.json(), fmt)
                 reply.text = redact(reply.text, self.key)
-                reply.cost = cost_for(self.model, reply.usage, when, reply.cache_write)
+                reply.cost = cost_for(self.model, reply.usage, when, reply.cache_write, provider=self.provider)
             except (ValueError, KeyError, TypeError, IndexError):
                 raise RuntimeError('Invalid LLM response; uncertain charge remains reserved') from None
             self.budget.settle(reservation, reply.cost)

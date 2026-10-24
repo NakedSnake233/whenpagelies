@@ -1,0 +1,8 @@
+{
+  "started_at": 1792797397.8406606,
+  "status": "running",
+  "before": {
+    "returncode": 0,
+    "log": "logs/r2_pristine_before.log"
+  }
+}

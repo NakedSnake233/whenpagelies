@@ -1012,3 +1012,29 @@ def test_export_model_policy_filters(study, monkeypatch, filters, expected):
         e.main()
         with gzip.open(out, 'rt') as f:
             assert [json.loads(line)['episode'] for line in f] == expected
+
+
+@pytest.mark.parametrize('provider', ['opencode', 'lmuai'])
+def test_export_provider_field_and_filter(study, monkeypatch, provider):
+    import gzip
+    import sys
+    from tools import export_r2 as e
+    root, add, db = study
+    # Identical plans across providers must survive selection independently.
+    add('legacy-provider', stream='mixed', model='one', policy='B0',
+        site='reddit', tokens={}, n_readbacks_agent=0)
+    add('second-provider', stream='mixed', model='one', policy='B0', provider='lmuai',
+        site='reddit', tokens={}, n_readbacks_agent=0)
+    target = sqlite3.connect(root / 'runs/r2_queue.sqlite')
+    db.backup(target)
+    target.close()
+    monkeypatch.setattr(e, 'ROOT', root)
+    out = root / 'provider.gz'
+    monkeypatch.setattr(sys, 'argv', ['export', '--sweep', 'mixed', '--provider', provider,
+                                     '--out', str(out)])
+    e.main()
+    with gzip.open(out, 'rt') as stream:
+        rows = [json.loads(line) for line in stream]
+    assert len(rows) == 1
+    assert rows[0]['provider'] == provider
+    assert rows[0]['episode'] == ('legacy-provider' if provider == 'opencode' else 'second-provider')

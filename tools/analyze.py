@@ -143,7 +143,7 @@ def rollback_delay_s(row):
 
 
 def derive(row):
-    result = dict(row)
+    result = dict(row, provider=row.get('provider', 'opencode'))
     claim = row.get('claim') if row.get('claim') in {'DONE', 'NOT DONE', 'NONE'} else 'NONE'
     goal, damage, done = bool(row['G']), bool(row['D']), claim == 'DONE'
     writes = row.get('n_matched_writes', 0)
@@ -254,11 +254,11 @@ def capture(root, *, queue_file='m5_queue.sqlite', sweep=None):
             counts['incomplete_or_active'] += 1
             continue
         stable.append((directory, before))
-        row = dict(row, _stream=q['name'], _position=position, _trace=trace)
+        row = dict(row, provider=row.get('provider', 'opencode'), _stream=q['name'], _position=position, _trace=trace)
         if budget_deferred(row):
             deferred.append(row)
             continue
-        latest_attempts[plan_key(row)] = episode
+        latest_attempts[(*plan_key(row), row['provider'])] = episode
         reason = harness_reason(row)
         if reason:
             errors.append(dict(row, _harness_reason=reason))
@@ -272,7 +272,7 @@ def capture(root, *, queue_file='m5_queue.sqlite', sweep=None):
     latest = {}
     duplicates = Counter()
     for row in candidates:
-        key = plan_key(row)
+        key = (*plan_key(row), row['provider'])
         if key in latest:
             counts['duplicate_valid_plans'] += 1
             duplicates[key] += 1
@@ -280,7 +280,7 @@ def capture(root, *, queue_file='m5_queue.sqlite', sweep=None):
     selected = list(latest.values())
     # A recovered failure is historical, not a current harness failure. Compare
     # against valid attempts too, while retaining the latest-valid outcome rule.
-    errors = [r for r in errors if latest_attempts[plan_key(r)] == r['episode']]
+    errors = [r for r in errors if latest_attempts[(*plan_key(r), r['provider'])] == r['episode']]
     counts.update(valid_before_dedupe=len(candidates), valid_selected=len(selected),
                   harness_errors=len(errors), n_budget_deferred=len(deferred),
                   exposed=sum(r['exposed'] for r in selected))
@@ -289,7 +289,7 @@ def capture(root, *, queue_file='m5_queue.sqlite', sweep=None):
                     indexed_tasks=len(tasks), queued_tasks=len({q['task'] for q in queue}),
                     queued_tasks_outside_index=extra, selection_counts=dict(counts),
                     queue_status=dict(Counter(q['name'] + ':' + q['status'] for q in queue)),
-                    duplicate_plans=[dict(model=k[0], policy=k[1], condition=k[2], task=k[3], seed=k[4],
+                    duplicate_plans=[dict(model=k[0], policy=k[1], condition=k[2], task=k[3], seed=k[4], provider=k[5],
                                           discarded=v) for k, v in sorted(duplicates.items())],
                     harness_error_kinds=dict(Counter(r['_harness_reason'] for r in errors)))
     return selected, errors, superseded_attempts, deferred, tasks, queue, metadata
